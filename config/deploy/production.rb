@@ -61,3 +61,7 @@
 #   }
 
 server "18.179.163.60", user: "ec2-user", roles: %w{app db web}
+
+# unicornに現在の環境を本番環境だと認識させる
+set :rails_env, "production"
+set :unicorn_rack_env, "production"
