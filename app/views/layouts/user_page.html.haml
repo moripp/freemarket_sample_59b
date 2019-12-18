@@ -37,7 +37,26 @@
                   %span お知らせ日
               %i.icon-arrow-right
           %li.view-list
-            .a{""}一覧を見る
+            %a{""}一覧を見る
+        %ul#tab-todo.mypage-item-list.tab-pane.active
+          %li.not-fond.bold 現在やる事はありません
+    %aside.modal{"data-close" => "modal", "data-modal" => "banner"}
+      .modal-inner.modal-banner
+        .modal-banner-eye-catch
+          %img{:alt => "", :src => ""}/
+          %img{:alt => "", :src => ""}/
+      .modal-banner-body
+        %h2 今すぐ無料ダウンロード！
+        %p.bold 全ての機能を使えるスマホアプリはこちら！
+        .modal-banner-app.clearfix
+          %a.pull-left{:href => "https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8", :target => "_blank"}
+            %img{:alt => "", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?1215422380"}/
+          %a.pull-left{:href => "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja", :target => "_blank"}
+            %img{:alt => "", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?1215422380"}/
+          %a.modal-banner-app-open{"" => "", "" => "", "" => "", "" => "", :href => ""}
+           アプリで開く
+        %i.icon-close{"data-close" => "modal"}
+        
             
                 
 
