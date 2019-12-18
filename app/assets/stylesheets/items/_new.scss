@@ -1,6 +1,6 @@
 .exhibit-wrapper {
   width: 100vw;
-  background-color: $back;
+  background-color: $back-gray;
 
   // ①ヘッダー
   &__header {
@@ -22,13 +22,13 @@
       font-size: 20px;
       font-weight: 600;
       padding: 40px;
-      border-bottom: 1px solid $back;
+      border-bottom: 1px solid $back-gray;
       color: $black;
     }
 
     .exhibit-form {
       padding: 40px;
-      border-bottom: 1px solid $back;
+      border-bottom: 1px solid $back-gray;
       &__group {
         &__label-small {
           margin-top: 10px;
@@ -37,8 +37,8 @@
           margin-top: 20px;
           width: 100%;
           height: 170px;
-          background-color: $back;
-          border: 2px dotted $line;
+          background-color: $back-gray;
+          border: 2px dotted $line-silver;
           &__text {
             text-align: center;
             width: 300px;
@@ -79,7 +79,7 @@
         .exhibit-form-send-btn {
           width: 100%;
           height: 50px;
-          background-color: $red;
+          background-color: $corporate-red;
           color: $white;
           font-size: 15px;
           border-style: none;
@@ -126,7 +126,7 @@
       font-weight: 600;
     }
     .exhibit-form-require {
-      background: $red;
+      background: $corporate-red;
       color: $white;
       padding: 0.3em;
       font-size: 13px;
@@ -136,7 +136,7 @@
     .textfield-default {
       width: 100%;
       height: 50px;
-      border: 1px solid $line;
+      border: 1px solid $line-silver;
       border-radius: 5px;
       padding: 0 20px;
       font-size: 18px;
@@ -145,7 +145,7 @@
     .textfield-small {
       width: 200px;
       height: 50px;
-      border: 1px solid $line;
+      border: 1px solid $line-silver;
       border-radius: 5px;
       padding: 0 20px;
       font-size: 15px;
@@ -155,7 +155,7 @@
     .textarea-default {
       width: 100%;
       height: 200px;
-      border: 1px solid $line;
+      border: 1px solid $line-silver;
       border-radius: 5px;
       padding: 10px;
       font-size: 15px;
@@ -180,6 +180,3 @@
     }
   }
 }
-
-
-
