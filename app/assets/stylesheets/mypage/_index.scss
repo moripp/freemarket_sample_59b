@@ -8,7 +8,6 @@
   margin:auto 0;
   width: 100%;
   padding:40px 0 40px;
-  background-color:black ;
 
   &__main-innner{
     width:700px;
@@ -20,10 +19,25 @@
     width:280px;
     margin:0 40px 0 0;
 
+    &__side-bar{
+      margin:40px 0 0;
+
+      &__side-list{
+        list-style: none;
+      }
+
+      &__side-list-head{
+        margin:40px 0 0;
+        font-size:16px;
+      }
+    }
+
   }
 
 }
 
 .main-banner{
-
+  background: url();
+  background-position:center;
+  background-size:cover;
 }
