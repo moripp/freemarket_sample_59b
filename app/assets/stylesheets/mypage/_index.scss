@@ -1,0 +1,29 @@
+.white-bar{
+  position:relative;
+  border-top:1px solid #eee;
+  background:#fff;
+  box-shadow:0 3px 3px 0 rgba(0,0,0,0.16);
+}
+.main-container{
+  margin:auto 0;
+  width: 100%;
+  padding:40px 0 40px;
+  background-color:black ;
+
+  &__main-innner{
+    width:700px;
+    float:right;
+  }
+
+  &__main-side{
+    float:left;
+    width:280px;
+    margin:0 40px 0 0;
+
+  }
+
+}
+
+.main-banner{
+
+}
