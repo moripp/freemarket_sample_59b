@@ -1,24 +1,75 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# items
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null:false|
+|user_id|references|null: false, foreign_key: true|
+|image_id|references|
+|description|text|null: false|
+|status|integre|nill:false|
+|buy_id|references|foreign_key: true|
+|category_id|references|foreign_key: true|
 
-Things you may want to cover:
+## Association
+- belongs_to :user
+- has_many :images
+- belongs_to :buy
 
-* Ruby version
+# users
+|Column|Type|Options|
+|------|----|-------|
+|name_sei|string|null: false|
+|name_mei|string|null: false|
+|kana_sei|string|null: false|
+|kana_mei|string|null: false|
+|email|text|null: false, unique: true|
+|password|text|null: false|
+|recaptcha|text|null: false|
+|postal_code|string|null: false|
+|prefectures|string|null: false|
+|city|string|null: false|
+|address|string| null: false|
+|building|string||
+|tel|string|null: false|
+|profile_id|references|null: false|
+|credit_card_id|references|null: false|
 
-* System dependencies
+## Association
+- belongs_to :profile 
+- has_many :items
+- belongs_to :credit_card
 
-* Configuration
+# buys
+|Column|Type|Options|
+|------|----|-------|
+|item_id|references|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
 
-* Database creation
+## Association
+- belongs_to :item
+- belongs_to :user
 
-* Database initialization
+# images
+|Column|Type|Options|
+|------|----|-------|
+|file|string|null: false|
 
-* How to run the test suite
+## Association
+- belongs_to :item
 
-* Services (job queues, cache servers, search engines, etc.)
+# categorys
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, unique: true|
 
-* Deployment instructions
+## Association
+- has_many :items
 
-* ...
+# profiles
+|Column|Type|Options|
+|------|----|-------|
+|nickname|string|null: false|
+|introduction|text|null: false|
+
+## Association
+- belongs_to :user
