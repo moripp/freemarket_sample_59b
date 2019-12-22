@@ -1,8 +1,10 @@
 .white-bar{
   position:relative;
   border-top:1px solid #eee;
-  background:#fff;
+  background:red;
   box-shadow:0 3px 3px 0 rgba(0,0,0,0.16);
+  width:1020px;
+  height:48px;
 }
 .main-container{
   margin:auto 0;
@@ -12,6 +14,22 @@
   &__main-innner{
     width:700px;
     float:right;
+
+    &__user-icon{
+      height:200px;
+      position:relative;
+      padding:20px;
+      background-size:cover;
+      text-align:center;
+    }
+    &__notification-todo{
+      margin:0;
+      background:#fff;
+
+      &__tab-container{
+        
+      }
+    }
   }
 
   &__main-side{
