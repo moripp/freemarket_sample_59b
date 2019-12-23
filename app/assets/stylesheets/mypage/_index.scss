@@ -1,19 +1,22 @@
 .white-bar{
   position:relative;
   border-top:1px solid #eee;
-  background:red;
   box-shadow:0 3px 3px 0 rgba(0,0,0,0.16);
   width:1020px;
   height:48px;
 }
 .main-container{
   margin:auto 0;
-  width: 100%;
+  width: 1020px;
+  height:1292px;
   padding:40px 0 40px;
+  background-color:gray;
+  display: block;
 
-  &__main-innner{
+  &__innner{
     width:700px;
     float:right;
+    height:1211.84px;
 
     &__user-icon{
       height:200px;
@@ -26,25 +29,26 @@
       margin:0;
       background:#fff;
 
-      &__tab-container{
+      .tab-container{
         
       }
     }
   }
 
-  &__main-side{
+  .main-side{
+    background:red;
     float:left;
     width:280px;
     margin:0 40px 0 0;
 
-    &__side-bar{
+    &__bar{
       margin:40px 0 0;
 
-      &__side-list{
+      &__li-list{
         list-style: none;
       }
 
-      &__side-list-head{
+      &__li-head{
         margin:40px 0 0;
         font-size:16px;
       }
@@ -59,3 +63,4 @@
   background-position:center;
   background-size:cover;
 }
+

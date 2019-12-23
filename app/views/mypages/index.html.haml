@@ -1,23 +1,28 @@
 = render 'layouts/header'
 
 %nuv.white-bar
-メルカリ
-マイページ
+  %ul
+    %li.itemscope.itemtype
+      %span メルカリ
+
+    %li.itemscope.itemtype
+      %span マイページ
+      パンくず
 %main.main-container.clearfix
-  .main-inner
-    %section.user-icon
+  %main-container__inner
+    %section.main-container__inner__user-icon
     user-icon
-    %section.notification-todo
+    %section.main-container__inner__notification-todo
       .tab-container
 
   
   .main-side
-    %nav.side-bar
-      %ul.side-list
-      %h3.side-list-head メルペイ
-      %ul.side-list
-      %h3.side-list-head 設定
-      %ul.side-list
+    %nav.main-side__bar
+      %ul.main-side__bar__list
+      %h3.main-side__bar__li-head メルペイ
+      %ul.main-side__bar__list
+      %h3.main-side__bar__li-head 設定
+      %ul.main-side__bar__list
 
 
 
