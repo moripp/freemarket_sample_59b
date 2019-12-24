@@ -12,7 +12,7 @@
     .exhibit-page-description
       商品の情報を入力
     -# ここからform
-    = form_with(model: @item, url: items_path, local: true) do |f|
+    = form_with(model: @item, local: true) do |f|
       -# form 画像アップロード
       .exhibit-form
         .exhibit-form__group
