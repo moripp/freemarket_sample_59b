@@ -1,69 +1,94 @@
-.white-bar{
-  position:relative;
-  border-top:1px solid #eee;
-  box-shadow:0 3px 3px 0 rgba(0,0,0,0.16);
-  width:1020px;
-  height:48px;
-}
-.main-container{
-  margin:auto 0;
-  width: 1020px;
-  height:1292px;
-  padding:40px 0 40px;
-  background-color:gray;
-  display: block;
+.default-container{
+  background-color:$back-gray;
 
-  &__right{
-    width:700px;
-    float:right;
-    height:1211.84px;
-  
+  .white-bar{
+    position:relative;
+    border-top:1px solid #eee;
+    box-shadow:0 3px 3px 0 rgba(0,0,0,0.16);
+    width:100%;
+    height:48px;
+    background-color:$white;
 
-    &__user-icon{
-      height:200px;
-      position:relative;
-      padding:20px;
-      background-size:cover;
-      text-align:center;
-    }
-    &__notification-todo{
-      margin:0;
-      background:#fff;
-    }
+    .ul{
+      width:1020px;
+      overflow: visible;
+      list-style: none;
 
-    &__under{
-      margin:40px 0 0;
-      background:#fff;
-      }
-    }
-  
-
-  &__left{
-    background:red;
-    float:left;
-    width:280px;
-    margin:0 40px 0 0;
-
-    &__bar{
-      margin:40px 0 0;
-
-      &__li-list{
+      .li{
+        display: inline-block;
+        font-size: 14px;
+        line-height: 1.2;
         list-style: none;
       }
-
-      &__li-head{
-        margin:40px 0 0;
-        font-size:16px;
-      }
     }
+  }
+  
+  .main-container{
+    margin:40px auto 0;
+    width: 1020px;
+    padding:0 0 40px;
+    background-color:gray;
+    
+    &__right{
+      width:700px;
+      float: right;
+      
+      &__user-icon{
+        height:200px;
+        position:relative;
+        padding:20px;
+        background-size:cover;
+        text-align:center;
+        background-color: greenyellow;
+      }
+      &__notification-todo{
+        margin:0;
+        background:#fff;
 
+        &__tab{
+          list-style: none;
+        }
+          &__tab-content{
+           
+          }
+            
+      }
+
+      &__under{
+        margin:40px 0 0;
+        background:#fff;
+        list-style: none;
+        }
+      }
+    
+
+    &__left{
+      background:beige;
+      float:left;
+      width:280px;
+      margin:0 40px 0 0;
+
+      &__bar{
+        margin:40px 0 0;
+
+        &__li-list{
+          list-style: none;
+        }
+
+        &__li-head{
+          margin:40px 0 0;
+          font-size:16px;
+        }
+      }
+
+    }
+  }
+
+
+  .main-banner{
+    background: url();
+    background-position:center;
+    background-size:cover;
+    background: red;
   }
 }
-
-.main-banner{
-  background: url();
-  background-position:center;
-  background-size:cover;
-  background: red;
-}
-

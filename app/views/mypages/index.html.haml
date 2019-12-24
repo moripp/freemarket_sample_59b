@@ -1,38 +1,19 @@
-= render 'layouts/header'
+.default-container
+  = render 'layouts/header'
 
-%nuv.white-bar
-  %ul
-    %li.itemscope.itemtype
-      %span メルカリ
-
-    %li.itemscope.itemtype
-      %span マイページ
-      パンくず
-%main.main-container.clearfix
-
-  %main-container__right
-    %section.main-container__right__user-icon
-    user-icon
-    %section.main-container__right__notification-todo
-      .tab-container
-    %section.main-container__right__under
-
+  %nav.white-bar
+    %ul
+      %li.itemscope.itemtype
+        %span メルカリ
+      %li.itemscope.itemtype
+        %span マイページ
+        
+  %main.main-container.clearfix
   
-  .main-container__left
-    %nav.main-container__left__bar
-      %ul.main-container__left__bar__list
-      %h3.main-container__left__bar__li-head メルペイ
-      %ul.main-container__left__bar__list
-      %h3.main-container__left__bar__li-head 設定
-      %ul.main-container__left__bar__list
+    = render 'mypages/right'
 
+    = render 'mypages/left'
 
+  = render 'mypages/banner'
 
-
-%aside.main-banner
-
-
-
-
-
-= render 'layouts/footer'
+  = render 'layouts/footer'
