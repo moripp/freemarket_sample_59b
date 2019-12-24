@@ -23,6 +23,9 @@
             %label{ class: "exhibit-form-label-small" } 最大10枚までアップロードできます。
           .exhibit-form__group__image
             .exhibit-form__group__image__text
+              = 3.times do |times|
+                = f.fields_for :images do |b|
+                  = b.file_field :image
               %pre{ class: "exhibit-form-label-small" } 
                 ドラッグアンドドロップ
                 またはクリックしてファイルをアップロード
@@ -54,7 +57,7 @@
                   %span{ class: "exhibit-form-require"} 必須
               .exhibit-form__group2__right__box__right
                 %label{ class: "exhibit-form-label-small" } ¥
-                = f.text_field :name, placeholder: "例）300", class: "textfield-small"
+                = f.text_field :price, placeholder: "例）300", class: "textfield-small"
       -# form 出品ボタン
       .exhibit-form
         .exhibit-form__btn1
