@@ -13,10 +13,11 @@
   background-color:gray;
   display: block;
 
-  &__innner{
+  &__right{
     width:700px;
     float:right;
     height:1211.84px;
+  
 
     &__user-icon{
       height:200px;
@@ -28,14 +29,16 @@
     &__notification-todo{
       margin:0;
       background:#fff;
+    }
 
-      .tab-container{
-        
+    &__under{
+      margin:40px 0 0;
+      background:#fff;
       }
     }
-  }
+  
 
-  .main-side{
+  &__left{
     background:red;
     float:left;
     width:280px;
@@ -55,12 +58,12 @@
     }
 
   }
-
 }
 
 .main-banner{
   background: url();
   background-position:center;
   background-size:cover;
+  background: red;
 }
 
