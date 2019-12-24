@@ -10,6 +10,6 @@ $gray: #808080;             // 灰色
 $silver: #c0c0c0;
 
 // その他の色
-$shadow: rgba(0,0,0,0.18);  // 影の色（黒色18%の濃さ）
+$shadow: rgba(0,0,0,0.18) 0px 2px 4px;  // 影の色（黒色18%の濃さ）,左右2px,下に4pxの影が出る
 $corporate-red: #ea352c;              // 赤色（出品ボタンなど）
 $line-silver: #c0c0c0;             // formの線の色

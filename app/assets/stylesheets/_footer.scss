@@ -1,0 +1,26 @@
+.main_footer {
+  width: 100vw;
+  height: 56px;
+  background: $footer-black;
+  line-height: 56px;
+  bottom: 0;
+  position: absolute;
+  &__wrapper {
+      width: 1020px;
+      margin: 0 auto;
+      display: flex;
+      &__logo{
+        flex-wrap: wrap;
+        width: 20%;
+        img{
+          vertical-align: middle;
+        }
+      }
+      &__name{
+        flex-wrap: wrap;
+        width: 80%;
+        color: $white;
+        text-align: center;
+      }  
+  }
+}
