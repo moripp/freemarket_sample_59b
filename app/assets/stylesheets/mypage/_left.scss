@@ -12,10 +12,10 @@
       margin:8px 0 0;
       height:685px;
 
-        .li{
+        & li{
           height:48px;
         }
-        .a{
+        & a{
           position: relative;
           display: block;
           min-height: 48px;
@@ -38,7 +38,8 @@
     }
     .left-list-b{
       height:97px;
-      .a{}
+      & a{
+      }
     }
   }
 }

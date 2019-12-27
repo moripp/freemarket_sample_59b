@@ -9,14 +9,14 @@
     height:48px;
     background-color:$white;
 
-    .ul {
+    &ul {
       width:1020px;
       overflow: visible;
       .buy-item{
         list-style:none;
       }
 
-      .li{
+      & li{
         display: inline-block;
         font-size: 14px;
         line-height: 1.2;

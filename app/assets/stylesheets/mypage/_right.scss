@@ -15,26 +15,28 @@
     background:#fff;
 
     &__tab{
-      list-style: none;
       border: 0;
       background: #eee;
-
-      .active{
-        display: block;
+      display:flex;
+      
+      & .active{
         color: #333;
-        font-size: 22px;
         line-height: 72px;
-        width:50%;
+        background-color: white;
 
-        .h3{
-          
-        }
+      & h3{
+        
       }
-      .li{
+    }
+      & li{
         font-size: 22px;
         width:50%;
+        display:inline-block;
+        text-align: center;
 
-        .a{
+
+        
+        & a{
           position: relative;
           display: block;
           color: #333;
@@ -50,21 +52,32 @@
         display:block;
         list-style: none;
 
-        .li{
+        & li{
           border-bottom: 1px solid #eee;
           position: relative;
           height:81px;
+          display: flex;
+          a{
+            display:flex;
+            width:100%;
 
-          .mypage-item-link{
 
-
-            .figure{
-
+            figure{
+              text-align: center;           
               position: relative;
               overflow: hidden;
               float: left;
-              width: 48px;
+              width: 10%;
               height: 48px;
+             
+            }
+
+            .mypage-item-body{
+              width:85%
+            }
+            i.fa.fa-arrow-right {
+              line-height: 81px;
+              text-align: center;
             }
           }
         }
@@ -82,14 +95,14 @@
       font-size:16px;
       line-height:72px;
 
-      .ul{
+      & ul{
         .buy-item{
           list-style:none;
           border:0;
           background:#eee;
           font-size:0;
         }
-        .li{
+        li{
           width:50%;
         }
       }
@@ -97,8 +110,7 @@
     .under-content{
       height:236px;
 
-      .ul{
-
+      ul{
         .content-inner{
           
         }

@@ -27,15 +27,15 @@
     .tab-content
       %ul.ul-tab
         %li
-          %a.mypage-item-link{href: ""}
+          = link_to "#" do
             %figure
-              %img.saicoro{src: ""}/
+              = image_tag("#{asset_path('logo_red.png')}", size: "48x48", alt: "logo")
             .mypage-item-body
               .mypage-item-text おしらせ文
               %time
                 %i.icon-time
                 %span 時間
-            %i.icon-arrow-right
+            %i.fa.fa-arrow-right
         %li おしらせ
         %li おしらせ
         %li おしらせ
