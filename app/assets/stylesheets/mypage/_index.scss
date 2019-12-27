@@ -9,10 +9,12 @@
     height:48px;
     background-color:$white;
 
-    .ul{
+    .ul {
       width:1020px;
       overflow: visible;
-      list-style: none;
+      .buy-item{
+        list-style:none;
+      }
 
       .li{
         display: inline-block;
@@ -26,69 +28,9 @@
   .main-container{
     margin:40px auto 0;
     width: 1020px;
-    padding:0 0 40px;
-    background-color:gray;
-    
-    &__right{
-      width:700px;
-      float: right;
-      
-      &__user-icon{
-        height:200px;
-        position:relative;
-        padding:20px;
-        background-size:cover;
-        text-align:center;
-        background-color: greenyellow;
-      }
-      &__notification-todo{
-        margin:0;
-        background:#fff;
 
-        &__tab{
-          list-style: none;
-        }
-          &__tab-content{
-           
-          }
-            
-      }
+    @import "mypage/right";
 
-      &__under{
-        margin:40px 0 0;
-        background:#fff;
-        list-style: none;
-        }
-      }
-    
-
-    &__left{
-      background:beige;
-      float:left;
-      width:280px;
-      margin:0 40px 0 0;
-
-      &__bar{
-        margin:40px 0 0;
-
-        &__li-list{
-          list-style: none;
-        }
-
-        &__li-head{
-          margin:40px 0 0;
-          font-size:16px;
-        }
-      }
-
-    }
-  }
-
-
-  .main-banner{
-    background: url();
-    background-position:center;
-    background-size:cover;
-    background: red;
+    @import "mypage/left";
   }
 }

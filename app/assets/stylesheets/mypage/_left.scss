@@ -1,0 +1,25 @@
+.main-container__left{
+  background:beige;
+  float:left;
+  width:280px;
+  margin:0 40px 0 0;
+
+  &__bar{
+    margin:40px 0 0;
+
+    &__li-list{
+      list-style: none;
+    }
+
+    &__li-head{
+      margin:40px 0 0;
+      font-size:16px;
+    }
+  }
+}
+.main-banner{
+background: url();
+background-position:center;
+background-size:cover;
+background: red;
+}

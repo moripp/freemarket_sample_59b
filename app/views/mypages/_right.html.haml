@@ -16,30 +16,43 @@
     %ul.main-container__right__notification-todo__tab
       %li.active
         %h3
-          %a
+          %a{"data-toggle" => "tab", :href => "#mypage-tab-notification"}
             お知らせ
             %span.mypage-nav-number.hidden-large
+           
       %li
         %h3
-          %a
+          %a{"data-toggle" => "tab", :href => "#mypage-tab-todo"}
             やることリスト
-    .main-container__right__notification-todo__tab-content
-      %ul
+    .tab-content
+      %ul.ul-tab
         %li
           %a.mypage-item-link{href: ""}
             %figure
-              %img.saicoro{alt: "saicoro_logo_red.svg", src: "saicoro_logo_red.svg"}/
+              %img.saicoro{src: ""}/
             .mypage-item-body
-            .mypage-item-text おしらせ
-            %time
-            %i.icon-time
-            %span 時間
+              .mypage-item-text おしらせ文
+              %time
+                %i.icon-time
+                %span 時間
             %i.icon-arrow-right
-        %li
-        %li
-        %li
-        %li
-        %li
+        %li おしらせ
+        %li おしらせ
+        %li おしらせ
+        %li おしらせ
+        %li.tab-go-list 一覧を見る 
       %ul
-        
+
   %section.main-container__right__under
+    %h2.buy-item-head 購入した商品
+    %ul.buy-item
+      %li.active
+        %h3 取引中
+      %li
+        %h3 過去の取引
+    
+    .under-content
+      
+      
+
+

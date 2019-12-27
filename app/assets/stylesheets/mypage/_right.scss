@@ -1,0 +1,98 @@
+.main-container__right{
+  width:700px;
+  float: right;
+  
+  &__user-icon{
+    height:200px;
+    position:relative;
+    padding:20px;
+    background-size:cover;
+    text-align:center;
+    background-color: greenyellow;
+  }
+  &__notification-todo{
+    margin:0;
+    background:#fff;
+
+    &__tab{
+      list-style: none;
+      border: 0;
+      background: #eee;
+
+      .active{
+        display: block;
+        color: #333;
+        font-size: 22px;
+        line-height: 72px;
+        width:50%;
+
+        .h3{
+          
+        }
+      }
+      .li{
+        font-size: 22px;
+        width:50%;
+
+        .a{
+          position: relative;
+          display: block;
+          color: #333;
+          font-size: 16px;
+          line-height: 72px;
+        }
+      }
+    }
+    
+    .tab-content{
+
+      .ul-tab{
+        display:block;
+        list-style: none;
+
+        .li{
+          border-bottom: 1px solid #eee;
+          position: relative;
+          height:81px;
+
+          .mypage-item-link{
+
+
+            .figure{
+
+              position: relative;
+              overflow: hidden;
+              float: left;
+              width: 48px;
+              height: 48px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__under{
+    margin:40px 0 0;
+    background:#fff;
+
+    .buy-item-head{
+      padding:0 16px;
+      background: #fafafa;
+      font-size:16px;
+      line-height:72px;
+
+      .ul{
+        .buy-item{
+          list-style:none;
+          border:0;
+          background:#eee;
+          font-size:0;
+        }
+        .li{
+          width:50%;
+        }
+      }
+    }
+  }
+}
