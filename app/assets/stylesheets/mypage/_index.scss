@@ -21,6 +21,8 @@
         font-size: 14px;
         line-height: 1.2;
         list-style: none;
+        text-overflow: ellipsis;
+        white-space: nowrap
       }
     }
   }

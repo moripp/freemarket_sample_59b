@@ -8,7 +8,7 @@
     padding:20px;
     background-size:cover;
     text-align:center;
-    background-color: greenyellow;
+    background-color:rgb(224, 195, 230);
   }
   &__notification-todo{
     margin:0;
@@ -91,6 +91,16 @@
         }
         .li{
           width:50%;
+        }
+      }
+    }
+    .under-content{
+      height:236px;
+
+      .ul{
+
+        .content-inner{
+          
         }
       }
     }

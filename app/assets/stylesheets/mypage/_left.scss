@@ -7,13 +7,38 @@
   &__bar{
     margin:40px 0 0;
 
-    &__li-list{
+    .left-list-a{
       list-style: none;
+      margin:8px 0 0;
+      height:685px;
+
+        .li{
+          height:48px;
+        }
+        .a{
+          position: relative;
+          display: block;
+          min-height: 48px;
+          padding: 16px;
+          background: #fff;
+          font-size: 14px;
+          color: #333;
+          .icon-arrow-right{
+            position: absolute;
+            top: 50%;
+            right: 16px;
+            color: #ccc;
+          }
+      }
     }
 
-    &__li-head{
+    .left-list-head{
       margin:40px 0 0;
       font-size:16px;
+    }
+    .left-list-b{
+      height:97px;
+      .a{}
     }
   }
 }
