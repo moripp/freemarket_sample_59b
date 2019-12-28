@@ -1,12 +1,86 @@
-.profile-wrapper {
+.profile-wrapper{
   width: 100vw;
-  height: 100vh;
   background-color: $back-gray;
+  
+  &__contents {
+    width: 1020px;
+    height: 100vh;
+    background: $back-gray;
+    display: flex;
+    margin: 0 auto 0;
+    margin-top: 40px;
 
-  .profile-content{
-    float: right;
-    width: 700px;
-    height:500px;
-    background-color: white;
+    .mypages-left{
+      width: 280px;
+      height: 500px;
+      background-color: white;
+      float: left;
+      margin: 0 40px 0 0;
+    }
+    &__right{
+      width: 700px;
+      height:500px;
+      background-color: white;
+      text-align: center;
+
+      .profile-heading{
+        text-align: center;
+        font-size: 20px;
+        font-weight: 600;
+        padding: 8px 24px;
+      }
+
+      .profile-form{
+        &__icon{
+          padding: 72px 16px 24px;
+          text-align: center;
+          background-image: url(dummy_mainvisual.png);  
+          background-size: contain;
+          background-position: center;
+
+          &__name{
+            .name-default{
+              padding: 10px 16px 8px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+              background: #fff;
+              line-height: 1.5;
+              font-size: 16px;
+            }
+          }
+        }
+        &__content{
+          padding: 40px 16px;
+          &__text{
+            .profile-default{
+              min-height: 216px;
+              display: block;
+              width: 100%;
+              max-width: 100%;
+              min-height: 104px;
+              border: 1px solid #ccc;
+              background: #fff;
+              font-size: 16px;
+              line-height: 1.5;
+            }
+          }
+          &__btn{
+            .profile-form-send-btn{
+              margin: 16px 0 0;
+              background:$corporate-red;
+              border: 1px solid #ea352d;
+              color: #fff;
+              border-style: none;
+              cursor: pointer;
+              display: block;
+              width: 100%;
+              line-height: 48px;
+              font-size: 14px;
+              border: 1px solid transparent;
+            }
+          }
+        }
+      }
+    }
   }
 }
