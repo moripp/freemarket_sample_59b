@@ -1,0 +1,12 @@
+.profile-wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-color: $back-gray;
+
+  .profile-content{
+    float: right;
+    width: 700px;
+    height:500px;
+    background-color: white;
+  }
+}
