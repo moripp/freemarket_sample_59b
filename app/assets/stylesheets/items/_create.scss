@@ -1,0 +1,49 @@
+.exhibit-complete-wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-color: $back-gray;
+  &__contents {
+    width: 700px;
+    background-color: $white;
+    margin: 0 auto;
+    &__title {
+      text-align: center;
+      font-size: 20px;
+      font-weight: 600;
+      padding: 40px;
+      border-bottom: 1px solid $back-gray;
+      color: $black;
+    }
+    &__box {
+      padding: 40px;
+      &__description {
+        text-align: center;
+        font-size: 15px;
+        font-weight: 500;
+        color: $black;
+      }
+      &__btn {
+        text-align: center;
+        margin-top: 50px;
+        .continue-exhibit-btn {
+          text-decoration: none;
+          background-color: $corporate-red;
+          color: $white;
+          font-size: 15px;
+          display: block;
+          height: 50px;
+          line-height: 50px;
+        }
+      }
+      &__link {
+        text-align: center;
+        margin-top: 20px;
+        .root-path-btn {
+          text-decoration: none;
+          color: $light-blue;
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}
