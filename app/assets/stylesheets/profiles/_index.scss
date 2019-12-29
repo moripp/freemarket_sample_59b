@@ -1,20 +1,18 @@
 .profile-wrapper{
   width: 100vw;
+  height: 100vh;
   background-color: $back-gray;
   
   &__contents {
     width: 1020px;
-    height: 100vh;
-    background: $back-gray;
-    display: flex;
     margin: 0 auto 0;
     margin-top: 40px;
+    display: flex;
 
-    .mypages-left{
+    &__left{
       width: 280px;
       height: 500px;
       background-color: white;
-      float: left;
       margin: 0 40px 0 0;
     }
     &__right{
@@ -24,27 +22,23 @@
       text-align: center;
 
       .profile-heading{
-        text-align: center;
-        font-size: 20px;
+        font-size: 24px;
         font-weight: 600;
         padding: 8px 24px;
       }
 
       .profile-form{
         &__icon{
-          padding: 72px 16px 24px;
-          text-align: center;
           background-image: url(colorful_banner.png);  
           background-size: contain;
           background-position: center;
+          padding: 72px 16px 24px;
 
           &__nickname{
             .nickname-default{
               padding: 10px 16px 8px;
               border-radius: 4px;
               border: 1px solid #ccc;
-              background: #fff;
-              line-height: 1.5;
               font-size: 16px;
             }
           }
@@ -54,27 +48,23 @@
           &__text{
             .introduction-default{
               min-height: 216px;
-              display: block;
               width: 100%;
-              max-width: 100%;
               min-height: 104px;
               border: 1px solid #ccc;
-              background: #fff;
               font-size: 16px;
-              line-height: 1.5;
+              display: block;
             }
           }
           &__btn{
             .profile-form-send-btn{
+              width: 100%;
+              line-height: 48px;
               margin: 16px 0 0;
               background:$corporate-red;
               border: 1px solid #ea352d;
               color: #fff;
               border-style: none;
-              cursor: pointer;
               display: block;
-              width: 100%;
-              line-height: 48px;
               font-size: 14px;
               border: 1px solid transparent;
             }

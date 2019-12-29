@@ -1,14 +1,12 @@
 -# 2-1.ユーザープロフィール編集ページ
 -# ①ヘッダー、②コンテンツ（②-1左カラム、②-2右カラム）、③フッターの大きく4要素でできている。
 .profile-wrapper
-
   -# ①ヘッダー
   = render 'layouts/header'
-
   -# ②コンテンツ
   .profile-wrapper__contents
-    -# ②-1左カラム（キッドさん作成）
-    .mypages-left
+    -# ②-1左カラム（キッドさん作成中）
+    .profile-wrapper__contents__left
     -# ②-2右カラム
     .profile-wrapper__contents__right
       %h2{ class: "profile-heading" } プロフィール
@@ -22,5 +20,5 @@
               = f.text_area :introduction, placeholder: "よろしくです", class: "introduction-default"
             .profile-form__content__btn
               = f.submit "変更する", class: "profile-form-send-btn"
-
+-# ③フッター
 = render 'layouts/footer'
