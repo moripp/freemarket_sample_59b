@@ -9,7 +9,7 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to root_path
     else
-      # 保存失敗時は失敗画面を出す
+      render :new
     end
   end
 
