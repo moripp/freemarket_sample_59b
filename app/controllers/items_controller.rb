@@ -7,7 +7,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
-      render "create"
+      render :create
     else
       # 保存失敗時は失敗画面を出す
     end
