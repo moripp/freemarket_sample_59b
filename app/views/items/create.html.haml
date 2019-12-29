@@ -1,0 +1,14 @@
+-# 出品完了ページ
+.exhibit-complete-wrapper
+  .exhibit-complete-wrapper__contents
+    .exhibit-complete-wrapper__contents__title
+      出品が完了しました
+    .exhibit-complete-wrapper__contents__box
+      .exhibit-complete-wrapper__contents__box__description
+        あなたが出品した商品は「出品した商品一覧」からいつでも見ることができます。
+      .exhibit-complete-wrapper__contents__box__btn
+        = link_to new_item_path, class: "continue-exhibit-btn" do
+          続けて出品する
+      .exhibit-complete-wrapper__contents__box__link
+        = link_to root_path, class: "root-path-btn" do
+          商品ページへ行ってシェアする
