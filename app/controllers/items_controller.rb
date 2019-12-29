@@ -7,7 +7,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
-      redirect_to root_path
+      render "create"
     else
       # 保存失敗時は失敗画面を出す
     end
