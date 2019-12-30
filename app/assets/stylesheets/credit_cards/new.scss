@@ -1,0 +1,43 @@
+.credit_cards-input-wrapper{
+  width: 100vw;
+  height: 100vh;
+  background-color: $back-gray;
+  &__contents{
+    width: 1020px;
+    margin: 0 auto 0;
+    margin-top: 40px;
+    display: flex;
+    &__left{
+      width: 280px;
+      height: 500px;
+      background-color: white;
+      margin: 0 40px 0 0;
+    }
+    &__right{
+      width: 700px;
+      height:500px;
+      background-color: white;
+      text-align: center;
+
+      &__title{
+          font-size: 24px;
+          font-weight: 600;
+          padding: 8px 24px;
+      }
+      
+      &__btn{
+        .credit_cards-input-btn{
+          text-decoration: none;
+          width: 250px;
+          height: 50px;
+          background-color: #ea352c;
+          color: white;
+          font-size: 15px;
+          margin: 0 auto 0;
+          display: block;
+          line-height: 50px;
+        }
+      }
+    }
+  }
+}

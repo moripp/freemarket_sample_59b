@@ -1,0 +1,32 @@
+-# 2-4.ユーザークレジットカード情報入力ページ
+-# ①ヘッダー、②コンテンツ（②-1左カラム、②-2右カラム）、③フッターの大きく4要素でできている。
+.credit_cards-input-wrapper
+  -# ①ヘッダー
+  = render 'layouts/header'
+  -# ②コンテンツ
+  .credit_cards-input-wrapper__contents
+    -# ②-1左カラム（キッドさん作成中）
+    .credit_cards-input-wrapper__contents__left
+    -# ②-2右カラム
+    .credit_cards-input-wrapper__contents__right
+      .credit_cards-input-wrapper__contents__right__title
+      %h2{ class: "credit_cards-input-heading" } クレジットカード情報入力
+      = form_with(local: true) do |f|
+        .credic_cards-form
+          .credit_cards-form__content
+            .credit_cards-form__content__card-number
+              カード番号
+              = f.number_field :number, placeholder: "半角数字のみ", class: "card-number-default"
+            .credit_cards-form__content__expiration
+              有効期限
+              = f.date_field :expiration, placeholder: "01", class: "expiration-default"
+            .credit_cards-form__content__sc
+              セキュリティコード
+              = f.number_field :securitycode, placeholder: "カード背面4桁もしくは3桁の番号", class: "security-code-default"
+
+      .credit_cards-input-wrapper__contents__right__btn
+        = link_to credit_cards_path, class: "credit_cards-input-btn" do
+          追加する
+      
+  -# ③フッター
+  = render 'layouts/footer'
