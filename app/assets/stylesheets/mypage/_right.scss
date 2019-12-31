@@ -1,7 +1,9 @@
 .main-container__right{
   width:700px;
   float: right;
-  
+  & li{
+    list-style:none;
+  } 
   &__user-icon{
     height:200px;
     position:relative;
@@ -50,7 +52,6 @@
 
       .ul-tab{
         display:block;
-        list-style: none;
 
         & li{
           border-bottom: 1px solid #eee;
@@ -90,31 +91,30 @@
     background:#fff;
 
     .buy-item-head{
+      border:0;
       padding:0 16px;
       background: #fafafa;
-      font-size:16px;
       line-height:72px;
-
-      & ul{
-        .buy-item{
-          list-style:none;
-          border:0;
-          background:#eee;
-          font-size:0;
-        }
-        li{
-          width:50%;
+    }
+      .mypage-tabs{    
+        height: 74px ;
+        border:0;
+        background:#eee;
+        list-style: none;
+        
+        & li{
+          background-color: #eee;
+          width: 50%;
+          display: inline-block; 
+        
         }
       }
-    }
+  }
     .under-content{
       height:236px;
-
-      ul{
+          
         .content-inner{
           
         }
-      }
     }
   }
-}
