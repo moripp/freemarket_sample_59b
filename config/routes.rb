@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "exam#index"
+  root "home#index"
   resources :items, only: [:new, :create]
   resources :profiles,only: [:edit,:index]
   resources :credit_cards,only: [:index, :create]
