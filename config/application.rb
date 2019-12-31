@@ -13,6 +13,7 @@ module FreemarketSample59b
       g.javascripts    false
       g.helper         false
       g.test_framework false
+      config.i18n.default_locale = :ja #deviseを日本語化するための記述
     end
   end
 end
