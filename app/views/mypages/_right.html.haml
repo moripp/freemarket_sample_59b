@@ -1,8 +1,8 @@
 .main-container__right
   %section.main-container__right__user-icon 
-    %a{href: "#"}
+    = image_tag("#{asset_path('melcari.png')}", size: "cover", alt: "logo")
+    %a 
       %figure
-        %img{:alt => "", :height => "60", :src => "//static.mercdn.net/images/member_photo_noimage_thumb.png", :width => "60"}/
       %h2.bold 名前
       .number
         %div
