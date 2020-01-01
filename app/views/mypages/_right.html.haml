@@ -29,7 +29,7 @@
         %li
           = link_to "#" do
             %figure
-              = image_tag("#{asset_path('logo_red.png')}", size: "48x48", alt: "logo")
+              = image_tag("#{asset_path('logo_red.png')}", size: "45x45", alt: "logo")
             .mypage-item-body
               .mypage-item-text おしらせ文
               %time
@@ -46,8 +46,12 @@
   %section.main-container__right__under
     %h2.buy-item-head 購入した商品
     %ul.mypage-tabs
-      %li.active  取引中
-      %li.not-moving  過去の取引
+      %li
+        .active
+          取引中       
+      %li
+        .not-moving
+          過去の取引        
     .under-content
       %ul.content-inner
         %li.mypage-item-not-found 取引中の商品がありません

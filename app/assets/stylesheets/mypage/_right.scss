@@ -21,7 +21,7 @@
       background: #eee;
       display:flex;
       
-      & .active{
+      .active{
         color: #333;
         line-height: 72px;
         background-color: white;
@@ -75,10 +75,11 @@
 
             .mypage-item-body{
               width:85%
+              
             }
             i.fa.fa-arrow-right {
-              line-height: 81px;
-              text-align: center;
+            line-height: 81px;
+            text-align: center;
             }
           }
         }
@@ -101,20 +102,26 @@
         border:0;
         background:#eee;
         list-style: none;
-        
+        display: flex;
+
         & li{
-          background-color: #eee;
           width: 50%;
-          display: inline-block; 
-        
+          display: block;
+          text-align: center;
+          line-height: 74px;
+          .active{
+            background-color: #fff;
+            border-top: 2px solid #ea352d;
+            font-size: 16px;
         }
-      }
+    }  
   }
     .under-content{
       height:236px;
-          
         .content-inner{
-          
+          text-align: center;
+          line-height: 236px;
         }
     }
   }
+}
