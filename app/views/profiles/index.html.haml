@@ -1,0 +1,24 @@
+-# 2-1.ユーザープロフィール編集ページ
+-# ①ヘッダー、②コンテンツ（②-1左カラム、②-2右カラム）、③フッターの大きく4要素でできている。
+.profile-wrapper
+  -# ①ヘッダー
+  = render 'layouts/header'
+  -# ②コンテンツ
+  .profile-wrapper__contents
+    -# ②-1左カラム（キッドさん作成中）
+    .profile-wrapper__contents__left
+    -# ②-2右カラム
+    .profile-wrapper__contents__right
+      %h2{ class: "profile-heading" } プロフィール
+      = form_with(local: true) do |f|
+        .profile-form
+          .profile-form__icon
+            .profile-form__icon__nickname
+              = f.text_field :nickname, placeholder: "例)PIRORI", class: "nickname-default"
+          .profile-form__content
+            .profile-form__content__text
+              = f.text_area :introduction, placeholder: "よろしくです", class: "introduction-default"
+            .profile-form__content__btn
+              = f.submit "変更する", class: "profile-form-send-btn"
+-# ③フッター
+= render 'layouts/footer'
