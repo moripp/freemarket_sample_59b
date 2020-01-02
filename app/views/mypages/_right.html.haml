@@ -1,16 +1,16 @@
 .main-container__right
   %section.main-container__right__user-icon 
-    = image_tag("#{asset_path('melcari.png')}", size: "cover", alt: "logo")
     %a 
       %figure
+        %img{:alt => "", :height => "60", :src => "//static.mercdn.net/images/member_photo_noimage_thumb.png", :width => "60"}/
       %h2.bold 名前
       .number
         %div
           評価
-          %span.bold 評価数
+          %span.bold 0
         %div
           出品数
-          %span.bold 個数
+          %span.bold 0
 
   %section.main-container__right__notification-todo
     %ul.main-container__right__notification-todo__tab
@@ -35,7 +35,7 @@
               %time
                 %i.icon-time
                 %span 時間
-            %i.fa.fa-arrow-right
+            %i.fa.fa-chevron-right
         %li おしらせ
         %li おしらせ
         %li おしらせ

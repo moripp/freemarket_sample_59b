@@ -10,8 +10,21 @@
     padding:20px;
     background-size:cover;
     text-align:center;
-    background-color:rgb(224, 195, 230);
-  }
+    background-color:rgb(241, 208, 246);
+    & a{
+      & figure{
+        padding: 30px 10px 0 0;
+      }  
+      .bold{
+        margin: 8px;
+      }
+      .number{
+        display: flex;
+        padding-left: 260px;
+      
+      }
+    }
+  } 
   &__notification-todo{
     margin:0;
     background:#fff;
