@@ -1,0 +1,74 @@
+.item-list{
+  &__heading {
+    margin-bottom: 16px;
+    h3{
+      font-size: 24px;
+    }
+  }
+  &__box {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -10px;
+    &__card{
+      width: 20%;
+      list-style: none;
+      &__wrapper {
+        margin: 10px;
+        box-shadow: $shadow;
+        border: 1px transparent solid;
+
+        &:hover{
+          border: 1px $light-blue solid;
+          box-sizing: initial;
+        }
+        a{
+          text-decoration: none;
+        }
+        figure{
+          background: $white;
+          position: relative;
+          .thumbnail {
+            height: 0px;
+            overflow: hidden;
+            padding: 0 0 100%;
+            position: relative;
+            background: $gray;
+            img{
+              bottom: 0;
+              position: absolute;
+              top: 0;
+            }
+          }
+          figcaption {
+            height: 64px;
+            font-size: 14px;
+            padding: 0 12px;
+            color: $black;
+            line-height: 1.4em;
+            span{
+              display: inline-block;
+              height: 2.8em;
+              overflow: hidden;
+              margin: 14px 0px;
+            }
+          }
+          .price{
+            position: absolute;
+            bottom: 80px;
+            left: 0;
+            height: 28px;
+            background: rgba(0,0,0,0.40);
+            padding: 0 12px;
+            border-radius: 0 14px 14px 0;
+            color: $white;
+            font-size: 17px;
+            letter-spacing: .02em;
+            z-index: 999;
+            display: inline-flex;
+            align-items: center;
+          }
+        }
+      }
+    }
+  }
+}
