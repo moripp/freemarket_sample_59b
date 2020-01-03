@@ -1,7 +1,7 @@
 class Item < ApplicationRecord
   has_many :images  
   accepts_nested_attributes_for :images # 商品の情報と一緒に画像も保存されるようにする
-  attribute :status, :string, default: 'for_sale' # statuカラムにはデフォルトでfor_saleを入力
+
 
   validates :images, associated: true
   validates :name, presence: true, length: { maximum: 40 }
