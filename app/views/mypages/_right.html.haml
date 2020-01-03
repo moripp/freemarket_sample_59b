@@ -16,32 +16,63 @@
     %ul.main-container__right__notification-todo__tab
       %li.active
         %h3
-          %a{"data-toggle" => "tab", :href => "#mypage-tab-notification"}
+          %a
             お知らせ
             %span.mypage-nav-number.hidden-large
            
       %li
         %h3
-          %a{"data-toggle" => "tab", :href => "#mypage-tab-todo"}
+          %a
             やることリスト
     .tab-content
       %ul.ul-tab
         %li
-          = link_to "#" do
+          %a
             %figure
               = image_tag("#{asset_path('logo_red.png')}", size: "45x45", alt: "logo")
             .mypage-item-body
               .mypage-item-text おしらせ文
               %time
-                %i.icon-time
-                %span 時間
+                %i.fa.fa-clock-o
             %i.fa.fa-chevron-right
-        %li おしらせ
-        %li おしらせ
-        %li おしらせ
-        %li おしらせ
-        %li.tab-go-list 一覧を見る 
-      %ul
+        %li
+          %a
+            %figure
+              = image_tag("#{asset_path('logo_red.png')}", size: "45x45", alt: "logo")
+            .mypage-item-body
+              .mypage-item-text おしらせ文
+              %time
+                %i.fa.fa-clock-o
+            %i.fa.fa-chevron-right
+        %li
+          %a
+            %figure
+              = image_tag("#{asset_path('logo_red.png')}", size: "45x45", alt: "logo")
+            .mypage-item-body
+              .mypage-item-text おしらせ文
+              %time
+                %i.fa.fa-clock-o
+            %i.fa.fa-chevron-right
+        %li
+          %a
+            %figure
+              = image_tag("#{asset_path('logo_red.png')}", size: "45x45", alt: "logo")
+            .mypage-item-body
+              .mypage-item-text おしらせ文
+              %time
+                %i.fa.fa-clock-o
+            %i.fa.fa-chevron-right
+        %li
+          %a
+            %figure
+              = image_tag("#{asset_path('logo_red.png')}", size: "45x45", alt: "logo")
+            .mypage-item-body
+              .mypage-item-text おしらせ文
+              %time
+                %i.fa.fa-clock-o
+            %i.fa.fa-chevron-right
+        %li.tab-go-list
+          %a 一覧を見る 
 
   %section.main-container__right__under
     %h2.buy-item-head 購入した商品

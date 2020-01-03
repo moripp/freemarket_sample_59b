@@ -14,6 +14,9 @@
     & a{
       & figure{
         padding: 30px 10px 0 0;
+        & img{
+          border-radius: 50%;
+        }
       }  
       .bold{
         margin: 8px;
@@ -21,7 +24,6 @@
       .number{
         display: flex;
         padding-left: 260px;
-      
       }
     }
   } 
@@ -35,22 +37,17 @@
       display:flex;
       
       .active{
+        border-top: 2px solid #ea352d;
         color: #333;
         line-height: 72px;
         background-color: white;
-
-      & h3{
-        
       }
-    }
       & li{
         font-size: 22px;
         width:50%;
         display:inline-block;
         text-align: center;
 
-
-        
         & a{
           position: relative;
           display: block;
@@ -71,9 +68,11 @@
           position: relative;
           height:81px;
           display: flex;
+
           a{
             display:flex;
             width:100%;
+            padding:16px;
 
 
             figure{
@@ -81,20 +80,35 @@
               position: relative;
               overflow: hidden;
               float: left;
-              width: 10%;
-              height: 48px;
-             
+              width: 48px;
+              height: 48px;           
             }
 
             .mypage-item-body{
-              width:85%
-              
+              margin: 10px 40px 0 20px;
+              width:85%;
+              .mypage-item-text{
+                padding-bottom: 10px;
+              }
             }
-            i.fa.fa-arrow-right {
-            line-height: 81px;
-            text-align: center;
+            i.fa.fa-chevron-right {
+              padding:15px;
             }
           }
+        }
+
+          .tab-go-list{
+            background: #fff;
+            padding:16px;
+            & a{
+              display: block;
+              height: 56px;
+              margin: 0 auto;
+              background: #eee;
+              color: #333;
+              line-height: 56px;
+              text-align: center;
+            }
         }
       }
     }
@@ -134,7 +148,7 @@
         .content-inner{
           text-align: center;
           line-height: 236px;
-        }
+      }
     }
   }
 }

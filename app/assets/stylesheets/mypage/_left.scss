@@ -6,14 +6,19 @@
   &__bar{
     & li{
       height:48px;
+      border-top:1px solid #eee;
+      
       & a{
         position: relative;
         display: block;
-        min-height: 48px;
         padding: 16px;
         background: #fff;
         font-size: 14px;
-        color: #333;
+        color: #333; 
+        & i{
+          float: right;
+          color:rgb(136, 128, 128);
+        }
       }
     }
 
