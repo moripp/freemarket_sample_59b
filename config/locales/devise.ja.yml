@@ -6,9 +6,7 @@ ja:
         name_mei: お名前（名）
         kana_sei: お名前（セイ）
         kana_mei: お名前（メイ）
-        birthday_yyyy: 年
-        birthday_mm: 月
-        birthday_dd: 日
+        birth_date: 生年月日
         postal_code: 郵便番号
         prefectures: 都道府県
         city: 市区町村
