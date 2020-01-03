@@ -22,6 +22,7 @@
 |name_mei|string|null: false|
 |kana_sei|string|null: false|
 |kana_mei|string|null: false|
+|birth_date|date|null: false|
 |email|text|null: false, unique: true|
 |password|text|null: false|
 |recaptcha|text|null: false|

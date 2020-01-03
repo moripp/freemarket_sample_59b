@@ -5,16 +5,21 @@
     .main_header__wrapper__menu
       .main_header__wrapper__menu__user
         -# ===ログイン後の表示===========
-        -# .main_header__wrapper__menu__user--mypage
-        -#   = link_to '#' do
-        -#     %i.fa.fa-user
-        -#       %span マイページ
-        
-        -# ===ログイン前の表示===========
-        %span.main_header__wrapper__menu__user--signup
-          = link_to '#' do
-            新規会員登録
-        %span.main_header__wrapper__menu__user--signin
-          = link_to '#' do
-            ログイン
-
+        - if user_signed_in?
+          .main_header__wrapper__menu__user--mypage
+            = link_to "#" do
+              %i.fa.fa-user
+                %span 
+                  = "#{current_user.name_sei} #{current_user.name_mei}"
+          .main_header__wrapper__menu__user--logout
+            = link_to destroy_user_session_path, method: :delete do
+              %i.fa.fa-sign-out
+                %span ログアウト
+        - else
+          -# ===ログイン前の表示===========
+          %span.main_header__wrapper__menu__user--signup
+            = link_to new_user_registration_path do
+              新規会員登録
+          %span.main_header__wrapper__menu__user--signin
+            = link_to new_user_session_path do
+              ログイン
