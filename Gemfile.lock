@@ -107,8 +107,6 @@ GEM
       warden (~> 1.2.3)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
-    enum_help (0.0.17)
-      activesupport (>= 3.0.0)
     erubi (1.9.0)
     erubis (2.7.0)
     excon (0.71.0)
@@ -206,7 +204,7 @@ GEM
       pry (>= 0.10.4)
     public_suffix (4.0.1)
     puma (3.12.2)
-    rack (2.0.7)
+    rack (2.0.8)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (5.2.4)
@@ -328,7 +326,6 @@ DEPENDENCIES
   chromedriver-helper
   coffee-rails (~> 4.2)
   devise
-  enum_help
   fog-aws
   font-awesome-rails
   haml-rails
