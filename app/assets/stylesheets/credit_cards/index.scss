@@ -1,3 +1,4 @@
+// 途中（title?）まで部分テンプレートにしたい
 .credit_cards-wrapper{
   width: 100vw;
   height: 100vh;
@@ -18,29 +19,56 @@
       height:500px;
       background-color: white;
       text-align: center;
-
-      &__title{
+      h2{
           font-size: 24px;
-          font-weight: 600;
           padding: 8px 24px;
+          border-bottom: 1px solid $silver;
+          text-align: center;
       }
-      &__heading{
-        font-size: 15px;
-        font-weight: 500;
-        color: $black;
-        padding: 40px;
-      }
-      &__btn{
-        .credit_cards-btn{
-          text-decoration: none;
-          width: 250px;
-          height: 50px;
-          background-color: #ea352c;
-          color: white;
-          font-size: 15px;
-          margin: 0 auto 0;
-          display: block;
-          line-height: 50px;
+      .credit_cards-box{
+        padding: 64px;
+        &__title{
+          max-width: 320px;
+          margin: 0 auto;
+          text-align: left;
+          h3{
+            font-size: 16px;
+          }
+        }
+        &__list{
+          list-style: none;
+          max-width: 320px;
+          margin: 0 auto;
+          position: relative;
+          li{
+            padding: 24px 0;
+            border-bottom: 1px solid $silver;
+            display: list-item;
+            .credit_cards-box__list__imformation{
+              position: relative;
+              &__figure{
+                margin-block-start: 1em;
+                margin-block-end: 1em;
+                margin-inline-end: 40px;
+                text-align: left;
+              }
+              &__number{
+                margin: 8px 0 0;
+                font-size: 16px;
+                text-align: left;
+              }
+              .credit_cards-remove-btn{
+                position: absolute;
+                top: 0;
+                right: 0;
+                padding: 4px 6px;
+                background: #fff;
+                border-radius: 3px;
+                border: 1px solid $corporate-red;
+                color: $corporate-red;
+              }
+            }
+          }
         }
       }
     }

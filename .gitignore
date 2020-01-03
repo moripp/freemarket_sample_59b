@@ -26,3 +26,4 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+app/views/credit_cards/new.html.haml
