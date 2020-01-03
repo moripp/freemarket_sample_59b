@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 2019_12_29_065942) do
     t.string "nickname"
     t.text "introduction"
   end
-
+  
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "image", null: false
     t.datetime "created_at", null: false
@@ -55,4 +55,12 @@ ActiveRecord::Schema.define(version: 2019_12_29_065942) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "nickname"
+    t.text "introduction"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
 end
+
