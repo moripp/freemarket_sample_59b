@@ -29,7 +29,7 @@
   } 
   &__notification-todo{
     margin:0;
-    background:#fff;
+    background:$white;
 
     &__tab{
       border: 0;
@@ -98,7 +98,7 @@
         }
 
           .tab-go-list{
-            background: #fff;
+            background: $white;
             padding:16px;
             & a{
               display: block;
@@ -137,7 +137,7 @@
           text-align: center;
           line-height: 74px;
           .active{
-            background-color: #fff;
+            background-color: $white;
             border-top: 2px solid #ea352d;
             font-size: 16px;
         }
