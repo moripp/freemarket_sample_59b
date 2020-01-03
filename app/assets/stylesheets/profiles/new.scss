@@ -1,0 +1,81 @@
+.profile-wrapper{
+  width: 100vw;
+  height: auto;
+  background-color: $back-gray;
+  
+  &__contents {
+    width: 1020px;
+    margin: 0 auto 0;
+    margin-top: 40px;
+    display: flex;
+
+    &__left{
+      width: 280px;
+      height: 500px;
+      background-color: white;
+      margin: 0 40px 0 0;
+    }
+    &__right{
+      width: 700px;
+      height: auto;
+      background-color: white;
+      text-align: center;
+
+      h2{
+        font-size: 24px;
+        font-weight: 600;
+        padding: 8px 24px;
+        border-bottom: 1px solid $silver;
+        text-align: center;
+      }
+
+      .profile-form{
+        padding: 64px;
+        border-top: 1px solid $silver;
+        text-align: left;
+        p{
+          margin: 8px 0 0;
+          line-height: 1.5;
+          font-size: 14px;
+        }
+        .profile__group{
+          margin: 40px 0 0;
+          label{
+            font-weight: 600;
+          }
+          .form-optional{
+            background: $silver;
+            margin: 0 0 0 8px;
+            padding: 2px 4px;
+            border-radius: 2px;
+            color: $white;
+            font-size: 12px;
+            vertical-align: top;
+          }
+          .textfield-default{
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+            border: 1px solid $line-silver;
+            background: $white;
+            line-height: 1.5;
+            font-size: 16px;
+            width: 100%;
+            margin: 8px 0 0;
+            -webkit-appearance: none;
+          }
+        }
+        .profile-form-send-btn{
+          width: 100%;
+          line-height: 48px;
+          margin: 40px 0 0;
+          background:$corporate-red;
+          border: 1px solid $corporate-red;
+          color: $white;
+          border-style: none;
+          display: block;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
