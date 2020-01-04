@@ -2,9 +2,8 @@
   %nav.main-container__left__bar
     %ul.left-list-a
       %li
-        %a
-          .mypage
-            マイページ
+        = link_to "#" do
+          マイページ
           %i.fa.fa-chevron-right
       %li
         -# %a
@@ -19,27 +18,27 @@
         -#   いいね！一覧
         -#   %i.fa.fa-chevron-right
       %li 
-        %a
+        = link_to "#" do
           出品する
           %i.fa.fa-chevron-right
       %li 
-        %a
+        = link_to "#" do
           出品した商品ー出品中
           %i.fa.fa-chevron-right
       %li 
-        %a
+        = link_to "#" do
           出品した商品ー取引中
           %i.fa.fa-chevron-right
       %li 
-        %a
+        = link_to "#" do
           出品した商品ー売却済み
           %i.fa.fa-chevron-right
       %li 
-        %a
+        = link_to "#" do
           購入した商品ー取引中
           %i.fa.fa-chevron-right
       %li 
-        %a
+        = link_to "#" do
           購入した商品ー過去の取引
           %i.fa.fa-chevron-right
       %li 
@@ -71,7 +70,7 @@
     %h3.left-list-head 設定
     %ul.left-list-c
       %li
-        %a.mypage-nav-list-item
+        = link_to "mypage-nav-list-item" do
           プロフィール
           %i.fa.fa-chevron-right
       %li
@@ -79,7 +78,7 @@
         -#   発送元・お届け先住所変更
         -#   %i.fa.fa-chevron-right
       %li
-        %a.mypage-nav-list-item
+        = link_to "mypage-nav-list-item" do
           支払い方法
           %i.fa.fa-chevron-right
       %li
@@ -87,7 +86,7 @@
         -#   メール/パスワード
         -#   %i.fa.fa-chevron-right
       %li
-        %a.mypage-nav-list-item
+        = link_to "mypage-nav-list-item" do
           本人情報
           %i.fa.fa-chevron-right
       %li
@@ -95,7 +94,7 @@
         -#   電話番号の確認
         -#   %i.fa.fa-chevron-right
       %li
-        %a.mypage-nav-list-item
+        = link_to "mypage-nav-list-item" do
           ログアウト
           %i.fa.fa-chevron-right
       

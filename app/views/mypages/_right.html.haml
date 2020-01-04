@@ -1,8 +1,8 @@
 .main-container__right
   %section.main-container__right__user-icon 
-    %a 
+    = link_to "#" do
       %figure
-        %img{:alt => "", :height => "60", :src => "//static.mercdn.net/images/member_photo_noimage_thumb.png", :width => "60"}/
+        = image_tag "//static.mercdn.net/images/member_photo_noimage_thumb.png",size:"60×60",alt:"トップ画"
       %h2.bold 名前
       .number
         %div
@@ -16,18 +16,18 @@
     %ul.main-container__right__notification-todo__tab
       %li.active
         %h3
-          %a
+          = link_to "#" do
             お知らせ
             %span.mypage-nav-number.hidden-large
            
       %li
         %h3
-          %a
+          = link_to "#" do
             やることリスト
     .tab-content
       %ul.ul-tab
         %li
-          %a
+          = link_to "#" do
             %figure
               = image_tag("#{asset_path('logo_red.png')}", size: "45x45", alt: "logo")
             .mypage-item-body
@@ -36,7 +36,7 @@
                 %i.fa.fa-clock-o
             %i.fa.fa-chevron-right
         %li
-          %a
+          = link_to "#" do
             %figure
               = image_tag("#{asset_path('logo_red.png')}", size: "45x45", alt: "logo")
             .mypage-item-body
@@ -45,7 +45,7 @@
                 %i.fa.fa-clock-o
             %i.fa.fa-chevron-right
         %li
-          %a
+          = link_to "#" do
             %figure
               = image_tag("#{asset_path('logo_red.png')}", size: "45x45", alt: "logo")
             .mypage-item-body
@@ -54,7 +54,7 @@
                 %i.fa.fa-clock-o
             %i.fa.fa-chevron-right
         %li
-          %a
+          = link_to "#" do
             %figure
               = image_tag("#{asset_path('logo_red.png')}", size: "45x45", alt: "logo")
             .mypage-item-body
@@ -63,7 +63,7 @@
                 %i.fa.fa-clock-o
             %i.fa.fa-chevron-right
         %li
-          %a
+          = link_to "#" do
             %figure
               = image_tag("#{asset_path('logo_red.png')}", size: "45x45", alt: "logo")
             .mypage-item-body
@@ -72,8 +72,7 @@
                 %i.fa.fa-clock-o
             %i.fa.fa-chevron-right
         %li.tab-go-list
-          %a 一覧を見る 
-
+          = link_to  "一覧を見る"
   %section.main-container__right__under
     %h2.buy-item-head 購入した商品
     %ul.mypage-tabs

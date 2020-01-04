@@ -17,7 +17,10 @@
         color: #333; 
         & i{
           float: right;
-          color:rgb(136, 128, 128);
+          color:#ccc;
+          position: absolute;
+          margin: auto;
+          right: 16px; 
         }
       }
     }
@@ -43,12 +46,6 @@
     .left-list-c{
       margin: 8px 0 0;
       height: 342px;
-    }
-    .icon-arrow-right{
-      position: absolute;
-      top: 50%;
-      right: 16px;
-      color: #ccc;
     }
   }
 }

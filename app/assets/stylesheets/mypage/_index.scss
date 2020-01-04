@@ -5,7 +5,7 @@
   .white-bar{
     position:relative;
     border-top:1px solid #eee;
-    box-shadow:0 3px 3px 0 rgba(0,0,0,0.16);
+    box-shadow:0 3px 3px 0 $shadow;
     width:100%;
     height:48px;
     background-color:$white;
