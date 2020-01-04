@@ -31,7 +31,8 @@
       .field
         = f.label :prefectures
         %br/
-        = f.text_field :prefectures, autofocus: true, autocomplete: "prefectures"
+        = f.select :prefectures, User.prefectures.keys, autofocus: true, autocomplete: "prefectures", prompt: '選択してください', class: 'xxxx'
+        -# classはビュー合わせ
       .field
         = f.label :city
         %br/
