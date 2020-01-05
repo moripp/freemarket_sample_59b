@@ -21,7 +21,9 @@
 /yarn-error.log
 
 /public/assets
+/public/uploads/*
 .byebug_history
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+app/views/credit_cards/new.html.haml

@@ -1,0 +1,21 @@
+-# 2-4.ユーザークレジットカード登録ページ
+-# ①ヘッダー、②コンテンツ（②-1左カラム、②-2右カラム）、③フッターの大きく4要素でできている。
+.credit_cards-wrapper
+  -# ①ヘッダー
+  = render 'layouts/header'
+  -# ②コンテンツ
+  .credit_cards-wrapper__contents
+    -# ②-1左カラム（キッドさん作成中）
+    .credit_cards-wrapper__contents__left
+    -# ②-2右カラム
+    .credit_cards-wrapper__contents__right
+      .credit_cards-wrapper__contents__right__title
+      %h2{ class: "credit_cards-heading" } 支払い方法
+      .credit_cards-wrapper__contents__right__heading
+        クレジットカード一覧
+      .credit_cards-wrapper__contents__right__btn
+        = link_to credit_cards_path, class: "credit_cards-btn" do
+          クレジットカードを追加する
+      
+  -# ③フッター
+  = render 'layouts/footer'

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'mypages/index'
-  resources :index
+  root "exam#index"
+  resources :mypages, only: [:index]
   resources :items, only: [:new]
 end

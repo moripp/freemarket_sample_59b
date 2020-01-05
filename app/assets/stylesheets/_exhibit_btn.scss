@@ -1,0 +1,25 @@
+.exhibit_btn {
+  width: 160px;
+  height: 160px;
+  background: $corporate-red;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 5vh;
+  right: 5vh;
+  z-index: 999;
+  a{
+    text-decoration: none;
+    color: $white;
+    text-align: center;
+    padding: 10px 0px;
+    span{
+      display: block;
+      font-size: 22px;
+      padding: 30px 0px 10px;
+    }
+    i.fa.fa-camera{
+      display: block;
+      font-size: 60px;
+    }
+  }
+}
