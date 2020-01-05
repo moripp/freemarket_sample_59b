@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  root "exam#index"
+  devise_for :users
+  root "home#index"
   resources :mypages, only: [:index]
-  resources :items, only: [:new]
+  resources :items, only: [:new, :create, :show]
+  resources :profiles,only: [:new,:edit,:index]
+  resources :credit_cards,only: [:index,:new,:create]
 end

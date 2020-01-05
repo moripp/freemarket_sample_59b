@@ -1,24 +1,16 @@
 .wrapper
-  .default-container
-    = render 'layouts/header'
-    = render 'layouts/exhibit_btn'
-    .content_wrapper
-      %nav.white-bar
-        %ul.pan
-          %li
-            = link_to "#" do 
-              %span メルカリ
-            %i.fa.fa-chevron-right
-          %li
-            = link_to "#" do 
-              %span マイページ
-            
-      %main.main-container.clearfix
-      
-        = render 'mypages/right'
-
-        = render 'mypages/left'
-
-      = render 'mypages/banner'
-
-    = render 'layouts/footer'
+  = render 'layouts/header'
+  = render 'layouts/exhibit_btn'
+  %nav.white-bar
+    %ul.pan
+      %li
+        = link_to "#" do 
+          %span メルカリ
+        %i.fa.fa-chevron-right
+      %li
+        = link_to "#" do 
+          %span マイページ
+  %main.main-container.clearfix   
+    = render 'mypages/right'
+    = render 'mypages/left'
+  = render 'layouts/footer'
