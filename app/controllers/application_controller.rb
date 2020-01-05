@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :basic_auth, if: :production? # 本番環境のみBasic認証を行う
+  before_action :configure_permitted_parameters, if: :devise_controller? # devise経由でusersに変更がある場合に実行
 
   private
 
@@ -14,5 +15,11 @@ class ApplicationController < ActionController::Base
       username == ENV["BASIC_AUTH_USER"] && password == ENV["BASIC_AUTH_PASSWORD"]
     end
   end
+
+  # deviseデフォルトで許可しているkey以外を許容するための記載
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name_sei,:name_mei,:kana_sei,:kana_mei,:birth_date,:postal_code,:prefectures,:city,:address,:building,:tel])
+  end
+
 
 end
