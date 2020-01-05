@@ -1,0 +1,77 @@
+-# 商品詳細ページ
+-# ヘッダー
+= render 'layouts/header'
+
+.details-wrapper
+  .details-wrapper__contents
+    .margin
+    -# ◆商品情報　開始◆
+    .details-wrapper__contents__item-box
+      -# 商品名表示
+      %h1.item-name
+        商品のタイトル
+      -# 商品の詳細表示
+      .item-main-content
+        -# 画像表示
+        .item-photo
+          .item-photo__main
+            =image_tag('saicoro_logo_red.svg', size: "300x300", alt: "gazo")
+          .item-photo__sub
+            =image_tag('saicoro_logo_red.svg', size: "50x50", alt: "gazo")
+            =image_tag('saicoro_logo_red.svg', size: "50x50", alt: "gazo")
+            =image_tag('saicoro_logo_red.svg', size: "50x50", alt: "gazo")
+            =image_tag('saicoro_logo_red.svg', size: "50x50", alt: "gazo")
+            =image_tag('saicoro_logo_red.svg', size: "50x50", alt: "gazo")
+            =image_tag('saicoro_logo_red.svg', size: "50x50", alt: "gazo")
+        -# 詳細を表形式で表示
+        .item-detail-table
+          %table
+            %tr
+              %th 出品者
+              %td moripp
+            %tr
+              %th カテゴリー
+              %td 
+            %tr
+              %th ブランド
+              %td 
+            %tr
+              %th 商品の状態
+              %td 新品、未使用
+            %tr
+              %th 配送料の負担
+              %td 送料込み(出品者負担)
+            %tr
+              %th 配送の方法
+              %td ラクラク便
+            %tr
+              %th 配送元地域
+              %td 東京都
+            %tr
+              %th 配送日の目安
+              %td 1~2日で配送
+      -# 商品の価格表示
+      .item-price
+        %span.item-price__money
+          ¥3,000
+        %span
+          （税込）
+        %span.item-price__delivery
+          送料込み
+      -# 商品の説明文表示
+      .item-description
+        商品の説明を表示させます。
+    -# ◆商品情報　終了◆
+
+    -# ボタン3つ
+    .details-wrapper__contents__btn
+      = link_to root_path, class: "btn-red" do
+        商品の編集
+      .details-wrapper__contents__btn__or
+        or
+      = link_to root_path, class: "btn-gray" do
+        出品を一旦停止する
+      = link_to root_path, class: "btn-gray" do
+        この商品を削除する
+
+-# フッター
