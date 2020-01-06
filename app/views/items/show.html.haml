@@ -16,13 +16,13 @@
             -# 画像表示
             .item-photo
               .item-photo__main
-                = image_tag("#{@item.images[0].image}", size: "300x300", alt: "gazo")
+                = image_tag("#{@item.images[0].image}", size: "300x300", alt: "#{@item.name}")
                 -# 最終的にはmainにも全ての画像をhtmlに追加、JSで選択された画像だけ表示されるようにする
                 -# - @item.images.each do |file|
                 -#   = image_tag("#{file.image}", size: "300x0", alt: "gazo")
               .item-photo__sub
                 - @item.images.each do |file|
-                  = image_tag("#{file.image}", size: "60x60", alt: "gazo")
+                  = image_tag("#{file.image}", size: "60x60", alt: "#{@item.name}")
             -# 詳細を表形式で表示
             .item-detail-table
               %table
