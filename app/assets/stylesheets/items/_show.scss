@@ -31,7 +31,7 @@
             background-color: $back-gray;
           }
           &__sub {
-            height: 120px;
+            min-height: 60px;
             background-color: $back-gray;
           }
         }
@@ -54,6 +54,10 @@
                 width: 180px;
                 border: solid 1px $line-silver;
                 padding: 0 5px;
+              }
+              .link-layout {
+                color: $light-blue;
+                text-decoration: none;
               }
             }
           }
@@ -104,7 +108,7 @@
         font-size: 15px;
         line-height: 50px;
         text-decoration: none;
-        background-color: $silver;
+        background-color: $gray;
         color: $white;
       }
     }
