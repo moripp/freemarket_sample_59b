@@ -9,26 +9,28 @@
     .details-wrapper__contents__item-box
       -# 商品名表示
       %h1.item-name
-        商品のタイトル
+        = @item.name
       -# 商品の詳細表示
       .item-main-content
         -# 画像表示
         .item-photo
           .item-photo__main
-            =image_tag('saicoro_logo_red.svg', size: "300x300", alt: "gazo")
+            = image_tag("#{@item.images[0].image}", size: "300x300", alt: "gazo")
+            -# 最終的にはmainにも全ての画像をhtmlに追加、JSで選択された画像だけ表示されるようにする
+            -# - @item.images.each do |file|
+            -#   = image_tag("#{file.image}", size: "300x0", alt: "gazo")
           .item-photo__sub
-            =image_tag('saicoro_logo_red.svg', size: "50x50", alt: "gazo")
-            =image_tag('saicoro_logo_red.svg', size: "50x50", alt: "gazo")
-            =image_tag('saicoro_logo_red.svg', size: "50x50", alt: "gazo")
-            =image_tag('saicoro_logo_red.svg', size: "50x50", alt: "gazo")
-            =image_tag('saicoro_logo_red.svg', size: "50x50", alt: "gazo")
-            =image_tag('saicoro_logo_red.svg', size: "50x50", alt: "gazo")
+            - @item.images.each do |file|
+              = image_tag("#{file.image}", size: "60x60", alt: "gazo")
         -# 詳細を表形式で表示
         .item-detail-table
           %table
             %tr
               %th 出品者
-              %td moripp
+              %td
+                -# ******マイページの実装が終えたらパスを修正******
+                = link_to root_path, class: "link-layout" do
+                  = @item.user.name_sei
             %tr
               %th カテゴリー
               %td 
@@ -53,14 +55,15 @@
       -# 商品の価格表示
       .item-price
         %span.item-price__money
-          ¥3,000
+          ¥
+          = digit_separator(@item.price)
         %span
           （税込）
         %span.item-price__delivery
           送料込み
       -# 商品の説明文表示
       .item-description
-        商品の説明を表示させます。
+        = line_feed_display(@item.description)
     -# ◆商品情報　終了◆
 
     -# ボタン3つ
