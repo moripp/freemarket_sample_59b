@@ -20,7 +20,10 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:name, :description, :price, images_attributes: [:image])
+    params.require(:item)
+          .permit(:name, :description, :price, images_attributes: [:image])
+          .merge(user_id: current_user.id) #paramsハッシュにuser_id追加
+  end
 
   def move_to_Log_in #サインインしてない時はログイン画面へ
     redirect_to new_user_session_path unless user_signed_in?
