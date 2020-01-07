@@ -10,7 +10,7 @@
     padding:20px;
     background-size:cover;
     text-align:center;
-    background-color:rgb(241, 208, 246);
+    background-color:#f1d0f6;
     & a{
       & figure{
         padding: 30px 10px 0 0;
@@ -37,7 +37,7 @@
       display:flex;
       
       .active{
-        border-top: 2px solid #ea352d;
+        border-top: 2px solid $corporate-red;
         color: #333;
         line-height: 72px;
         background-color: white;
@@ -117,7 +117,6 @@
   &__under{
     margin:40px 0 0;
     background:#fff;
-
     .buy-item-head{
       border:0;
       padding:0 16px;
@@ -138,7 +137,7 @@
           line-height: 74px;
           .active{
             background-color: $white;
-            border-top: 2px solid #ea352d;
+            border-top: 2px solid $corporate-red;
             font-size: 16px;
         }
     }  

@@ -7,14 +7,13 @@
     width:100%;
     height:48px;
     background-color:$white;
-    & ul{
-      width:1020px;
-      height:48px;
-      padding-left: 200px;
-      .pan{
-      overflow: visible;
-      display:flex;
-      }
+    .pan{
+    overflow: visible;
+    display:flex;
+    width:1020px;
+    height:48px;
+    padding-left:150px;
+    
       & li{
         display: inline-block;
         font-size: 15px;
