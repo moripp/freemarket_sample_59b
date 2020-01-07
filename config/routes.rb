@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   resources :mypages, only: [:index]
   resources :items, only: [:new, :create, :show]
   resources :profiles,only: [:new,:edit,:index]
+  resources :items, only: [:new, :create, :show]
   resources :credit_cards,only: [:index,:new,:create]
 end
