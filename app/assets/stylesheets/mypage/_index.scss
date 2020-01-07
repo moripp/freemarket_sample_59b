@@ -1,8 +1,6 @@
 .wrapper{
-  min-height: 100vh;
   height: 100%;
   position: relative;
-  height: 100%;
   background-color:$back-gray;
   .white-bar{
     position:relative;
@@ -37,6 +35,6 @@
   .main-container{
     margin:40px auto 0;
     width: 1020px;
-    height: 1251px;
+    display: flex;
   }
 }
