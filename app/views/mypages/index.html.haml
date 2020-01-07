@@ -1,0 +1,17 @@
+.wrapper
+  = render 'layouts/header'
+  = render 'layouts/exhibit_btn'
+  .content_wrapper
+    %nav.white-bar
+      %ul.pan
+        %li
+          = link_to "#" do 
+            %span メルカリ
+          %i.fa.fa-chevron-right
+        %li
+          = link_to "#" do 
+            %span マイページ
+    %main.main-container 
+      = render 'mypages/left'
+      = render 'mypages/right'
+  = render 'layouts/footer'

@@ -1,0 +1,40 @@
+.wrapper{
+  height: 100%;
+  position: relative;
+  background-color:$back-gray;
+  .white-bar{
+    position:relative;
+    border-top:1px solid #eee;
+    box-shadow:0 3px 3px 0 $shadow;
+    width:100%;
+    height:48px;
+    background-color:$white;
+    .pan{
+    overflow: visible;
+    display:flex;
+    width:1020px;
+    height:48px;
+    padding-left:150px;
+    
+      & li{
+        display: inline-block;
+        font-size: 15px;
+        line-height: 48px;
+        list-style: none;
+        text-overflow: ellipsis;
+        white-space: nowrap
+      }
+      & i{
+        margin: 0 8px;
+        font-size: 20px;
+        color: #888;
+      }
+    }
+  }
+  
+  .main-container{
+    margin:40px auto 0;
+    width: 1020px;
+    display: flex;
+  }
+}
