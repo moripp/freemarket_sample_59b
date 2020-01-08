@@ -8,11 +8,11 @@ Rails.application.routes.draw do
   # ウィザード形式の記述
   resources :signup do
     collection do
-      get 'step1'
-      get 'step2'
-      get 'step3'
-      get 'step4' # 入力最終ステップ
-      get 'done' # 登録完了後のページ
+      get 'input_user_info'
+      get 'input_phone_number'
+      get 'input_address'
+      get 'input_payment' # 入力最終ステップ
+      get 'completion_registration' # 登録完了後のページ
     end
   end
   
