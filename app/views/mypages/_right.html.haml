@@ -1,0 +1,87 @@
+.main-container__right
+  %section.main-container__right__user-icon 
+    = link_to "#" do
+      %figure
+        = image_tag "//static.mercdn.net/images/member_photo_noimage_thumb.png",size:"60×60",alt:"トップ画"
+      %h2.bold 名前
+      .number
+        %div
+          評価
+          %span.bold 0
+        %div
+          出品数
+          %span.bold 0
+
+  %section.main-container__right__notification-todo
+    %ul.main-container__right__notification-todo__tab
+      %li.active
+        %h3
+          = link_to "#" do
+            お知らせ
+            %span.mypage-nav-number.hidden-large
+           
+      %li
+        %h3
+          = link_to "#" do
+            やることリスト
+    .tab-content
+      %ul.ul-tab
+        %li
+          = link_to "#" do
+            %figure
+              = image_tag("#{asset_path('logo_red.png')}", size: "45x45", alt: "logo")
+            .mypage-item-body
+              .mypage-item-text おしらせ文
+              %time
+                %i.fa.fa-clock-o
+            %i.fa.fa-chevron-right
+        %li
+          = link_to "#" do
+            %figure
+              = image_tag("#{asset_path('logo_red.png')}", size: "45x45", alt: "logo")
+            .mypage-item-body
+              .mypage-item-text おしらせ文
+              %time
+                %i.fa.fa-clock-o
+            %i.fa.fa-chevron-right
+        %li
+          = link_to "#" do
+            %figure
+              = image_tag("#{asset_path('logo_red.png')}", size: "45x45", alt: "logo")
+            .mypage-item-body
+              .mypage-item-text おしらせ文
+              %time
+                %i.fa.fa-clock-o
+            %i.fa.fa-chevron-right
+        %li
+          = link_to "#" do
+            %figure
+              = image_tag("#{asset_path('logo_red.png')}", size: "45x45", alt: "logo")
+            .mypage-item-body
+              .mypage-item-text おしらせ文
+              %time
+                %i.fa.fa-clock-o
+            %i.fa.fa-chevron-right
+        %li
+          = link_to "#" do
+            %figure
+              = image_tag("#{asset_path('logo_red.png')}", size: "45x45", alt: "logo")
+            .mypage-item-body
+              .mypage-item-text おしらせ文
+              %time
+                %i.fa.fa-clock-o
+            %i.fa.fa-chevron-right
+        %li.tab-go-list
+          = link_to  "一覧を見る"
+  %section.main-container__right__under
+    %h2.buy-item-head 購入した商品
+    %ul.mypage-tabs
+      %li
+        .active
+          取引中       
+      %li
+        .not-moving
+          過去の取引        
+    .under-content
+      %ul.content-inner
+        %li.mypage-item-not-found 取引中の商品がありません
