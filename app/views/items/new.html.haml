@@ -12,7 +12,7 @@
     .exhibit-page-description
       商品の情報を入力
     -# ここからform
-    = form_with(model: @item, local: true) do |f|
+    = form_with(model: @item, local: true, id: "exhibit-form") do |f|
       -# form 画像アップロード
       .exhibit-form
         .exhibit-form__group
@@ -21,7 +21,7 @@
             %span{ class: "exhibit-form-require"} 必須
           .exhibit-form__group__label-small
             %label{ class: "exhibit-form-label-small" } 最大10枚までアップロードできます。
-          .exhibit-form__group__image
+          .exhibit-form__group__image#exhibit-form-image
             .exhibit-form__group__image__text
               = 3.times do |times|
                 = f.fields_for :images do |b|
@@ -50,7 +50,7 @@
             %label{ class: "exhibit-form-label-gray" } 販売価格
             %label{ class: "exhibit-form-label-gray-small" } (300~9,999,999)
           .exhibit-form__group2__right
-            .exhibit-form__group2__right__box
+            .exhibit-form__group2__right__box#exhibit-form-price
               .exhibit-form__group2__right__box__left
                 .exhibit-form__group2__right__box__left__box
                   %label{ class: "exhibit-form-label" } 価格
