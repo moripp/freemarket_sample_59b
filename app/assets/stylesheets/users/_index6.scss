@@ -1,0 +1,43 @@
+.users-wrapper {
+  
+  background-color: $back-gray;
+
+
+
+  &__contents {
+    
+  
+
+    &__sign{  
+    
+    }
+      &__signup{
+
+      }
+        &__deadline{
+
+        } 
+          &__input{
+
+          }
+            
+        &__payment{
+          margin-bottom: 40px;
+        }
+        &__securitycode{
+          margin-top: 40px;
+        }
+  }
+
+}
+  .users-wrapper__contents__sign__signup__next-send-btn{
+     width: 100%;
+        height: 50px;
+        background-color: $corporate-red;
+        color: $white;
+        font-size: 15px;
+        border-style: none;
+        cursor: pointer;
+        text-align: center;
+        margin-top: 40px;
+}

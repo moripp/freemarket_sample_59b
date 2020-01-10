@@ -1,0 +1,63 @@
+.users-wrapper
+  = render 'header'
+  .users-wrapper__contents
+    %h2 住所入力
+    .users-wrapper__contents__sign
+      .users-wrapper__contents__sign__signup
+        = form_with(local: true) do |f|
+      
+          .users-wrapper__contents__sign__signup__name
+            .users-wrapper__contents__sign__signup__name__label
+              %label{ class: "users-wrapper-label" } お名前
+              %span{ class: "users-wrapper-require"} 必須
+            .users-wrapper__contents__sign__signup__name__input
+              = f.text_field :name, placeholder: "例) 山田 ", class: "textfield-default"
+            .users-wrapper__contents__sign__signup__name__input
+              = f.text_field :name, placeholder: "例) 太郎 ", class: "textfield-default"
+          .users-wrapper__contents__sign__signup__kana
+            .users-wrapper__contents__sign__signup__kana__label
+              %label{ class: "users-wrapper-label" } お名前カナ
+              %span{ class: "users-wrapper-require"} 必須
+            .users-wrapper__contents__sign__signup__kana__input
+              = f.text_field :name, placeholder: "例) ヤマダ ", class: "textfield-default"
+            .users-wrapper__contents__sign__signup__kana__input
+              = f.text_field :name, placeholder: "例) アヤ ", class: "textfield-default"
+          .users-wrapper__contents__sign__signup__postalcode
+            .users-wrapper__contents__sign__signup__postalcode__label
+              %label{ class: "users-wrapper-label" } 郵便番号
+              %span{ class: "users-wrapper-require"} 必須
+            .users-wrapper__contents__sign__signup__postalcode__input
+              = f.text_field :name, placeholder: "例) 123-4567", class: "textfield-default"
+          .users-wrapper__contents__sign__signup__prefecture
+            .users-wrapper__contents__sign__signup__prefecture__label
+              %label{ class: "users-wrapper-label" } 都道府県
+              %span{ class: "users-wrapper-require"} 必須
+            .users-wrapper__contents__sign__signup__prefecture__input
+              = f.text_field :name, placeholder: "例) 北海道", class: "textfield-default"
+          .users-wrapper__contents__sign__signup__municipality
+            .users-wrapper__contents__sign__signup__municipality__label
+              %label{ class: "users-wrapper-label" } 市区町村
+              %span{ class: "users-wrapper-require"} 必須
+            .users-wrapper__contents__sign__signup__municipality__input
+              = f.text_field :name, placeholder: "例) 横浜市緑区", class: "textfield-default"
+          .users-wrapper__contents__sign__signup__address
+            .users-wrapper__contents__sign__signup__address__label
+              %label{ class: "users-wrapper-label" } 番地
+              %span{ class: "users-wrapper-require"} 必須
+            .users-wrapper__contents__sign__signup__address__input
+              = f.text_field :name, placeholder: "例) 青山１−１−１", class: "textfield-default"
+          .users-wrapper__contents__sign__signup__building
+            .users-wrapper__contents__sign__signup__building__label
+              %label{ class: "users-wrapper-label" } 番地
+              %span{ class: "users-wrapper-require"} 任意
+            .users-wrapper__contents__sign__signup__building__input
+              = f.text_field :name, placeholder: "例) 柳ビル１０３", class: "textfield-default"
+          .users-wrapper__contents__sign__signup__cellphonenumber
+            .users-wrapper__contents__sign__signup__cellphonenumber__label
+              %label{ class: "users-wrapper-label" } 電話
+              %span{ class: "users-wrapper-require"} 任意
+            .users-wrapper__contents__sign__signup__cellphonenumber__input
+              = f.text_field :name, placeholder: "例) 09058674356", class: "textfield-default"
+          .users-wrapper__contents__sign__signup__next
+            .users-wrapper__contents__sign__signup__next__btn
+              = f.submit "次へ進む", class: "users-wrapper__contents__sign__signup__next-send-btn"
