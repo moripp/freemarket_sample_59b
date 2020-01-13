@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :items
+
          validates :name_sei, presence: true
          validates :name_mei, presence: true
          validates :kana_sei, presence: true, format: { with: /\A[\p{katakana}\p{blank}ー－]+\z/}
