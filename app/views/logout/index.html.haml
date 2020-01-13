@@ -1,0 +1,27 @@
+.wrapper
+  = render 'layouts/header'
+  = render 'layouts/exhibit_btn'
+  .content-wrapper
+    %nav.white-bar
+      %ul.pan
+        %li
+          = link_to("#",{class: "text"}) do
+            %span メルカリ
+          %i.fa.fa-chevron-right
+        %li
+          = link_to("#",{class: "text"}) do
+            %span マイページ
+          %i.fa.fa-chevron-right
+        %li
+          = link_to("#",{class: "text"}) do
+            %span ログアウト
+    %main.main-container
+      = render 'mypages/left'
+      .main-container__right
+        %form
+          .single-content
+            %button.btn-red{type:"submit"} ログアウト
+
+    
+          
+  = render 'layouts/footer'
