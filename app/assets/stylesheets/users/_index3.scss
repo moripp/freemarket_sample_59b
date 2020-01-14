@@ -1,7 +1,5 @@
 .users-wrapper {
-  width: 100vw;
-  background-color: $back-gray;
-
+ 
 
 
   &__contents {
@@ -35,19 +33,19 @@
         }
         &__nameconfirm{
           margin-bottom: 30px;
+          &__textfield{
+            display: flex;
+          }
         }
-        &__name__textfield{
-          display: flex;
-        }
-        &__nameconfirm{
-          margin-bottom: 30px;
-        }
+        
+        
         &__name{
           margin-bottom: 60px;
+          &__textfield{
+            display: flex;
+          }
         }
-        &__nameconfirm__textfield{
-          display: flex;
-        }
+        
         &__born__textfield{
           display: flex;
         }
