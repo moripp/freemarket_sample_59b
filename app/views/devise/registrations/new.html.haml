@@ -29,10 +29,9 @@
         %br/
         = f.text_field :postal_code, autofocus: true, autocomplete: "postal_code"
       .field
-        = f.label :prefectures
+        = f.label :prefectures_id
         %br/
-        = f.select :prefectures, User.prefectures.keys, autofocus: true, autocomplete: "prefectures", prompt: '選択してください', class: 'xxxx'
-        -# classはビュー合わせ
+        = f.select :prefecture_id, Prefecture.all, :id, :name
       .field
         = f.label :city
         %br/

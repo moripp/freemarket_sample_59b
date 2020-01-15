@@ -7,7 +7,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # GET /resource/sign_up
   def new
     super
-    @results = Address.where('prefecture_id IN(?)', params[:prefecture_id])
+    @prefecture = Address.where('prefecture_id IN(?)', params[:prefecture_id])
+    @users << @prefecture.id
   end
 
   # POST /resource
