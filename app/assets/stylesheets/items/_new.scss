@@ -39,6 +39,29 @@
           min-height: 170px;
           display: flex;
           flex-wrap: wrap;
+
+          // 画像アップロード終えたらサムネイル表示
+          .sell-image-upload-container {
+            width: 114px;
+            height: 170px;
+            margin: 0 10px 10px 0;
+            &__image-box {
+              width: 100%;
+              height: 114px;
+            }
+            &__btn {
+              width: 100%;
+              height: 56px;
+              // 画像アップロード済みのボタン
+              .image-upload-btn-uploaded {
+                width: 100%;
+                height: 100%;
+                margin: 0 10px 10px 0;
+                background-color: $gray;
+              }
+            }
+          }
+
           .image-upload-box {
             width: 100%;
             min-width: 114px;
