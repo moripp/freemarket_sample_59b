@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 .wrapper{
   background: rgb(245, 245, 245);
   .content-wrapper{
@@ -30,8 +33,8 @@
         }
         & i{
           margin: 0 8px;
-          font-size: 20px;
-          color: #888;
+          font-size: 16px;
+          color: #ccc;
         }
       }
     }
