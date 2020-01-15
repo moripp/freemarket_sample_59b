@@ -31,3 +31,15 @@ $(function() {
     const insert_area = $(`#sell-image-${n}`);
     $(document).appendTo(insert_area);
   }
+
+  // 【関数】　新しい画像アップロードボタンを追加
+  function addNewInput(insert_area, n) {
+    const new_input = $(`<input class="image-upload-btn"
+                                accept="image/*"
+                                type="file"
+                                name="item[images_attributes][${n}][image]"
+                                id="item_images_attributes_${n}_image"
+                                >`);
+    insert_area.prepend(new_input);
+  }
+
