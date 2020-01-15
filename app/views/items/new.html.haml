@@ -22,13 +22,12 @@
           .exhibit-form__group__label-small
             %label{ class: "exhibit-form-label-small" } 最大10枚までアップロードできます。
           .exhibit-form__group__image#exhibit-form-image
-            .exhibit-form__group__image__text
-              = 3.times do |times|
-                = f.fields_for :images do |b|
-                  = b.file_field :image
-              %pre{ class: "exhibit-form-label-small" } 
-                ドラッグアンドドロップ
-                またはクリックしてファイルをアップロード
+            = f.fields_for :images do |b|
+              .image-upload-box
+                = b.file_field :image, class: "image-upload-btn", accept: "image/*"
+                %pre.image-upload-label
+                  ドラッグアンドドロップ
+                  またはクリックしてファイルをアップロード
       -# form 商品名、商品説明
       .exhibit-form
         .exhibit-form__group
