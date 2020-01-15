@@ -24,3 +24,10 @@ $(function() {
     `;
     $(html).insertBefore(insert_area);
   }
+
+  // 【関数】　画像アップロード済みボタンのclass名を変更し、場所を移動
+  function moveBtn(document, n) {
+    $(document).removeClass().addClass("image-upload-btn-uploaded");
+    const insert_area = $(`#sell-image-${n}`);
+    $(document).appendTo(insert_area);
+  }
