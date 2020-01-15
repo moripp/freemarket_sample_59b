@@ -11,3 +11,16 @@ $(function() {
     var brob_url = window.URL.createObjectURL(file); // Blob URL Schemeを生成
     return brob_url;
   }
+
+  // 【関数】　アップロードした画像を表示させる
+  function addSellImage(brob_url, n, insert_area) {
+    const html = `
+      <div class="sell-image-upload-container">
+        <figure class="sell-image-upload-container__image-box">
+          <img id="file-preview" src="${brob_url}" style="width:114px; height: 114px;">
+        </figure>
+        <div class="sell-image-upload-container__btn" id="sell-image-${n}"></div>
+      </div>
+    `;
+    $(html).insertBefore(insert_area);
+  }
