@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'logout/index'
+  
   devise_for :users
   root "home#index"
   resources :mypages, only: [:index]
@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   resources :items, only: [:new, :create, :show]
   resources :credit_cards,only: [:index,:new,:create]
   resources :logout,only: [:index]
-
   # ウィザード形式の記述
   resources :signup do
     collection do
@@ -19,5 +18,4 @@ Rails.application.routes.draw do
       get 'completion_registration' # 登録完了後のページ
     end
   end
-  
 end

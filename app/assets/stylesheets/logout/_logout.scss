@@ -1,17 +1,6 @@
-* {
-  box-sizing: border-box;
-}
 .wrapper{
-  background: rgb(245, 245, 245);
-  .content-wrapper{
-    background-color: $back-gray;
-  }
   .main-container{
-    margin:40px auto 0;
-    width: 1020px;
-    height:1292px;
     &__right{
-      width:700px;
       height:179px;
       float: right;
       background-color: $white;
