@@ -31,7 +31,7 @@
       .field
         = f.label :prefectures_id
         %br/
-        = f.select :prefecture_id, Prefecture.all, :id, :name
+        = f.select :prefecture_id, @prefecture.all.map { |pre| [pre.name, pre.id] }
       .field
         = f.label :city
         %br/
