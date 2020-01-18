@@ -18,5 +18,7 @@ class User < ApplicationRecord
          validates :city, presence: true
          validates :address, presence: true
          validates :tel, presence: true
+  # ユーザーは1枚のカードのみ登録できる
+         has_one :credit_card
 
 end

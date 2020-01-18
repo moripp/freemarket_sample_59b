@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :mypages, only: [:index]
   resources :items, only: [:new, :create, :show]
   resources :profiles,only: [:new,:edit,:index]
-  resources :items, only: [:new, :create, :show]
+  resources :items, only: [:new, :create, :show, :index]
   resources :credit_cards,only: [:index,:new,:create]
 
   # ウィザード形式の記述
@@ -17,5 +17,4 @@ Rails.application.routes.draw do
       get 'completion_registration' # 登録完了後のページ
     end
   end
-  
 end
