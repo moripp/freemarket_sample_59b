@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   devise_for :users
   root "home#index"
   resources :mypages, only: [:index]
@@ -6,7 +7,7 @@ Rails.application.routes.draw do
   resources :profiles,only: [:new,:edit,:index]
   resources :items, only: [:new, :create, :show, :index]
   resources :credit_cards,only: [:index,:new,:create]
-
+  resources :logout,only: [:index]
   # ウィザード形式の記述
   resources :signup do
     collection do
