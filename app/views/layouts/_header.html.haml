@@ -3,11 +3,13 @@
     .main_header__wrapper__logo
       =link_to image_tag("#{asset_path('saicoro_logo_red.svg')}", size: "136x36", alt: "saicoro"), root_path
     .main_header__wrapper__menu
+      =link_to sitemap_index_path do
+        サイトマップ
       .main_header__wrapper__menu__user
         -# ===ログイン後の表示===========
         - if user_signed_in?
           .main_header__wrapper__menu__user--mypage
-            = link_to "#" do
+            = link_to mypages_path do
               %i.fa.fa-user
                 %span 
                   = "#{current_user.name_sei} #{current_user.name_mei}"
