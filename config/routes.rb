@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   
   devise_for :users
   root "home#index"
+  resources :sitemap, only: [:index]
   resources :mypages, only: [:index]
   resources :items, only: [:new, :create, :show]
   resources :profiles,only: [:new,:edit,:index]
