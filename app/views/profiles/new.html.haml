@@ -3,10 +3,11 @@
 .profile-wrapper
   -# ①ヘッダー
   = render 'layouts/header'
+  = render 'layouts/exhibit_btn'
   -# ②コンテンツ
   .profile-wrapper__contents
     -# ②-1左カラム（キッドさん作成中）
-    .profile-wrapper__contents__left
+    = render 'mypages/left'
     -# ②-2右カラム
     .profile-wrapper__contents__right
       %h2.profile-heading 本人情報の登録
