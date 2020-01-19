@@ -1,9 +1,6 @@
 .wrapper{
   .main-container{
     &__right{
-      height:179px;
-      float: right;
-      background-color: $white;
       & form{
         padding: 64px;
         .single-content{
