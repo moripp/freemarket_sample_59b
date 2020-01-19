@@ -7,7 +7,7 @@
         -# ===ログイン後の表示===========
         - if user_signed_in?
           .main_header__wrapper__menu__user--mypage
-            = link_to "#" do
+            = link_to mypages_path do
               %i.fa.fa-user
                 %span 
                   = "#{current_user.name_sei} #{current_user.name_mei}"
