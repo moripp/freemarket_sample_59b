@@ -1,20 +1,23 @@
 .wrapper{
   .main-container{
     &__right{
-      & form{
-        padding: 64px;
-        .single-content{
-          max-width: 320px;
-          margin: 0 auto;
-          & button{
-            background-color:$corporate-red;
-            color:$white;
-            width:320px;
-            height:50px;
-            font-size: 14px;
-            cursor: pointer;
-          }
-        }  
+      .logout_wrapper{
+        background: $white;
+        & form{
+          padding: 64px;
+          .single-content{
+            max-width: 320px;
+            margin: 0 auto;
+            & button{
+              background-color:$corporate-red;
+              color:$white;
+              width:320px;
+              height:50px;
+              font-size: 14px;
+              cursor: pointer;
+            }
+          }  
+        }
       }
     }
   }
