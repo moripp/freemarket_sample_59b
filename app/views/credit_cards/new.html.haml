@@ -12,7 +12,7 @@
       -# 見出し
       %h2.credit_cards-input-wrapper__contents__right__title クレジットカード情報入力
       -# ここからform
-      = form_with(local: true) do |f|
+      = form_with(url: credit_cards_path , local: true) do |f|
         -# form カード番号
         .credit_cards-form
           .credit_cards-form__content
@@ -44,9 +44,10 @@
                 %span.credit_cards-form-require 必須
               .credit_cards-form__content__group__input
                 = f.number_field :securitycode, placeholder: "カード背面4桁もしくは3桁の番号", class: "input-default"
-      .credit_cards-input-wrapper__contents__right__btn
-        = link_to credit_cards_path, class: "credit_cards-input-btn" do
-          追加する
+          .credit_cards-input-wrapper__contents__right__btn
+            = f.submit "追加する", class: "credit_cards-input-btn"
+        -# = link_to credit_cards_path, class: "credit_cards-input-btn" do
+        -#   追加する
       
   -# ③フッター
   = render 'layouts/footer'
