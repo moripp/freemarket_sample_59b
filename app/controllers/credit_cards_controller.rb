@@ -6,9 +6,10 @@ class CreditCardsController < ApplicationController
     # Payjp.api_key = "sk_test_09088df6ac5f5a56b2df8d37"
     card = current_user.credit_card
     if card.blank?
-      redirect_to action: "new"
+      render :index
     else
       @card = CreditCard.where(user_id: current_user.id).first
+      render :index_created
       # customer = Payjp::Customer.retrieve(card.customer_id)
       # @customer_card = customer.cards.retrieve(card.card_id)
     end
