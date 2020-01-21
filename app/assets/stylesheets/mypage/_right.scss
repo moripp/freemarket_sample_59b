@@ -11,6 +11,8 @@
     text-align:center;
     background-color:#f1d0f6;
     & a{
+      text-decoration: none;
+      color: #333;
       & figure{
         padding: 30px 10px 0 0;
         & img{
@@ -48,6 +50,7 @@
         text-align: center;
 
         & a{
+          text-decoration: none;
           position: relative;
           display: block;
           color: #333;
@@ -69,6 +72,8 @@
           display: flex;
 
           a{
+            color: #333;
+            text-decoration: none;
             display:flex;
             width:100%;
             padding:16px;

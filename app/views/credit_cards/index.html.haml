@@ -3,10 +3,11 @@
 .credit_cards-wrapper
   -# ①ヘッダー
   = render 'layouts/header'
+  = render 'layouts/exhibit_btn'
   -# ②コンテンツ
   .credit_cards-wrapper__contents
     -# ②-1左カラム（キッドさん作成中）
-    .credit_cards-wrapper__contents__left
+    = render 'mypages/left'
     -# ②-2右カラム
     .credit_cards-wrapper__contents__right
       .credit_cards-wrapper__contents__right__title
