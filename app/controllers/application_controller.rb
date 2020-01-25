@@ -21,5 +21,9 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name_sei,:name_mei,:kana_sei,:kana_mei,:birth_date,:postal_code,:prefectures,:city,:address,:building,:tel])
   end
 
+  # サインインしてない時はログイン画面へ遷移させる
+  def move_to_Log_in
+    redirect_to new_user_session_path unless user_signed_in?
+  end
 
 end
