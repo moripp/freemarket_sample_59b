@@ -1,0 +1,67 @@
+.exhibit-form {
+  &__group {
+    &__image {
+      margin-top: 20px;
+      width: 620px;
+      min-height: 170px;
+      display: flex;
+      flex-wrap: wrap;
+      .image-upload-box {
+        width: 100%;
+        min-width: 114px;
+        height: 170px;
+        background-color: $back-gray;
+        border: 2px dotted $line-silver;
+        position: relative;
+        .image-upload-btn {
+          width: 100%;
+          height: 100%;
+          opacity: 0;
+          cursor: pointer;
+        }
+        // 画像アップロード済みのボタン
+        .image-upload-btn-uploaded {
+          display: none;
+        }
+        .image-upload-label {
+          position: absolute;
+          pointer-events: none;
+          top: 50%;
+          right: 16px;
+          left: 16px;
+          text-align: center;
+          font-size: 14px;
+          color: $black;
+          line-height: 1.5;
+          transform: translate(0, -50%);
+          white-space: pre-wrap;
+          word-wrap: break-word;
+        }
+      }
+    }
+  }
+}
+
+// 画像アップロード終えたらサムネイル表示
+.sell-image-upload-container {
+  width: 114px;
+  height: 170px;
+  margin: 0 10px 10px 0;
+  &__image-box {
+    width: 100%;
+    height: 114px;
+  }
+  &__btn {
+    width: 100%;
+    height: 56px;
+    .item-image-delete-btn {
+      width: 100%;
+      height: 56px;
+      background-color: $back-gray;
+      text-align: center;
+      line-height: 56px;
+      color: $light-blue;
+      cursor: pointer;
+    }
+  }
+}
