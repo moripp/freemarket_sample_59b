@@ -37,7 +37,6 @@ class CreditCardsController < ApplicationController
     else
       # 顧客情報をPAY.JPに作成しcustomerに代入。その時にcardというキーに対して、payjp-tokenのparamsのvalueを入れる
       customer = Payjp::Customer.create(
-        # card: params['payjp-token']
         card: payjp_token_params[params['payjp-token']]
       )
       # 引数に代入されている情報を元にクレジットカードの新しいインスタンスを作成し、@cardに代入。
