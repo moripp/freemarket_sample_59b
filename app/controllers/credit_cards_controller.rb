@@ -3,7 +3,7 @@ class CreditCardsController < ApplicationController
   
   def index
     # payjpテスト秘密鍵をセット
-    Payjp.api_key = "sk_test_09088df6ac5f5a56b2df8d37"
+    Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_ACCESS_KEY)
     # 今ログインしているユーザーのクレジットカードを@cardに代入
     @card = current_user.credit_card
     # もしcardがある場合
@@ -28,7 +28,7 @@ class CreditCardsController < ApplicationController
 
   def create
     # payjpテスト秘密鍵をセット
-    Payjp.api_key = 'sk_test_09088df6ac5f5a56b2df8d37'
+    Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_ACCESS_KEY)
     # paramsの中にjsで作った'payjp-Tokenが存在するか確かめる。まだ存在しない場合、
     if params['payjp-token'].blank?
       # newアクションに飛ばす。
