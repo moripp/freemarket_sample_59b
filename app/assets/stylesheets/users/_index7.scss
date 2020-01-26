@@ -1,37 +1,21 @@
 .users-wrapper {
-  
-  
-
-
-
   &__contents {
     margin-bottom: 40px;
-  
-
     &__sign{  
-      
-    
-
+      &__start-send-btn{
+        width: 100%;
+        height: 50px;
+        background-color: $corporate-red;
+        color: $white;
+        font-size: 15px;
+        border-style: none;
+        cursor: pointer;
+        text-align: center;
+        margin-top: 40px;
+      } 
       &__complete{
         text-align: center;
-      }
-      &__start{
-        
-      }
-      &__btn{
-        
       }
     }
   }
 }
-  .users-wrapper__contents__sign__start-send-btn{
-    width: 100%;
-          height: 50px;
-          background-color: $corporate-red;
-          color: $white;
-          font-size: 15px;
-          border-style: none;
-          cursor: pointer;
-          text-align: center;
-          margin-top: 40px;
-  }

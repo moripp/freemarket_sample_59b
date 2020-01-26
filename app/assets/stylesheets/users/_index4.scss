@@ -33,21 +33,3 @@
     }
   }
 }
-
-
-_index5.scss
-.users-wrapper {
-  &__contents { 
-    &__sign{
-      &__signup {
-          padding-bottom: 10px;
-          &__label {
-            padding-bottom: 10px;
-          }
-          &__input {
-            padding-bottom: 10px;
-        }
-      }
-    }
-  }
-}

@@ -4,7 +4,7 @@
       font-size: 15px;
       font-weight: 600;
   }
-  &--require{
+  &-require{
     background: $corporate-red;
     color: $white;
     border-radius: 2px;
@@ -124,7 +124,7 @@
               padding-left: 10px;
               width: 100px;
               height: 40px;
-              background: #fff;
+              background: $white;
               -webkit-appearance: none;
               -moz-appearance: none;
             }
