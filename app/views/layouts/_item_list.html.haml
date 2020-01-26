@@ -4,7 +4,7 @@
       %figure
         .thumbnail
           
-          = image_tag(item.images[0].image.url, size: "300x300", alt: @item.name)
+          = image_tag(item.images[0].image.url, size: "300x300", alt: item.name)
         %figcaption
           %span 
             = item.name
