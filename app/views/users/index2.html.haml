@@ -1,10 +1,12 @@
 .users-wrapper
   = render 'header'
-  .users-wrapper__contents
-    %p アカウントをお持ちでない方はこちら
-    = link_to "#" do
-      新規会員登録
-    .users-wrapper__contents__sign
+  .users-wrapper__signup_contents
+    .users-wrapper__signup_contents__account
+      %p アカウントをお持ちでない方はこちら
+      = link_to "#" do
+        .users-wrapper__contents__sign__btn.signup
+          新規会員登録
+    .users-wrapper__signup_contents__sns
       = link_to "#" do
         .users-wrapper__contents__sign__btn.facebook
           %i.fa.fa-facebook-square
@@ -15,7 +17,8 @@
           %span Googleでログイン
     .users-wrapper__contents__signin
       = form_with(local: true) do |f|
-        = f.text_field :email, placeholder: "メールアドレス", class: "textfield-default"
-        = f.text_field :passwors, placeholder: "パスワード", class: "textfield-default"
+        = f.text_field :email, placeholder: "メールアドレス", class: "textfield-default email"
+        = f.text_field :passwors, placeholder: "パスワード", class: "textfield-default password"
         = image_tag "#{asset_path('dummy_recaptcha.png')}", alt: 'dummy', height: '', width: '200px', class: ''
+      %input{type: "submit", value: "ログイン" ,class: "users-wrapper__contents__signin__login__btn"}
   = render 'footer'

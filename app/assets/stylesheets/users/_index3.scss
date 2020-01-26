@@ -1,13 +1,28 @@
 .users-wrapper {
- 
-
-
+  &--label{
+    color: $black;
+      font-size: 15px;
+      font-weight: 600;
+  }
+  &--require{
+    background: $corporate-red;
+    color: $white;
+    border-radius: 2px;
+    padding: 0.3em;
+    font-size: 13px;
+    font-weight: 600;
+  }
   &__contents {
-
-  
-    &__sign{
-      padding: 40px 40px 64px;
-    
+    &__sign{  
+      &__nextstage-send-btn{
+        width: 100%;
+        height: 50px;
+        background-color: $corporate-red;
+        color: $white;
+        font-size: 15px;
+        border-style: none;
+        cursor: pointer;
+      }  
       &__signup{
         width: 400px;
         margin: auto;
@@ -16,20 +31,29 @@
           font-size: 100%;
           vertical-align: baseline;
           background: transparent;
-        
           &__label{
-            
+            padding-bottom: 10px;
           }
-        
         }
         &__mail{
           margin-bottom: 30px;
+          &__label{
+            padding-bottom: 10px;
+          }
         }
-        &__password__confirm{
-          margin-bottom: 30px;
-        }
-        &__password__view{
-          margin-bottom: 30px;
+        &__password{
+          &__label{
+            padding-bottom: 10px;
+          }
+          &__confirm{
+            margin-bottom: 30px;
+          }
+          &__view{
+            margin-bottom: 30px;
+            & label{
+              vertical-align: middle;
+            }
+          }
         }
         &__nameconfirm{
           margin-bottom: 30px;
@@ -37,48 +61,79 @@
             display: flex;
           }
         }
-        
-        
+
         &__name{
           margin-bottom: 60px;
+          &__heading{
+            &__label{
+              padding-bottom: 10px;
+            }
+          }
           &__textfield{
             display: flex;
+            margin: 0 -3px;
+            &__left, &__right {
+              padding: 0px 3px;
+              &__input{
+                width: 50%;
+              }
+            }
           }
         }
-        
-        &__born__textfield{
+        &__nameconfirm{
+        &__heading{
+          &__label{
+            padding-bottom: 10px;
+          }
+        }
+        &__textfield{
           display: flex;
+          margin: 0 -3px;
+          &__left, &__right {
+            padding: 0px 3px;
+            &__input{
+              width: 50%;
+            }
+          }
         }
-        &__userpolicy{
-          margin-bottom: 30px;
+      }
+        &__born{
+          padding-bottom: 30px;
+          &__heading{
+            padding-bottom: 10px;
+          }
+          &__textfield{
+            display: flex;
+            position: relative;
+            & .birth_date_yyyy {
+              position: absolute;
+              top: 10px;
+              left: 80px;
+            }
+            & .birth_date_mm{
+              position: absolute;
+              top: 10px;
+              left: 185px;
+            }
+            & .birth_date_dd{
+              position: absolute;
+              top: 10px;
+              left: 290px;
+            }
+            & select {
+              padding-left: 10px;
+              width: 100px;
+              height: 40px;
+              background: #fff;
+              -webkit-appearance: none;
+              -moz-appearance: none;
+            }
+          }
         }
-        &__certificate{
-          margin-bottom: 30px;
-        }
+        &__certificate, &__userpolicy{
+          margin-bottom: 10px;
         }
       }
     }
   }
-  .users-wrapper-require{
-    background: $corporate-red;
-    color: $white;
-    border-radius: 2px;
-    padding: 0.3em;
-    font-size: 13px;
-    font-weight: 600;
-
-  }
-  .users-wrapper-label{
-    color: $black;
-      font-size: 15px;
-      font-weight: 600;
-  }
-  .users-wrapper__contents__sign__nextstage-send-btn{
-    width: 100%;
-          height: 50px;
-          background-color: $corporate-red;
-          color: $white;
-          font-size: 15px;
-          border-style: none;
-          cursor: pointer;
-  }
+}

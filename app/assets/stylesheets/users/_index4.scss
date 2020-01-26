@@ -1,49 +1,53 @@
 .users-wrapper {
-  
-  
-
-
-
   &__contents {
-
-  
     &__sign{
-      width: 400px;
-      margin: auto;
-
       &__box{
-        
-        
-      
-        
         &__cellphonenumber{
           margin-bottom: 15px;
-        
+          &__label{
+            padding-bottom: 10px;
+          }
           &__confirm{
             margin-bottom: 10px;
             margin-top: 5px;
             font-size: 100%;
             font-weight: 100;
-            // vertical-align: baseline;
-            // background: transparent;
           }
           &__send{
             margin-top: 40px;
-          }
-          &__btn{
-            margin-bottom: 30px;
+            & .submit{
+              width: 100%;
+              height: 50px;
+              background-color: $corporate-red;
+              color: $white;
+              font-size: 15px;
+              border-style: none;
+              cursor: pointer;
+            }
+            &__btn{
+              margin-bottom: 30px;
+            }
           }
         }
       }
     }
   }
 }
-  .users-wrapper__contents__cellphonenumber__send-send-btn{
-    width: 100%;
-          height: 50px;
-          background-color: $corporate-red;
-          color: $white;
-          font-size: 15px;
-          border-style: none;
-          cursor: pointer;
+
+
+_index5.scss
+.users-wrapper {
+  &__contents { 
+    &__sign{
+      &__signup {
+          padding-bottom: 10px;
+          &__label {
+            padding-bottom: 10px;
+          }
+          &__input {
+            padding-bottom: 10px;
+        }
+      }
+    }
   }
+}
