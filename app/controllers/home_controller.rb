@@ -3,7 +3,7 @@ class HomeController < ApplicationController
 
   def index
    
-    @item = Item.all.order(id: "DESC").limit(10)
+    @item = Item.order(id: "DESC").limit(10)
   
   end
 end
