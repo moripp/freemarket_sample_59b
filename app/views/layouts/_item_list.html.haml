@@ -1,0 +1,13 @@
+%li.item-list__box__card
+  .item-list__box__card__wrapper
+    =link_to item_path(item.id) do
+      %figure
+        .thumbnail
+          
+          = image_tag(item.images[0].image.url, size: "300x300", alt: item.name)
+        %figcaption
+          %span 
+            = item.name
+        %span.price
+          ¥
+          = digit_separator(item.price)

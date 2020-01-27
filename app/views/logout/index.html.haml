@@ -1,0 +1,13 @@
+.wrapper
+  = render 'layouts/header'
+  = render 'layouts/exhibit_btn'
+  .content-wrapper
+    = render 'layouts/pankuzu'
+    %main.main-container
+      = render 'mypages/left'
+      .main-container__right
+        .logout_wrapper
+          %form
+            .single-content
+              %button.btn-red{type:"submit"} ログアウト       
+  = render 'layouts/footer'

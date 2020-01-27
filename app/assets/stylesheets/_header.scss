@@ -1,0 +1,103 @@
+.wrapper{
+    min-height: 100vh;
+    height: 100%;
+    position: relative;
+    background-color:$back-gray;
+}
+
+.main_header {
+    width: 100vw;
+    height: 56px;
+    line-height: 56px;
+    box-shadow: $shadow;
+    background: $white;
+    &__wrapper {
+        width: 1020px;
+        margin: 0 auto;
+        display: flex;
+        &__logo {
+            flex-wrap: wrap;
+            width: 20%;
+            img {
+                vertical-align: middle;
+            }
+        }
+        // ===menu===========
+        &__menu {
+            flex-wrap: wrap;
+            width: 80%;
+        // ===user===========
+            &__user {
+                text-align: right;
+                display: flex;
+                float: right;
+                a{
+                    text-decoration: none;
+                    height: 38px;
+                    display: inline-block;
+                    line-height: 38px;
+                    border-radius: 4px;
+                    padding: 0px 10px 0px;
+                }
+                // ===ログイン前===========
+                &--signup{
+                    a{
+                        background: $corporate-red;
+                        color: $white;
+                        &:hover{
+                            background: $white;
+                            border: $corporate-red 1px solid;
+                            color: $corporate-red;
+                        }
+                    }
+                }
+                &--signin{
+                    a{
+                        border: $light-blue solid 1px;
+                        color: $light-blue;
+                        margin-left: 10px;
+                        &:hover{
+                            background: $light-blue;
+                            color: $white;
+                        }
+                    }
+                }
+                // ===ログイン後===========
+                &--mypage{
+                    a{
+                        color: $black;
+                        border: $silver solid 1px;
+                        &:hover{
+                            background: $back-gray;
+                        }
+                        i.fa.fa-user{
+                            font-size: 24px;
+                            & span{
+                                font-size: 16px;
+                                vertical-align: middle;
+                            }
+                        }
+                    }
+                }
+                // ===ログアウト===========
+                &--logout{
+                    a{
+                        color: $black;
+                        border: $silver solid 1px;
+                        margin-left: 10px;
+                        &:hover{
+                            background: $back-gray;
+                        }
+                        i.fa.fa-sign-out{
+                            font-size: 24px;
+                            & span{
+                                font-size: 16px;
+                                vertical-align: middle;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
