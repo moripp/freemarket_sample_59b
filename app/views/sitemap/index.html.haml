@@ -89,16 +89,16 @@
       - else
         %p userはありません
       %h2 プロフィール一覧
-      - if @profoles
-        - @profoles.each do |p|
-          %table.sitemap
-            %thead
-              %tr
-                %th id
-                %th nickname
-                %th introduction
-                %th created_at
-                %th updated_at
+      - if @profiles
+        %table.sitemap
+          %thead
+            %tr
+              %th id
+              %th nickname
+              %th introduction
+              %th created_at
+              %th updated_at
+            - @profiles.each do |p|
               %tr
                 %td
                   = p.id
@@ -112,7 +112,7 @@
                   = p.updated_at
       - else
         %p profoleはありません
-      %h2 images
+      %h2 images一覧
       - if @images
         %table.sitemap
           %thead
