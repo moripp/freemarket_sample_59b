@@ -1,11 +1,4 @@
 Rails.application.routes.draw do
-  
-
-  
-  
- 
- 
-
   devise_for :users
   root "home#index"
   resources :sitemap, only: [:index]
@@ -24,9 +17,9 @@ Rails.application.routes.draw do
       get 'input_payment' # 入力最終ステップ
       get 'completion_registration' # 登録完了後のページ
 
+    
      resources :users do
-            
-    collection do
+      collection do
       get 'index'
       get 'index2'
       get 'index3'
