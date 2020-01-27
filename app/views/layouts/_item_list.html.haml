@@ -1,9 +1,13 @@
 %li.item-list__box__card
   .item-list__box__card__wrapper
-    =link_to "#" do
+    =link_to item_path(item.id) do
       %figure
         .thumbnail
-          = image_tag "#{asset_path('item_dummy.jpg')}", alt: 'item-name', height: '', class: ''
+          
+          = image_tag(item.images[0].image.url, size: "300x300", alt: item.name)
         %figcaption
-          %span 【アウトレット】新車1万台（車検なし）、一部キズヘコミ有り、お気軽にご相談ください！
-        %span.price ¥128,00
+          %span 
+            = item.name
+        %span.price
+          ¥
+          = digit_separator(item.price)
