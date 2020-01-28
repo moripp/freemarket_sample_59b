@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root "home#index"
   resources :sitemap, only: [:index]
   resources :mypages, only: [:index]
-  resources :items, only: [:new, :create, :show]
+  resources :items, only: [:new, :create, :show, :edit, :update]
   resources :profiles,only: [:new,:edit,:index]
   resources :items, only: [:new, :create, :show, :index]
   resources :credit_cards,only: [:index,:new,:create]
