@@ -1,0 +1,10 @@
+.main
+  .inner
+    %p 確認
+    %p 削除すると二度と復活できません。
+    %p 削除する代わりに停止することもできます。
+    %p 本当に削除しますか？
+.anser
+  .anser_inner
+    = link_to 'キャンセル'
+    = link_to '削除する', "/items/#{@item.id}",method: :delete
