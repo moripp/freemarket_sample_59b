@@ -1,0 +1,44 @@
+.wrapper
+  = render 'layouts/header'
+  = render 'layouts/exhibit_btn'
+  .content_wrapper
+    .home-wrapper
+      %h2 サイトマップ
+      %ul
+        %li
+          = link_to root_path do
+            TOPページ 
+        %li
+          = link_to sitemap_index_path do
+            サイトマップ
+        %li
+          = link_to mypages_path do
+            マイページ
+        %li
+          = link_to new_item_path do
+            出品
+        %li
+          = link_to profiles_path do
+            プロフィール（index）
+        %li
+          = link_to new_profile_path do
+            プロフィール（new）
+        %li
+          = link_to logout_index_path do
+            ログアウト
+        %li
+          = link_to credit_cards_path do
+            クレジットカード（index）
+        %li
+          = link_to new_credit_card_path do
+            クレジットカード（new）
+        %li
+          = link_to input_user_info_signup_index_path do
+            ウィザード形式テンプレ
+      %h2 商品一覧
+      %ul
+        - @item.each do |i|
+          %li
+            = link_to item_path(i.id) do
+              = i.name
+  = render 'layouts/footer'

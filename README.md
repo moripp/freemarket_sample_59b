@@ -4,7 +4,6 @@
 |------|----|-------|
 |name|string|null:false|
 |user_id|references|null: false, foreign_key: true|
-|image_id|references|
 |description|text|null: false|
 |status|integre|nill:false|
 |buy_id|references|foreign_key: true|
@@ -13,7 +12,8 @@
 ## Association
 - belongs_to :user
 - has_many :images
-- belongs_to :buy
+- has_one :buy
+- belongs_to :category
 
 # users
 |Column|Type|Options|
@@ -22,6 +22,7 @@
 |name_mei|string|null: false|
 |kana_sei|string|null: false|
 |kana_mei|string|null: false|
+|birth_date|date|null: false|
 |email|text|null: false, unique: true|
 |password|text|null: false|
 |recaptcha|text|null: false|
@@ -35,9 +36,10 @@
 |credit_card_id|references|null: false|
 
 ## Association
-- belongs_to :profile 
+- has_one :profile
 - has_many :items
-- belongs_to :credit_card
+- has_many :buys
+- has_one :credit_card
 
 # buys
 |Column|Type|Options|
@@ -53,6 +55,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |file|string|null: false|
+|item_id|references|foreign_key: true|
 
 ## Association
 - belongs_to :item
@@ -73,3 +76,15 @@
 
 ## Association
 - belongs_to :user
+
+# credit_cards
+|Column|Type|Options|
+|------|----|-------|
+|number|string|null: false|
+|expiration_mm|string|null: false|
+|expiration_yy|string|null: false|
+|security_code|string|null: false|
+
+## Association
+- belongs_to :user
+※カラム名はgem合わせ

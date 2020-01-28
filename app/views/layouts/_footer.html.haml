@@ -1,2 +1,5 @@
-%footer
-  = image_tag 'footer_dummy', alt: 'dummy', height: '', width: '100%', class: ''
+%footer.main_footer
+  .main_footer__wrapper
+    .main_footer__wrapper__logo
+      =link_to image_tag("#{asset_path('saicoro_logo_white.svg')}", size: "136x36", alt: "saicoro"), root_path
+    .main_footer__wrapper__name Saicoro, Inc
