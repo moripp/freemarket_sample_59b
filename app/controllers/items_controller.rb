@@ -19,6 +19,16 @@ class ItemsController < ApplicationController
   def index
   end
 
+  def pay
+    @item = Item.find(params[:id])
+    # Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+    # charge = Payjp::Charge.create(
+    # amount: @item.price,
+    # card: params['payjp-token'],
+    # currency: 'jpy'
+    # )
+  end
+
   def show
     @item = Item.find(params[:id])
   end
@@ -29,6 +39,7 @@ class ItemsController < ApplicationController
 
   def update
   end
+
 
   private
   def item_params

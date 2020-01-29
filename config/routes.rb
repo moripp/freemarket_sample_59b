@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
-  
   devise_for :users
   root "home#index"
   resources :sitemap, only: [:index]
   resources :mypages, only: [:index]
-  resources :items, only: [:new, :create, :show, :edit, :update]
+  resources :items, only: [:new, :create, :show, :index, :edit, :update] do
+    member do
+      get 'pay'
+    end
+  end
   resources :profiles,only: [:new,:edit,:index]
-  resources :items, only: [:new, :create, :show, :index]
   resources :credit_cards,only: [:index,:new,:create]
   resources :logout,only: [:index]
   # ウィザード形式の記述
