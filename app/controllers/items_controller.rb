@@ -29,7 +29,7 @@ class ItemsController < ApplicationController
       if  @item.user_id == current_user.id
           @item.destroy
       end
-      redirect_to("/")
+      redirect_to mypages_path
   end
 
   private
