@@ -75,7 +75,7 @@
             or
           = link_to root_path, class: "btn-gray" do
             出品を一旦停止する
-          = link_to "/items/#{@item.id}",method: :delete, class: "btn-gray" do
+          = link_to item_path(@item.id),method: :delete, class: "btn-gray" do
             この商品を削除する
   -# フッター
   = render 'layouts/footer'
