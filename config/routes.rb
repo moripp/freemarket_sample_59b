@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   resources :items, only: [:new, :create, :show, :index, :edit, :update] do
     member do
       get 'pay'
+      get 'purchase'
+    end
+    collection do
+      get 'done'
     end
   end
   resources :profiles,only: [:new,:edit,:index]
