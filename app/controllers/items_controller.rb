@@ -24,8 +24,10 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    redirect_to mypages_path
-    if @item.user_id == current_user.id && @item.destroy
+    if  @item.user_id == current_user.id && @item.destroy
+      redirect_to mypages_path
+    else
+      render :index
     end
   end
 
