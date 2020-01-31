@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :move_to_Log_in
+  before_action :set_item, only:[:show,:destroy]
 
   def new
     @item = Item.new
@@ -20,7 +21,21 @@ class ItemsController < ApplicationController
   end
 
   def show
+  end
+
+  def destroy
+    if  @item.user_id == current_user.id && @item.destroy
+      redirect_to mypages_path
+    else
+      render :index
+    end
+  end
+
+  def edit
     @item = Item.find(params[:id])
+  end
+
+  def update
   end
 
   private
@@ -28,6 +43,10 @@ class ItemsController < ApplicationController
     params.require(:item)
           .permit(:name, :description, :price, images_attributes: [:image])
           .merge(user_id: current_user.id) #paramsハッシュにuser_id追加
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
   end
 
 end

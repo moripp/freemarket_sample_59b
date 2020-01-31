@@ -35,10 +35,105 @@
         %li
           = link_to input_user_info_signup_index_path do
             ウィザード形式テンプレ
+      %h2 ▼table確認用
       %h2 商品一覧
-      %ul
-        - @item.each do |i|
-          %li
-            = link_to item_path(i.id) do
-              = i.name
+      - if @items
+        %table.sitemap
+          %thead
+            %tr
+              %th id
+              %th name
+              %th description
+              %th price
+              %th created_at
+              %th updated_at
+              %th status
+              %th user_id
+            - @items.each do |i|
+              %tr
+                %td
+                  = i.id
+                %td
+                  = link_to item_path(i.id) do
+                    = i.name
+                %td
+                  = i.description
+                %td
+                  = i.price
+                %td
+                  = i.created_at
+                %td
+                  = i.updated_at
+                %td
+                  = i.status
+                %td
+                  = i.user_id
+      - else
+        %p itemはありません
+      %h2 ユーザー一覧
+      - if @users
+        %table.sitemap
+          %thead
+            %tr
+              %th id
+              %th created_at
+              %th updated_at
+          - @users.each do |u|
+            %tr
+              %td
+                = u.id
+              %td
+                = u.created_at
+              %td
+                = u.updated_at
+      - else
+        %p userはありません
+      %h2 プロフィール一覧
+      - if @profiles
+        %table.sitemap
+          %thead
+            %tr
+              %th id
+              %th nickname
+              %th introduction
+              %th created_at
+              %th updated_at
+            - @profiles.each do |p|
+              %tr
+                %td
+                  = p.id
+                %td
+                  = p.nickname
+                %td
+                  = p.introduction
+                %td
+                  = p.created_at
+                %td
+                  = p.updated_at
+      - else
+        %p profoleはありません
+      %h2 images一覧
+      - if @images
+        %table.sitemap
+          %thead
+            %tr
+              %th id
+              %th image
+              %th created_at
+              %th updated_at
+              %th item_id
+          - @images.each do |img|
+            %tr
+              %td
+                = img.id
+              %td
+                = image_tag(img.image.url, size: "100x100")
+              %td
+                = img.created_at
+              %td
+                = img.updated_at
+              %td
+                = img.item_id   
+      - else
+        %p imageはありません
   = render 'layouts/footer'

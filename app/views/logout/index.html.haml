@@ -7,7 +7,7 @@
       = render 'mypages/left'
       .main-container__right
         .logout_wrapper
-          %form
+          = link_to destroy_user_session_path, method: :delete do
             .single-content
-              %button.btn-red{type:"submit"} ログアウト       
+              %button.btn-red ログアウト       
   = render 'layouts/footer'

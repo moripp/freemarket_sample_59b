@@ -69,13 +69,13 @@
 
         -# ボタン3つ
         .details-wrapper__contents__btn
-          = link_to root_path, class: "btn-red" do
+          = link_to edit_item_path, class: "btn-red" do
             商品の編集
           .details-wrapper__contents__btn__or
             or
           = link_to root_path, class: "btn-gray" do
             出品を一旦停止する
-          = link_to root_path, class: "btn-gray" do
+          = link_to item_path(@item.id),method: :delete, class: "btn-gray" do
             この商品を削除する
   -# フッター
   = render 'layouts/footer'
