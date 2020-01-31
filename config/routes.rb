@@ -5,9 +5,9 @@ Rails.application.routes.draw do
   resources :users, only: [:index]
   resources :sitemap, only: [:index]
   resources :mypages, only: [:index]
-  resources :items, only: [:new, :create, :show]
+  resources :items, only: [:new, :create, :show, :edit, :update]
   resources :profiles,only: [:new,:edit,:index]
-  resources :items, only: [:new, :create, :show, :index]
+  resources :items, only: [:new, :create, :show, :index ,:destroy]
   resources :credit_cards,only: [:index,:new,:create]
   resources :logout,only: [:index]
   # ウィザード形式の記述

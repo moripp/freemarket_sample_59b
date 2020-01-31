@@ -1,4 +1,4 @@
--# 出品ページ
+-# 商品情報編集ページ
 -# ①ヘッダー、②コンテンツ、③フッター、の大きく3要素でできている
 .exhibit-wrapper
 
@@ -30,9 +30,9 @@
       -# form 出品ボタン
       .exhibit-form
         .exhibit-form__btn1
-          = f.submit "出品する", class: "exhibit-form-send-btn"
+          = f.submit "変更する", class: "exhibit-form-send-btn"
         .exhibit-form__btn2
-          %a{href: "javascript:history.back()", class: "exhibit-return-btn"} もどる
+          %a{href: "javascript:history.back()", class: "exhibit-return-btn"} キャンセル
 
   -# ③フッター
   = render 'items/layouts/exhibit_footer'

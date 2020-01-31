@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 0) do
-
-=======
-ActiveRecord::Schema.define(version: 2020_01_12_074909) do
+ActiveRecord::Schema.define(version: 2020_01_25_124234) do
 
   create_table "credit_cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -47,6 +43,7 @@ ActiveRecord::Schema.define(version: 2020_01_12_074909) do
     t.text "introduction"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id", null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -75,5 +72,4 @@ ActiveRecord::Schema.define(version: 2020_01_12_074909) do
   add_foreign_key "credit_cards", "users"
 
   end
- end
-end
+
