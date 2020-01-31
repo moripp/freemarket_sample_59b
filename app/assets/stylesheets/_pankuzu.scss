@@ -5,6 +5,10 @@
   width:100%;
   height:48px;
   background-color:$white;
+  & a{
+    text-decoration: none;
+    color:black;
+  }
   .pan{
   overflow: visible;
   display:flex;
