@@ -1,0 +1,18 @@
+.users-wrapper
+  = render 'header'
+  .users-wrapper__contents
+    %h2 新規会員登録
+    .users-wrapper__contents__sign
+      = link_to "#" do
+        .users-wrapper__contents__sign__btn.email
+          %i.fa.fa-envelope
+          %span メールアドレスで登録する
+      = link_to "#" do
+        .users-wrapper__contents__sign__btn.facebook
+          %i.fa.fa-facebook-square
+          %span Facebookで登録する
+      = link_to "#" do
+        .users-wrapper__contents__sign__btn.google
+          %i.fa.fa-google
+          %span Googleで登録する
+  = render 'footer'
