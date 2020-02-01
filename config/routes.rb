@@ -5,8 +5,9 @@ Rails.application.routes.draw do
   resources :mypages, only: [:index]
   resources :items, only: [:new, :create, :show, :index, :edit, :update] do
     member do
-      get 'pay'
+      post 'pay'
       get 'purchase'
+      get 'show_myitem'
     end
     collection do
       get 'done'
