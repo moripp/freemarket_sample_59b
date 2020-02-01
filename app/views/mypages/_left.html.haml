@@ -2,11 +2,11 @@
   %nav.main-container__left__bar
     %ul.left-list-a
       %li
-        = link_to "#" do
+        = link_to mypages_path do
           マイページ
           %i.fa.fa-chevron-right
       %li 
-        = link_to "#" do
+        = link_to new_item_path do
           出品する
           %i.fa.fa-chevron-right
       %li 
@@ -44,7 +44,7 @@
           本人情報
           %i.fa.fa-chevron-right
       
-        = link_to "mypage-nav-list-item" do
+        = link_to logout_index_path do
           ログアウト
           %i.fa.fa-chevron-right
       

@@ -1,3 +1,38 @@
-%h1 STEP4（input_payment）
-= link_to completion_registration_signup_index_path do
-  次へ（completion_registration）
+.users-wrapper
+  = render 'header'
+  .users-wrapper__contents
+    %h2 支払い方法
+    .users-wrapper__contents__sign
+      .users-wrapper__contents__sign__signup
+      = form_with(local: true) do |f|
+        .users-wrapper__contents__sign__signup
+          .users-wrapper__contents__sign__signup__label
+            %label.users-wrapper-label カード番号
+            %span.users-wrapper-require 必須
+          .users-wrapper__contents__sign__signup__payment__input
+            = f.text_field :name, placeholder: "半角数字のみ", class: "textfield-default"
+        .users-wrapper__contents__sign__signup__deadline
+          .users-wrapper__contents__sign__signup__label
+            %label.users-wrapper-label 有効期限
+            %span.users-wrapper-require 必須
+          .users-wrapper__contents__sign__signup__deadline__input
+            .payment_card_expire
+              = select_tag 'card[month]', options_for_select(["1", "2", "3", "4", "5"]) 
+              .payment_card_expire__mm-icon
+                = fa_icon("chevron-down") 
+              .payment_card_expire__mm 月
+            .payment_card_expire
+              = select_tag 'card[year]', options_for_select(["20", "21", "22", "23", "24"]) 
+              .payment_card_expire__yy-icon
+                = fa_icon("chevron-down") 
+              .payment_card_expire__yy 年
+        .users-wrapper__contents__sign__signup__securitycode
+          .users-wrapper__contents__sign__signup__label
+            %label.users-wrapper-label セキュリティコード
+            %span.users-wrapper-require 必須
+          .users-wrapper__contents__sign__signup__securitycode__input
+            = f.text_field :name, placeholder: "カード背面４桁もしくは３桁の番号", class: "textfield-default"
+        .users-wrapper__contents__sign__signup__next
+          .users-wrapper__contents__sign__signup__next__btn
+            = f.submit "次へ進む", class: "users-wrapper__contents__sign__signup__next-send-btn"
+  = render 'footer'
