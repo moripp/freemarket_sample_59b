@@ -19,18 +19,28 @@ class ItemsController < ApplicationController
   def index
   end
 
+  def purchase
+  end
+
   def pay
     @item = Item.find(params[:id])
-    # Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
-    # charge = Payjp::Charge.create(
-    # amount: @item.price,
-    # card: params['payjp-token'],
-    # currency: 'jpy'
-    # )
+    Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_ACCESS_KEY)
+    charge = Payjp::Charge.create(
+      amount: @item.price,
+      card: params['payjp-token'],
+      currency: 'jpy'
+    )
+    redirect_to action: :done
+  end
+
+  def done
   end
 
   def show
     @item = Item.find(params[:id])
+  end
+
+  def show_myitem
   end
 
   def edit
