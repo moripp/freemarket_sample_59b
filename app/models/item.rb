@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
   belongs_to :user
-  has_many :images  
+  has_many :images , dependent: :destroy
   accepts_nested_attributes_for :images # 商品の情報と一緒に画像も保存されるようにする
 
   enum status: {for_sale: 0, not_sale: 1}
