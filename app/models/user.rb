@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :items
+  has_one :profile
 
          validates :name_sei, presence: true
          validates :name_mei, presence: true
