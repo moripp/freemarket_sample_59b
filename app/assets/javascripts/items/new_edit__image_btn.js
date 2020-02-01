@@ -76,7 +76,7 @@ $(function() {
   $(document).on('change', '.image-upload-btn',function(e) {
     const brob_url = createBroburl(this); // Brob URL Scheme 作成
     addSellImage(brob_url, n, insert_area); // アップロード画像を表示
-    moveBtn(this, n); // 画像アップロードを終えたボタンのclass名変更、場所移動
+    moveBtn(this, n); // 画像アップロードを終えたボタンのclass名変更
     if(n < 9) {
       // 新しいボタンを追加
       n = n + 1;
