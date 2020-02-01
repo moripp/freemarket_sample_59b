@@ -35,4 +35,6 @@
         .users-wrapper__contents__sign__signup__next
           .users-wrapper__contents__sign__signup__next__btn
             = f.submit "次へ進む", class: "users-wrapper__contents__sign__signup__next-send-btn"
+  = link_to completion_registration_signup_index_path do
+    %p 次へ進む（ダミー）
   = render 'footer'

@@ -7,7 +7,7 @@
         ありがとうございます。
         %br 会員登録が完了しました。
       .users-wrapper__contents__sign__start
-      = form_with(local: true) do |f|
-        .users-wrapper__contents__sign__start__btn
-          = f.submit "メルカリをはじめる", class: "users-wrapper__contents__sign__start-send-btn"
+        = link_to root_path do
+          .users-wrapper__contents__sign__start__btn
+            サイコロをはじめる
   = render 'footer'
