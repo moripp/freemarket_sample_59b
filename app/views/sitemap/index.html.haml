@@ -3,6 +3,7 @@
   = render 'layouts/exhibit_btn'
   .content_wrapper
     .home-wrapper
+
       %h2 サイトマップ
       %ul
         %li
@@ -35,6 +36,11 @@
         %li
           = link_to input_user_info_signup_index_path do
             ウィザード形式テンプレ
+      %h2 ※※ユーザー登録はこちらから（避難所）※※
+      = link_to new_user_registration_path do
+        %p 新規登録
+      = link_to new_user_session_path do
+        %p ログイン
       %h2 ▼table確認用
       %h2 商品一覧
       - if @items
