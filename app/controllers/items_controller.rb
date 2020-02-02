@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :move_to_Log_in
-  before_action :set_item, only:[:show,:destroy]
+  before_action :set_item, only:[:pay,:show,:show_myitem,:destroy,:edit]
 
   def new
     @item = Item.new
@@ -20,6 +20,22 @@ class ItemsController < ApplicationController
   def index
   end
 
+  def purchase
+  end
+
+  def pay
+    Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_ACCESS_KEY)
+    charge = Payjp::Charge.create(
+      amount: @item.price,
+      card: params['payjp-token'],
+      currency: 'jpy'
+    )
+    redirect_to done_items_path
+  end
+
+  def done
+  end
+
   def show
   end
 
@@ -31,12 +47,15 @@ class ItemsController < ApplicationController
     end
   end
 
+  def show_myitem
+  end
+
   def edit
-    @item = Item.find(params[:id])
   end
 
   def update
   end
+
 
   private
   def item_params
