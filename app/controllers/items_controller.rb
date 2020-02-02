@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :move_to_Log_in
-  before_action :set_item, only:[:show,:destroy]
+  before_action :set_item, only:[:pay,:show,:show_myitem,:destroy,:edit]
 
   def new
     @item = Item.new
@@ -24,7 +24,6 @@ class ItemsController < ApplicationController
   end
 
   def pay
-    @item = Item.find(params[:id])
     Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_ACCESS_KEY)
     charge = Payjp::Charge.create(
       amount: @item.price,
@@ -52,7 +51,6 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item = Item.find(params[:id])
   end
 
   def update
