@@ -30,7 +30,7 @@ class ItemsController < ApplicationController
       card: params['payjp-token'],
       currency: 'jpy'
     )
-    redirect_to action: :done
+    redirect_to done_items_path
   end
 
   def done
