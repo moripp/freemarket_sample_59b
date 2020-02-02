@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :move_to_Log_in
-  before_action :set_item, only:[:pay,:show,:show_myitem,:destroy,:edit]
+  before_action :set_item, only:[:purchase,:pay,:show,:show_myitem,:destroy,:edit]
 
   def new
     @item = Item.new
@@ -21,6 +21,9 @@ class ItemsController < ApplicationController
   end
 
   def purchase
+    @card = current_user.credit_card
+    customer = Payjp::Customer.retrieve(@card.customer_id) 
+    @customer_card = customer.cards.retrieve(@card.card_id) 
   end
 
   def pay
