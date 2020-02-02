@@ -16,7 +16,7 @@
             = link_to mypages_path do
               %i.fa.fa-user
                 %span 
-                  = "#{current_user.name_sei} #{current_user.name_mei}"
+                  = current_user.profile.nickname
           .main_header__wrapper__menu__user--logout
             = link_to destroy_user_session_path, method: :delete do
               %i.fa.fa-sign-out
