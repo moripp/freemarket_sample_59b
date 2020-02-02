@@ -61,4 +61,6 @@
           .users-wrapper__contents__sign__signup
             .users-wrapper__contents__sign__signup__btn
               = f.submit "次へ進む", class: "users-wrapper__contents__sign__signup__next-send-btn"
+  = link_to input_payment_signup_index_path do
+    %p 次へ進む（ダミー）
   = render 'footer'

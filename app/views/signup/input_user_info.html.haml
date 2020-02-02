@@ -78,4 +78,6 @@
           .users-wrapper__contents__sign__nextstage
             .users-wrapper__contents__sign__nextstage__btn
               = f.submit "次へ進む", class: "users-wrapper__contents__sign__nextstage-send-btn"
+  = link_to input_phone_number_signup_index_path do
+    %p 次へ進む（ダミー）
   = render 'footer'

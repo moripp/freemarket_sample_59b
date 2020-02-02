@@ -1,0 +1,33 @@
+.users-wrapper {
+  &__contents { 
+    &__sign{
+      padding: 24px 16px 40px;
+      a{
+        text-decoration: none;
+        color: $white;
+      }
+      &__btn {
+        border: none;
+        display: block;
+        width: 343px;
+        height: 50px;
+        margin: 16px auto;
+        padding-left: 10px;
+        text-align: left;
+        line-height: 50px;
+        border-radius: 4px;
+        &.email{
+          background-color: $corporate-red;          
+        }
+        &.facebook{
+          background-color: #385185;
+        }
+        &.google{
+          border: 1px solid $gray;
+          color: $black; 
+        }
+      }
+    }  
+  }  
+}
+  

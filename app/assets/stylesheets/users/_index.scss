@@ -1,32 +1,69 @@
 .users-wrapper {
   &__contents { 
+
     &__sign{
-      padding: 24px 16px 40px;
+
+      &__btn {
+        &.signup{
+          width: 100%;
+          background-color: $light-blue;
+          text-align: center;
+          text-decoration: none;
+          color: $white;
+        }
+      }
+    }
+    &__signin{
+      padding: 0px 60px 40px;
+      .textfield-default {
+        margin-bottom: 20px;
+      }
+      &__login{
+        &__btn {
+          width: 100%;
+          height: 50px;
+          background-color: $corporate-red;
+          color: #fff;
+          font-size: 15px;
+          border-style: none;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  &__signup_contents {
+    width: 456px;
+    margin: 0 auto;
+    background: $white;
+    &__account {
+      padding: 40px 64px;
+      border-bottom: 1px solid $silver;
       a{
         text-decoration: none;
+      }
+      & p{
+        text-align: center;
+      }
+    }
+    &__sns{
+      padding: 40px 64px;
+      & .facebook {
+        width: 100%;
         color: $white;
       }
-      &__btn {
-        border: none;
-        display: block;
-        width: 343px;
-        height: 50px;
-        margin: 16px auto;
-        padding-left: 10px;
-        text-align: left;
-        line-height: 50px;
-        border-radius: 4px;
-        &.email{
-          background-color: $corporate-red;          
-        }
-        &.facebook{
-          background-color: #385185;
-        }
-        &.google{
-          border: 1px solid $gray;
-          color: $black; 
-        }
+      & .google{
+        width: 100%;
       }
-    }  
-  }  
+      a{
+        text-decoration: none;
+      }
+
+    }
+  }
+}
+.textfield-default{
+  &.email,.password{
+    padding-bottom: 10px;
+
+  }
 }
