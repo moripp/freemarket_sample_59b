@@ -10,6 +10,10 @@
     background-size:cover;
     text-align:center;
     background-color:#f1d0f6;
+      & .fa-edit.fa {
+          color:    $light-blue;
+          text-decoration: underline;
+        }
     & a{
       text-decoration: none;
       color: #333;
