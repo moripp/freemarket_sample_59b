@@ -1,6 +1,6 @@
 .profile-wrapper{
   width: 100vw;
-  height: 100vh;
+  // height: 100vh;
   background-color: $back-gray;
   
   &__contents {
@@ -29,8 +29,7 @@
 
       .profile-form{
         &__icon{
-          background-image: url(colorful_banner.png);  
-          background-size: contain;
+          background-image: image-url("colorful_banner.png");          background-size: contain;
           background-position: center;
           padding: 72px 16px 24px;
 
