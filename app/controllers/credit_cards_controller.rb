@@ -1,5 +1,7 @@
 class CreditCardsController < ApplicationController
+  
   require "payjp"
+  before_action :move_to_Log_in,
   
   def index
     # payjpテスト秘密鍵をセット

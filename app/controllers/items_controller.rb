@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :move_to_Log_in, only:[:pay,:show_myitem,:destroy,:edit, :purchase, :new]
+  before_action :move_to_Log_in, except:[:show]
   before_action :set_item, only:[:pay,:show,:show_myitem,:destroy,:edit]
 
   def new
