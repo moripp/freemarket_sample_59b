@@ -31,3 +31,17 @@ $(function() {
       $(`#item_images_attributes_${index}_id`).remove(); // 不要なinputが作成されてしまうので削除
     });  
   };
+
+  // 削除させるimage_idをformに格納する
+  $(document).on('click', '.gon_item_images', function(e) {
+    const delete_id = Number($(this).attr('data-id'));
+    const delete_ids_html = `
+      <input  type="text"
+              name="delete_image_ids[]"
+              value="${delete_id}"
+              class="delete-image-ids">
+      </input>`;
+    $(delete_ids_html).insertBefore(insert_area);
+  });
+});
+
