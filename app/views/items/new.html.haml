@@ -9,23 +9,7 @@
   .exhibit-wrapper__contents
     .exhibit-page-description
       商品の情報を入力
-    -# ここからform
     = form_with(model: @item, local: true, id: "exhibit-form") do |f|
-      -# form 画像アップロード
-      .exhibit-form
-        .exhibit-form__group
-          .exhibit-form__group__label
-            %label{ class: "exhibit-form-label" } 出品画像
-            %span{ class: "exhibit-form-require"} 必須
-          .exhibit-form__group__label-small
-            %label{ class: "exhibit-form-label-small" } 最大10枚までアップロードできます。
-          .exhibit-form__group__image#exhibit-form-image
-            = f.fields_for :images do |b|
-              .image-upload-box
-                = b.file_field :image, class: "image-upload-btn", accept: "image/*"
-                %pre.image-upload-label
-                  ドラッグアンドドロップ
-                  またはクリックしてファイルをアップロード
       = render partial: 'items/form', locals: { f: f }
       -# form 出品ボタン
       .exhibit-form
