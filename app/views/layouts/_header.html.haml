@@ -15,8 +15,11 @@
           .main_header__wrapper__menu__user--mypage
             = link_to mypages_path do
               %i.fa.fa-user
-                %span 
-                  = "#{current_user.name_sei} #{current_user.name_mei}"
+                %span
+                  - if current_user.profile
+                    = current_user.profile.nickname
+                  - else
+                    = "#{current_user.name_sei}#{current_user.name_mei}"
           .main_header__wrapper__menu__user--logout
             = link_to destroy_user_session_path, method: :delete do
               %i.fa.fa-sign-out
