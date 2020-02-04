@@ -1,3 +1,23 @@
-%h1 STEP2（input_phone_number）
-= link_to input_address_signup_index_path do
-  次へ（input_address）
+.users-wrapper
+  = render 'header'
+  .users-wrapper__contents
+    %h2 電話番号の確認
+    .users-wrapper__contents__sign
+      .users-wrapper__contents__sign__box
+      = form_with(local: true) do |f|
+        .users-wrapper__contents__sign__box__cellphonenumber
+          .users-wrapper__contents__sign__box__cellphonenumber__label
+            %label.users-wrapper-label 携帯電話の番号
+          .users-wrapper__contents__sign__box__cellphonenumber__input
+          = f.text_field :name, placeholder: "携帯電話の番号を入力", class: "textfield-default"
+        .users-wrapper__contents__sign__box__cellphonenumber__confirm
+        本人確認のため、SMS（ショートメッセージサービス）を利用して認証を行います。
+        .users-wrapper__contents__sign__box__cellphonenumber__send
+          .users-wrapper__contents__sign__box__cellphonenumber__send__btn
+            = f.submit "SMSを送信する", class: "submit"
+        .users-wrapper__contents__sign__box__cellphonenumber__notice
+        *電話番号は本人確認や不正利用防止のためにのために利用
+        します。他のユーザーに公開されることはありません。
+  = link_to input_address_signup_index_path do
+    %p 次へ進む（ダミー）
+  = render 'footer'

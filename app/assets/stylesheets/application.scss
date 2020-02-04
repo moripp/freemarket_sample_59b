@@ -11,9 +11,17 @@
 @import "mypage/right";
 @import "mypage/left";
 @import "items/new";
+@import "users/common";
+@import "users/index";
+@import "signup/select";
+@import "signup/input_user_info";
+@import "signup/input_address";
+@import "signup/input_phone_number";
+@import "signup/input_payment";
+@import "signup/completion_registration";
 @import "items/new-image-btn";
 @import "items/create";
-@import "items/show";
+@import "items/show"; // items/payにも当たる
 @import "profiles/index";
 @import "credit_cards/index";
 @import "profiles/new";
@@ -22,3 +30,4 @@
 @import "logout/logout";
 @import "pankuzu";
 @import "sitemap/index"; // 開発終了後削除
+
