@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :move_to_Log_in
+  before_action :move_to_Log_in, only:[:pay,:show_myitem,:destroy,:edit, :purchase, :new]
   before_action :set_item, only:[:pay,:show,:show_myitem,:destroy,:edit]
 
   def new
@@ -21,6 +21,7 @@ class ItemsController < ApplicationController
   end
 
   def purchase
+    
   end
 
   def pay
@@ -37,6 +38,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+
   end
 
   def destroy
