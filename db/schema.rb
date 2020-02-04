@@ -70,6 +70,4 @@ ActiveRecord::Schema.define(version: 2020_01_31_114831) do
   end
 
   add_foreign_key "credit_cards", "users"
-
-  end
-
+end
