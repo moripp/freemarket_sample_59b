@@ -25,6 +25,9 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
+    gon.item = @item # gemのgonを使って@itemの情報をjsに渡す
+    gon.item_images = @item.images
+    @item.images.new
   end
 
   def update
