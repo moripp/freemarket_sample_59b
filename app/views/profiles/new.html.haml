@@ -1,9 +1,10 @@
 -# 2-2.ユーザー本人確認ページ
 -# ①ヘッダー、②コンテンツ（②-1左カラム、②-2右カラム）、③フッターの大きく4要素でできている。
-.profile-wrapper
+.wrapper
   -# ①ヘッダー
   = render 'layouts/header'
   = render 'layouts/exhibit_btn'
+  .profile-wrapper
   -# ②コンテンツ
   .profile-wrapper__contents
     -# ②-1左カラム（キッドさん作成中）
@@ -50,5 +51,5 @@
         .profile-form__btn
           = f.submit "登録する", class: "profile-form-send-btn"
 
--# ③フッター かぶさる問題があるので一旦コメントアウト
--# = render 'layouts/footer'
+
+ = render 'layouts/footer'
