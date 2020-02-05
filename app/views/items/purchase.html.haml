@@ -35,5 +35,5 @@
           .credit_cards-box__list__imformation__number 
             = "#{@customer_card.exp_month} / #{@customer_card.exp_year} "
         = form_tag(action: :pay, method: :post) do
-          %script.payjp-button{src: "https://checkout.pay.jp", type: "text/javascript" ,"data-text": "購入する" ,"data-key": "pk_test_1609ecc73a34d376c061c53d"}
+          %button 購入する
   = render 'items/layouts/exhibit_footer'
