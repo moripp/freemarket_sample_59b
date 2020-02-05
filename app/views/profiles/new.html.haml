@@ -16,13 +16,16 @@
           %p お客さまの本人情報をご登録ください。登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
         .profile__group
           %label お名前
-          %p 渡辺ひろこ
+          %p
+            = current_user.name_sei + current_user.name_mei
         .profile__group
           %label お名前カナ
-          %p ワタナベヒロコ
+          %p
+            = current_user.kana_sei+current_user.kana_mei
         .profile__group
           %label 生年月日
-          %p 2000/01/01 
+          %p 
+            = current_user.birth_date.strftime("%Y年%-m月%-d日")
         .profile__group
           %label 郵便番号
           %span.form-optional 任意 
