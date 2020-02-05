@@ -4,6 +4,6 @@ class ProfilesController < ApplicationController
   end
 
   def new
-    # require 'date'
+  
   end
 end
