@@ -27,10 +27,12 @@ class ItemsController < ApplicationController
   end
 
   def pay
+    credit_card = CreditCard.find_by(user_id: current_user.id)
     Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_ACCESS_KEY)
     charge = Payjp::Charge.create(
       amount: @item.price,
-      card: params['payjp-token'],
+      card: credit_card.card_id,
+      customer: credit_card.customer_id,
       currency: 'jpy'
     )
     redirect_to done_items_path
