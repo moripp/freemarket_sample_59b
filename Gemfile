@@ -79,4 +79,4 @@ gem 'payjp'
 gem 'pry-rails'
 gem 'jquery-rails'
 gem 'enum_help'
-
+gem 'gon'
