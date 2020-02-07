@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users  
   root "home#index"
-  resources :users, only: [:index]
+  resources :user, only: [:index]
   resources :sitemap, only: [:index]
   resources :mypages, only: [:index]
   resources :items, only: [:new, :create, :show, :edit, :update, :destroy] do
@@ -27,6 +27,6 @@ Rails.application.routes.draw do
       get 'input_payment' # 入力最終ステップ
       get 'completion_registration' # 登録完了後のページ
 
+    end
   end
- end
 end
