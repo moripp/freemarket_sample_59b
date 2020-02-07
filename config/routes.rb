@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users  
+  devise_for :users, controllers: { # カスタマイズしたdeviseのcontrollerが使えるようにする
+    omniauth_callbacks: 'users/omniauth_callbacks',
+    registrations: 'users/registrations'
+  }
   root "home#index"
   resources :user, only: [:index]
   resources :sitemap, only: [:index]
