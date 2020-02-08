@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users  
+  devise_for :users, controllers: { # カスタマイズしたdeviseのcontrollerが使えるようにする
+    omniauth_callbacks: 'users/omniauth_callbacks',
+    registrations: 'users/registrations'
+  }
   root "home#index"
-  resources :users, only: [:index]
+  resources :user, only: [:index]
   resources :sitemap, only: [:index]
   resources :mypages, only: [:index]
   resources :sell, only: [:new, :create]
@@ -28,6 +31,6 @@ Rails.application.routes.draw do
       get 'input_payment' # 入力最終ステップ
       get 'completion_registration' # 登録完了後のページ
 
+    end
   end
- end
 end
