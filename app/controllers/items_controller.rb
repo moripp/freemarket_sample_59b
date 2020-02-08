@@ -2,21 +2,6 @@ class ItemsController < ApplicationController
   before_action :move_to_Log_in, except:[:show]
   before_action :set_item, only:[:pay,:show,:show_myitem,:destroy,:edit]
 
-  def new
-    @item = Item.new
-    @item.images.new
-  end
-
-  def create
-    @item = Item.new(item_params)
-    if @item.save
-      render :create
-    else
-      render :new
-    end
-  end
-
-
   def index
   end
 
@@ -78,12 +63,6 @@ class ItemsController < ApplicationController
 
 
   private
-  def item_params
-    params.require(:item)
-          .permit(:name, :description, :price, images_attributes: [:image])
-          .merge(user_id: current_user.id) #paramsハッシュにuser_id追加
-  end
-
   def item_images_delete_params # 削除が必要なimage_idを取り出す
     params.fetch(:delete_image_ids, {}) # 空の場合エラーにならないようfetch使用
   end
