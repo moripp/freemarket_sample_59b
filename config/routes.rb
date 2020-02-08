@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   resources :users, only: [:index]
   resources :sitemap, only: [:index]
   resources :mypages, only: [:index]
-  resources :items, only: [:new, :create, :show, :edit, :update, :destroy] do
+  resources :sell, only: [:new, :create]
+  resources :items, only: [:show, :edit, :update, :destroy] do
     member do
       post 'pay'
       get 'purchase'
