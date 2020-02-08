@@ -10,7 +10,12 @@
 @import "mypage/index";
 @import "mypage/right";
 @import "mypage/left";
-@import "items/new";
+
+// sell関係
+@import "sell/new";
+@import "sell/new-image-btn";
+@import "sell/create";
+
 @import "users/common";
 @import "users/index";
 @import "signup/select";
@@ -19,8 +24,6 @@
 @import "signup/input_phone_number";
 @import "signup/input_payment";
 @import "signup/completion_registration";
-@import "items/new-image-btn";
-@import "items/create";
 @import "items/show"; // items/payにも当たる
 @import "profiles/index";
 @import "credit_cards/index";
