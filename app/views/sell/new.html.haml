@@ -9,6 +9,7 @@
   .exhibit-wrapper__contents
     .exhibit-page-description
       商品の情報を入力
+    = form_with(model: @item, url: sell_index_path, local: true, id: "exhibit-form") do |f|
       = render partial: 'sell/form', locals: { f: f }
       -# form 出品ボタン
       .exhibit-form
