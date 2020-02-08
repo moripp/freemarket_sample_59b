@@ -2,11 +2,14 @@
 .wrapper
   -# ヘッダー
   = render 'layouts/header'
-  = render 'items/show'
-  
-  .details-wrapper__contents__btn
-    = link_to purchase_item_path, class: "btn-red" do
-      購入する
-          
--# フッター
--# = render 'layouts/footer'
+  .content_wrapper
+    .details-wrapper
+      .details-wrapper__contents
+        = render 'items/show'
+
+        .details-wrapper__contents__btn
+          = link_to purchase_item_path, class: "btn-red" do
+            購入する
+
+  -# フッター
+  = render 'layouts/footer'
