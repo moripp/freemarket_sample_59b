@@ -2,10 +2,18 @@
 .wrapper
   -# ヘッダー
   = render 'layouts/header'
-  = render 'items/show'
-  .details-wrapper__contents__btn
-    = link_to purchase_item_path, class: "btn-red" do
-      購入する
+  -# コンテンツ
+  .content_wrapper
+    .details-wrapper
+      .details-wrapper__contents
+        .margin
+        -# ◆商品情報開始◆
+        .details-wrapper__contents__item-box
+          = render 'items/show'
+        -# ボタン
+        .details-wrapper__contents__btn
+          = link_to purchase_item_path, class: "btn-red" do
+            購入画面に進む
           
--# フッター
--# = render 'layouts/footer'
+  -# フッター
+  = render 'layouts/footer'
