@@ -40,7 +40,7 @@ $(function() {
                                 name="item[images_attributes][${n}][image]"
                                 id="item_images_attributes_${n}_image"
                                 >`);
-    insert_area.prepend(new_input);
+    insert_area.append(new_input);
   }
 
   // 【関数】アップロードボタンのidとnameの番号、サムネのid番号を変更
