@@ -1,5 +1,6 @@
 class MyitemsController < ApplicationController
   before_action :move_to_Log_in
+  before_action :check_item_owner
 
   def show
   end
@@ -36,6 +37,12 @@ class MyitemsController < ApplicationController
   end
 
   private
+  def check_item_owner # itemの出品者とログインユーザーが一致しているか確認
+    @item = Item.find(params[:id])
+    unless @item.user_id == current_user.id
+      redirect_to root_path
+    end
+  end
 
   def item_images_delete_params # 削除が必要なimage_idを取り出す
     params.fetch(:delete_image_ids, {}) # 空の場合エラーにならないようfetch使用
