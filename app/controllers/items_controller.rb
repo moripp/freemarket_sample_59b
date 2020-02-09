@@ -21,9 +21,22 @@ class ItemsController < ApplicationController
   end
 
   def purchase
+    Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_ACCESS_KEY)
+    # 今ログインしているユーザーのクレジットカードを@cardに代入
     @card = current_user.credit_card
-    customer = Payjp::Customer.retrieve(@card.customer_id) 
-    @customer_card = customer.cards.retrieve(@card.card_id) 
+    # もしcardがある場合
+    if @card
+      # @cardから顧客情報(customer_id)を取得し customerに代入
+      customer = Payjp::Customer.retrieve(@card.customer_id) 
+      # customerからcard_idを取得し @customer_card に代入
+      @customer_card = customer.cards.retrieve(@card.card_id) 
+      # index_createdのviewファイルを表示させる
+      render :purchase
+    # もしcardがない場合
+    else
+      # indexのviewファイルを表示させる
+      redirect_to credit_cards_path
+    end
   end
 
   def pay
