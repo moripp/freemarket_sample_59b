@@ -4,49 +4,52 @@
   -# ①ヘッダー
   = render 'layouts/header'
   = render 'layouts/exhibit_btn'
-  .content_wrapper
-    .profile-wrapper
-      -# ②コンテンツ
-      .profile-wrapper__contents
-        -# ②-1左カラム（キッドさん作成中）
-        = render 'mypages/left'
-        -# ②-2右カラム
-        .profile-wrapper__contents__right
-          %h2.profile-heading 本人情報の登録
-          = form_with(class: "profile-form",local: true) do |f|
-            %div
-              %p お客さまの本人情報をご登録ください。登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
-            .profile__group
-              %label お名前
-              %p 渡辺ひろこ
-            .profile__group
-              %label お名前カナ
-              %p ワタナベヒロコ
-            .profile__group
-              %label 生年月日
-              %p 2000/01/01 
-            .profile__group
-              %label 郵便番号
-              %span.form-optional 任意 
-              = f.text_field :zip_code, placeholder: "例)1234567", class: "textfield-default"
-            .profile__group
-              %label 都道府県
-              %span.form-optional 任意 
-              -# 後ほどselect式にしたい
-              = f.text_field :prefecture, placeholder: "例)東京都", class: "textfield-default"
-            .profile__group
-              %label 市区町村
-              %span.form-optional 任意 
-              = f.text_field :city, placeholder: "例)横浜市緑区", class: "textfield-default"
-            .profile__group
-              %label 番地
-              %span.form-optional 任意 
-              = f.text_field :address1_label, placeholder: "青山1-1-1", class: "textfield-default"
-            .profile__group
-              %label 建物名
-              %span.form-optional 任意 
-              = f.text_field :address2_label, placeholder: "オロロロビル101", class: "textfield-default"
-            .profile-form__btn
-              = f.submit "登録する", class: "profile-form-send-btn"
-  -# ③フッター
-  = render 'layouts/footer'
+  .profile-wrapper
+  -# ②コンテンツ
+  .profile-wrapper__contents
+    -# ②-1左カラム（キッドさん作成中）
+    = render 'mypages/left'
+    -# ②-2右カラム
+    .profile-wrapper__contents__right
+      %h2.profile-heading 本人情報の登録
+      = form_with(class: "profile-form",local: true) do |f|
+        %div
+          %p お客さまの本人情報をご登録ください。登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+        .profile__group
+          %label お名前
+          %p
+            = current_user.name_sei + current_user.name_mei
+        .profile__group
+          %label お名前カナ
+          %p
+            = current_user.kana_sei+current_user.kana_mei
+        .profile__group
+          %label 生年月日
+          %p 
+            = current_user.birth_date.strftime("%Y年%-m月%-d日")
+        .profile__group
+          %label 郵便番号
+          %span.form-optional 任意 
+          = f.text_field :zip_code, placeholder: "例)1234567", class: "textfield-default"
+        .profile__group
+          %label 都道府県
+          %span.form-optional 任意 
+          -# 後ほどselect式にしたい
+          = f.text_field :prefecture, placeholder: "例)東京都", class: "textfield-default"
+        .profile__group
+          %label 市区町村
+          %span.form-optional 任意 
+          = f.text_field :city, placeholder: "例)横浜市緑区", class: "textfield-default"
+        .profile__group
+          %label 番地
+          %span.form-optional 任意 
+          = f.text_field :address1_label, placeholder: "青山1-1-1", class: "textfield-default"
+        .profile__group
+          %label 建物名
+          %span.form-optional 任意 
+          = f.text_field :address2_label, placeholder: "オロロロビル101", class: "textfield-default"
+        .profile-form__btn
+          = f.submit "登録する", class: "profile-form-send-btn"
+
+
+ = render 'layouts/footer'
