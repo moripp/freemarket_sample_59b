@@ -1,3 +1,40 @@
-= form_tag(action: :pay, method: :post) do
-  %script.payjp-button{src: "https://checkout.pay.jp", type: "text/javascript" ,"data-text": "購入する" ,"data-key": "pk_test_1609ecc73a34d376c061c53d"}
-
+.exhibit-wrapper
+  -# ①ヘッダー
+  = render 'items/layouts/exhibit_header'
+  .details-wrapper
+    .details-wrapper__contents
+      .margin
+      -# ◆商品情報開始◆
+      .details-wrapper__contents__item-box
+        -# 商品名表示
+        %h1.item-name
+          購入内容の確認
+        -# 商品の詳細表示
+        .item-buy-content
+          -# 画像表示
+          .item-photo
+            = image_tag(@item.images[0].image.url, size: "100x100", alt: @item.name)
+          .item-name-small
+            = @item.name
+        -# 商品の価格表示
+        .item-price
+          %span.item-price__money
+            ¥
+            = digit_separator(@item.price)
+          %span
+            （税込）
+          %span.item-price__delivery
+            送料込み
+        .credit_cards-box-purchase
+          %h3.credit_card
+            支払い方法
+          %figure.credit_cards-box__list__imformation__figure
+            = image_tag("#{asset_path('visa.svg')}", size: "49x15", alt: "VISA")
+          .credit_cards-box__list__imformation__number 
+            = @customer_card.last4 
+          .credit_cards-box__list__imformation__number 
+            = "#{@customer_card.exp_month} / #{@customer_card.exp_year} "
+      .details-wrapper__contents__btn
+        = form_tag(action: :pay, method: :post) do
+          %button{class: "btn-red"} 購入する
+  = render 'items/layouts/exhibit_footer'
