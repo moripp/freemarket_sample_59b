@@ -15,3 +15,5 @@
 //= require activestorage
 //= require_tree .
 
+var n = 0;  //他のjsファイルで使用（複数のファイルで使用しているので共通化）
+
