@@ -20,7 +20,10 @@
         %td
           -# ******マイページの実装が終えたらパスを修正******
           = link_to root_path, class: "link-layout" do
-            = @item.user.name_sei
+            - if @item.user.profile	        
+              = @item.user.profile.nickname	        
+            - else	      
+              = "#{@item.user.name_sei}#{@item.user.name_mei}"
       %tr
         %th カテゴリー
         %td 
