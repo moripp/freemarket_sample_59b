@@ -5,8 +5,10 @@
   .content_wrapper
     .details-wrapper
       .details-wrapper__contents
-        = render 'items/show'
-
+        .margin
+        -# ◆商品情報開始◆
+        .details-wrapper__contents__item-box
+          = render 'items/show'
         -# ボタン3つ
         .details-wrapper__contents__btn
           = link_to edit_myitem_path, class: "btn-red" do
