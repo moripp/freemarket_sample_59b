@@ -7,12 +7,12 @@ Rails.application.routes.draw do
   resources :user, only: [:index]
   resources :sitemap, only: [:index]
   resources :mypages, only: [:index]
+  resources :myitems, only: [:show, :edit, :update, :destroy]
   resources :sell, only: [:new, :create]
-  resources :items, only: [:show, :edit, :update, :destroy] do
+  resources :items, only: [:show] do
     member do
       post 'pay'
       get 'purchase'
-      get 'show_myitem'
     end
     collection do
       get 'done'

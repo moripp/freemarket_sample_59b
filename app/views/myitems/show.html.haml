@@ -1,8 +1,7 @@
--# 自分が出品した商品詳細ページ
+-# 商品詳細ページ
 .wrapper
   -# ヘッダー
   = render 'layouts/header'
-  -# コンテンツ
   .content_wrapper
     .details-wrapper
       .details-wrapper__contents
@@ -12,13 +11,13 @@
           = render 'items/show'
         -# ボタン3つ
         .details-wrapper__contents__btn
-          = link_to edit_item_path, class: "btn-red" do
+          = link_to edit_myitem_path, class: "btn-red" do
             商品の編集
           .details-wrapper__contents__btn__or
             or
           = link_to root_path, class: "btn-gray" do
             出品を一旦停止する
-          = link_to root_path, class: "btn-gray" do
+          = link_to myitem_path, method: :delete, class: "btn-gray" do
             この商品を削除する
   -# フッター
   = render 'layouts/footer'
