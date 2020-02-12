@@ -36,7 +36,7 @@
                   = i.name+"を出品しました"
                 %time
                   %i.fa.fa-clock-o
-                    = i.created_at.strftime("%Y年%-m月%-d日")
+                    = i.created_at.strftime("%-m月%-d日")
               %i.fa.fa-chevron-right
         %li.tab-go-list
           = link_to  "一覧を見る"
