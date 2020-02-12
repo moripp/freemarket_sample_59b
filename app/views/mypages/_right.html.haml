@@ -32,9 +32,11 @@
               %figure
                 = image_tag(i.images[0].image.url, size: "45x45", alt: i.name)
               .mypage-item-body
-                .mypage-item-text おしらせ文
+                .mypage-item-text
+                  = i.name+"を出品しました"
                 %time
                   %i.fa.fa-clock-o
+                    = i.created_at.strftime("%Y年%-m月%-d日")
               %i.fa.fa-chevron-right
         %li.tab-go-list
           = link_to  "一覧を見る"
