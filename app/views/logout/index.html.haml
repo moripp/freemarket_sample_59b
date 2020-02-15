@@ -2,12 +2,22 @@
   = render 'layouts/header'
   = render 'layouts/exhibit_btn'
   .content-wrapper
-    = render 'layouts/pankuzu'
+    %nav.white-bar
+      %ul.pan
+        %p
+          
+        
+        %p
+          - breadcrumb :logout
+          = breadcrumbs
+          
     %main.main-container
+      
       = render 'mypages/left'
       .main-container__right
         .logout_wrapper
           %form
             .single-content
-              %button.btn-red{type:"submit"} ログアウト       
+              %button.btn-red{type:"submit"} ログアウト 
+              
   = render 'layouts/footer'

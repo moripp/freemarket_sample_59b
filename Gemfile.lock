@@ -135,6 +135,8 @@ GEM
     formatador (0.2.5)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    gretel (3.0.9)
+      rails (>= 3.1.0)
     haml (5.1.2)
       temple (>= 0.8.0)
       tilt
@@ -331,6 +333,7 @@ DEPENDENCIES
   enum_help
   fog-aws
   font-awesome-rails
+  gretel
   haml-rails
   jbuilder (~> 2.5)
   jquery-rails

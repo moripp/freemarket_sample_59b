@@ -4,8 +4,28 @@
   -# ①ヘッダー
   = render 'layouts/header'
   = render 'layouts/exhibit_btn'
+  .content-wrapper
+    %nav.white-bar
+      %ul.pan
+        %p
+          -# = link_to("#",{class: "text"}) do
+          -#   %span メルカリ
+          -# %i.fa.fa-chevron-right
+
+        -# %p
+          -# = link_to("#",{class: "text"}) do
+          -#   %span マイページ
+          -# - breadcrumb :mypage
+          -# = breadcrumbs
+          -# %i.fa.fa-chevron-right
+        %p
+          -# = link_to("#",{class: "text"}) do
+          -#   %span ログアウト
+          - breadcrumb :credit_card
+          = breadcrumbs
   -# ②コンテンツ
   .credit_cards-wrapper__contents
+    
     -# ②-1左カラム（キッドさん作成中）
     = render 'mypages/left'
     -# ②-2右カラム

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  get 'pankuzu/index'
   devise_for :users
   root "home#index"
   resources :sitemap, only: [:index]
