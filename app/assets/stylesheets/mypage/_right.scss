@@ -100,19 +100,13 @@
             }
           }
         }
-
-          .tab-go-list{
-            background: $white;
-            padding:16px;
-            & a{
-              display: block;
-              height: 56px;
-              margin: 0 auto;
-              background: #eee;
-              color: #333;
-              line-height: 56px;
-              text-align: center;
-            }
+      }
+      .pagination{
+        height:81px;
+        text-align: center;
+        line-height: 81px;
+        & a{
+          text-decoration: none;
         }
       }
     }

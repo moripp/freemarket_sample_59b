@@ -38,8 +38,8 @@
                   %i.fa.fa-clock-o
                     = i.created_at.strftime("%-m月%-d日")
               %i.fa.fa-chevron-right
-        %li.tab-go-list
-          = link_to  "一覧を見る"
+          -# = link_to  "一覧を見る"
+      = paginate(@items)
   %section.main-container__right__under
     %h2.buy-item-head 購入した商品
     %ul.mypage-tabs
