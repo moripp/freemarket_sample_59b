@@ -1,0 +1,22 @@
+-# 商品情報編集ページ
+-# ①ヘッダー、②コンテンツ、③フッター、の大きく3要素でできている
+.exhibit-wrapper
+
+  -# ①ヘッダー
+  = render 'items/layouts/exhibit_header'
+
+  -# ②コンテンツ（formがメインになっている）
+  .exhibit-wrapper__contents
+    .exhibit-page-description
+      商品の情報を入力
+    = form_with(model: @item, url: myitem_path, local: true, id: "exhibit-form") do |f|
+      = render partial: 'sell/form', locals: { f: f }
+      -# form 変更ボタン
+      .exhibit-form
+        .exhibit-form__btn1
+          = f.submit "変更する", class: "exhibit-form-send-btn"
+        .exhibit-form__btn2
+          %a{href: "javascript:history.back()", class: "exhibit-return-btn"} キャンセル
+
+  -# ③フッター
+  = render 'items/layouts/exhibit_footer'

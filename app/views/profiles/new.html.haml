@@ -1,9 +1,10 @@
 -# 2-2.ユーザー本人確認ページ
 -# ①ヘッダー、②コンテンツ（②-1左カラム、②-2右カラム）、③フッターの大きく4要素でできている。
-.profile-wrapper
+.wrapper
   -# ①ヘッダー
   = render 'layouts/header'
   = render 'layouts/exhibit_btn'
+  .profile-wrapper
   -# ②コンテンツ
   .profile-wrapper__contents
     -# ②-1左カラム（キッドさん作成中）
@@ -16,13 +17,16 @@
           %p お客さまの本人情報をご登録ください。登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
         .profile__group
           %label お名前
-          %p 渡辺ひろこ
+          %p
+            = current_user.name_sei + current_user.name_mei
         .profile__group
           %label お名前カナ
-          %p ワタナベヒロコ
+          %p
+            = current_user.kana_sei+current_user.kana_mei
         .profile__group
           %label 生年月日
-          %p 2000/01/01 
+          %p 
+            = current_user.birth_date.strftime("%Y年%-m月%-d日")
         .profile__group
           %label 郵便番号
           %span.form-optional 任意 
@@ -46,6 +50,6 @@
           = f.text_field :address2_label, placeholder: "オロロロビル101", class: "textfield-default"
         .profile-form__btn
           = f.submit "登録する", class: "profile-form-send-btn"
+ = render 'layouts/footer'
 
--# ③フッター かぶさる問題があるので一旦コメントアウト
--# = render 'layouts/footer'
+

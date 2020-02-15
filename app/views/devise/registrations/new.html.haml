@@ -1,6 +1,8 @@
 .wrapper
   = render 'layouts/header'
   .content_wrapper
+    = link_to 'Facebookで登録', user_facebook_omniauth_authorize_path, method: :post
+    = link_to 'Googleで登録', user_google_oauth2_omniauth_authorize_path, method: :post
     %h2 Sign up
     = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
       = render "devise/shared/error_messages", resource: resource
@@ -52,17 +54,20 @@
         = f.label :email
         %br/
         = f.email_field :email, autofocus: true, autocomplete: "email"
-      .field
-        = f.label :password
-        - if @minimum_password_length
-          %em
-            (#{@minimum_password_length} characters minimum)
-        %br/
-        = f.password_field :password, autocomplete: "new-password"
-      .field
-        = f.label :password_confirmation
-        %br/
-        = f.password_field :password_confirmation, autocomplete: "new-password"
+      - if @sns_id.present? # SNS認証して新規登録する場合はパスワード入力欄を表示しない
+        = hidden_field_tag :sns_auth, true # パスワードの代わりに次の値を送るタグを生成 params[:sns_auth] true
+      - else
+        .field
+          = f.label :password
+          - if @minimum_password_length
+            %em
+              (#{@minimum_password_length} characters minimum)
+          %br/
+          = f.password_field :password, autocomplete: "new-password"
+        .field
+          = f.label :password_confirmation
+          %br/
+          = f.password_field :password_confirmation, autocomplete: "new-password"
       .actions
         = f.submit "Sign up"
     = render "devise/shared/links"
