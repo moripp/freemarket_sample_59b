@@ -12,20 +12,17 @@ class MyitemsController < ApplicationController
   end
 
   def update
-    # 2つの機能で構成
-    # ①必要なら保存済みの画像を削除（formから受け取るdelete_image_idsを使って削除）
-    # ②更新（追加画像があればcreateし、その他nameやpriceなど変更があればupdate）
-    delete_images = Image.where(id: item_images_delete_params, item_id: params[:id]) # 悪意のあるform情報から守る為、whereにitem_idの条件追加
-    if delete_images.destroy_all # ①画像削除
-      item = Item.find(params[:id])
-      if item.update(item_edit_params) # ②更新
-        redirect_to action: 'show' 
-      else
-        render :edit # 失敗したらeditへ
-      end
-    else
-      render :edit # 失敗したらeditへ
+    ActiveRecord::Base.transaction do # トランザクションを定義して下記①と②の工程をまとめる
+      # 2つの機能で構成
+      # ①必要なら保存済みの画像を削除（formから受け取るdelete_image_idsを使って削除）
+      # ②更新（追加画像があればcreateし、その他nameやpriceなど変更があればupdate）
+      delete_images = Image.where(id: item_images_delete_params, item_id: params[:id]) # 悪意のあるform情報から守る為、whereにitem_idの条件追加
+      delete_images.destroy_all # ①画像削除
+      @item.update!(item_edit_params) # ②更新
     end
+      redirect_to action: 'show' # 成功したらshowへ
+    rescue
+      redirect_to action: 'edit' # ①と②どちらか失敗したら変更を取り消してeditへ戻る
   end
 
   def destroy
