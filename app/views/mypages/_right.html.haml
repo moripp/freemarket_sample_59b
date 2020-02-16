@@ -17,12 +17,11 @@
           出品数
           %span.bold 0
 
-
   %section.main-container__right__notification-todo
     %ul.main-container__right__notification-todo__tab
       %li.active
         %h3
-          = link_to "#" do
+          = link_to  do
             お知らせ
             %span.mypage-nav-number.hidden-large
            
@@ -32,53 +31,20 @@
             やることリスト
     .tab-content
       %ul.ul-tab
-        %li
-          = link_to "#" do
-            %figure
-              = image_tag("#{asset_path('logo_red.png')}", size: "45x45", alt: "logo")
-            .mypage-item-body
-              .mypage-item-text おしらせ文
-              %time
-                %i.fa.fa-clock-o
-            %i.fa.fa-chevron-right
-        %li
-          = link_to "#" do
-            %figure
-              = image_tag("#{asset_path('logo_red.png')}", size: "45x45", alt: "logo")
-            .mypage-item-body
-              .mypage-item-text おしらせ文
-              %time
-                %i.fa.fa-clock-o
-            %i.fa.fa-chevron-right
-        %li
-          = link_to "#" do
-            %figure
-              = image_tag("#{asset_path('logo_red.png')}", size: "45x45", alt: "logo")
-            .mypage-item-body
-              .mypage-item-text おしらせ文
-              %time
-                %i.fa.fa-clock-o
-            %i.fa.fa-chevron-right
-        %li
-          = link_to "#" do
-            %figure
-              = image_tag("#{asset_path('logo_red.png')}", size: "45x45", alt: "logo")
-            .mypage-item-body
-              .mypage-item-text おしらせ文
-              %time
-                %i.fa.fa-clock-o
-            %i.fa.fa-chevron-right
-        %li
-          = link_to "#" do
-            %figure
-              = image_tag("#{asset_path('logo_red.png')}", size: "45x45", alt: "logo")
-            .mypage-item-body
-              .mypage-item-text おしらせ文
-              %time
-                %i.fa.fa-clock-o
-            %i.fa.fa-chevron-right
-        %li.tab-go-list
-          = link_to  "一覧を見る"
+        - @items.each do |i|
+          %li
+            = link_to item_path(i.id) do
+              %figure
+                = image_tag(i.images[0].image.url, size: "45x45", alt: i.name)
+              .mypage-item-body
+                .mypage-item-text
+                  = i.name+"を出品しました"
+                %time
+                  %i.fa.fa-clock-o
+                    = i.created_at.strftime("%-m月%-d日")
+              %i.fa.fa-chevron-right
+          -# = link_to  "一覧を見る"
+      = paginate(@items)
   %section.main-container__right__under
     %h2.buy-item-head 購入した商品
     %ul.mypage-tabs
