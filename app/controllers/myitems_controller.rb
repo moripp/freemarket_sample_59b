@@ -12,17 +12,21 @@ class MyitemsController < ApplicationController
   end
 
   def update
-    ActiveRecord::Base.transaction do # トランザクションを定義して下記①と②の工程をまとめる
-      # 2つの機能で構成
+    ActiveRecord::Base.transaction do # トランザクションを定義して下記①〜③の工程をまとめる
+      # 3つの機能で構成
       # ①必要なら保存済みの画像を削除（formから受け取るdelete_image_idsを使って削除）
       # ②更新（追加画像があればcreateし、その他nameやpriceなど変更があればupdate）
+      # ③画像が0枚になってないか確認
       delete_images = Image.where(id: item_images_delete_params, item_id: params[:id]) # 悪意のあるform情報から守る為、whereにitem_idの条件追加
       delete_images.destroy_all # ①画像削除
       @item.update!(item_edit_params) # ②更新
+      # ③画像が0枚になっていないか確認
+      item_images = Item.find(params[:id]).images.length # ①②を終えた後の画像の枚数取得（普通は1〜10になる）
+      item_images / item_images # 普通は1になるが、画像0枚の時だけ例外処理が発生し、トランザクションで弾かれる
     end
       redirect_to action: 'show' # 成功したらshowへ
     rescue
-      redirect_to action: 'edit' # ①と②どちらか失敗したら変更を取り消してeditへ戻る
+      redirect_to action: 'edit' # ①〜③どれか失敗したら変更を取り消してeditへ戻る
   end
 
   def destroy
