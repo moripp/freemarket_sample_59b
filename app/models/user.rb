@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_one :profile
   has_one :credit_card # ユーザーは1枚のカードのみ登録できる
   has_many :sns_credentials
+  has_one :address
 
   # validations
   validates :name_sei, presence: true
@@ -17,11 +18,6 @@ class User < ApplicationRecord
   validates :kana_sei, presence: true, format: { with: /\A[\p{katakana}\p{blank}ー－]+\z/} # カタカナのみ許容する
   validates :kana_mei, presence: true, format: { with: /\A[\p{katakana}\p{blank}ー－]+\z/} # カタカナのみ許容する
   validates :birth_date, presence: true
-  validates :postal_code, presence: true
-  validates :prefectures, presence: true
-  validates :city, presence: true
-  validates :address, presence: true
-  validates :tel, presence: true
 
   def self.from_omniauth(auth)
     # 次の2行で3パターンの動きをしている
