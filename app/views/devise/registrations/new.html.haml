@@ -7,6 +7,10 @@
     = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
       = render "devise/shared/error_messages", resource: resource
       .field
+        = f.label :nickname
+        %br/
+        = f.text_field :nickname, autofocus: true, autocomplete: "nickname"
+      .field
         = f.label :name_sei
         %br/
         = f.text_field :name_sei, autofocus: true, autocomplete: "name_sei"
@@ -27,30 +31,6 @@
         %br/
         = f.date_select :birth_date, use_month_numbers: true,start_year: 1930, end_year: (Time.now.year - 10), default: Date.new(1989, 1, 1)
       .field
-        = f.label :postal_code
-        %br/
-        = f.text_field :postal_code, autofocus: true, autocomplete: "postal_code"
-      .field
-        = f.label :prefectures
-        %br/
-        = f.text_field :prefectures, autofocus: true, autocomplete: "prefectures"
-      .field
-        = f.label :city
-        %br/
-        = f.text_field :city, autofocus: true, autocomplete: "city"
-      .field
-        = f.label :address
-        %br/
-        = f.text_field :address, autofocus: true, autocomplete: "address"
-      .field
-        = f.label :building
-        %br/
-        = f.text_field :building, autofocus: true, autocomplete: "building"
-      .field
-        = f.label :tel
-        %br/
-        = f.text_field :tel, autofocus: true, autocomplete: "tel"
-      .field
         = f.label :email
         %br/
         = f.email_field :email, autofocus: true, autocomplete: "email"
@@ -69,6 +49,6 @@
           %br/
           = f.password_field :password_confirmation, autocomplete: "new-password"
       .actions
-        = f.submit "Sign up"
+        = f.submit "Next"
     = render "devise/shared/links"
     = render 'layouts/footer'
