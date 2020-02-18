@@ -1,6 +1,10 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   before_action :configure_params_if_authentication_sns, only: [:create]
 
+  def new
+    @user = User.new
+  end
+  
   def create
   private
   def configure_params_if_authentication_sns
