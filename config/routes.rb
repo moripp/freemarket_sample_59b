@@ -4,7 +4,6 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
   root "home#index"
-  resources :user, only: [:index]
   resources :sitemap, only: [:index]
   resources :mypages, only: [:index]
   resources :myitems, only: [:show, :edit, :update, :destroy]
