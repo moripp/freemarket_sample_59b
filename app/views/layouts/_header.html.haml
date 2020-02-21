@@ -5,14 +5,19 @@
     .main_header__wrapper__menu
       =link_to sitemap_index_path do
         サイトマップ
+      = link_to new_user_registration_path do
+        新規会員登録
       .main_header__wrapper__menu__user
         -# ===ログイン後の表示===========
         - if user_signed_in?
           .main_header__wrapper__menu__user--mypage
             = link_to mypages_path do
               %i.fa.fa-user
-                %span 
-                  = "#{current_user.name_sei} #{current_user.name_mei}"
+                %span
+                  - if current_user.profile
+                    = current_user.profile.nickname
+                  - else
+                    = "#{current_user.name_sei}#{current_user.name_mei}"
           .main_header__wrapper__menu__user--logout
             = link_to destroy_user_session_path, method: :delete do
               %i.fa.fa-sign-out
@@ -20,7 +25,7 @@
         - else
           -# ===ログイン前の表示===========
           %span.main_header__wrapper__menu__user--signup
-            = link_to new_user_registration_path do
+            = link_to select_signup_index_path do
               新規会員登録
           %span.main_header__wrapper__menu__user--signin
             = link_to new_user_session_path do

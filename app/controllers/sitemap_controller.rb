@@ -1,5 +1,8 @@
 class SitemapController < ApplicationController
   def index
-    @item = Item.all
+    @items = Item.all
+    @users = User.all
+    @profiles = Profile.all
+    @images = Image.all
   end
 end

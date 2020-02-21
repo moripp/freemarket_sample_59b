@@ -10,6 +10,10 @@
     background-size:cover;
     text-align:center;
     background-color:#f1d0f6;
+      & .fa-edit.fa {
+          color:    $light-blue;
+          text-decoration: underline;
+        }
     & a{
       text-decoration: none;
       color: #333;
@@ -100,19 +104,13 @@
             }
           }
         }
-
-          .tab-go-list{
-            background: $white;
-            padding:16px;
-            & a{
-              display: block;
-              height: 56px;
-              margin: 0 auto;
-              background: #eee;
-              color: #333;
-              line-height: 56px;
-              text-align: center;
-            }
+      }
+      .pagination{
+        height:81px;
+        text-align: center;
+        line-height: 81px;
+        & a{
+          text-decoration: none;
         }
       }
     }

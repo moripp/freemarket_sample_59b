@@ -1,0 +1,35 @@
+.users-wrapper {
+  &__contents {
+    &__sign{
+      &__box{
+        &__cellphonenumber{
+          margin-bottom: 15px;
+          &__label{
+            padding-bottom: 10px;
+          }
+          &__confirm{
+            margin-bottom: 10px;
+            margin-top: 5px;
+            font-size: 100%;
+            font-weight: 100;
+          }
+          &__send{
+            margin-top: 40px;
+            & .submit{
+              width: 100%;
+              height: 50px;
+              background-color: $corporate-red;
+              color: $white;
+              font-size: 15px;
+              border-style: none;
+              cursor: pointer;
+            }
+            &__btn{
+              margin-bottom: 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -5,4 +5,4 @@
         .item-list__heading
           %h3 アイテム一覧
         %ul.item-list__box
-          = render 'layouts/item_list'
+          = render partial: 'layouts/item_list', collection: @items, as: 'item'

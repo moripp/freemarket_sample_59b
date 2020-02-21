@@ -1,0 +1,44 @@
+-# form 画像アップロード
+.exhibit-form
+  .exhibit-form__group
+    .exhibit-form__group__label
+      %label{ class: "exhibit-form-label" } 出品画像
+      %span{ class: "exhibit-form-require"} 必須
+    .exhibit-form__group__label-small
+      %label{ class: "exhibit-form-label-small" } 最大10枚までアップロードできます。
+    .exhibit-form__group__image#exhibit-form-image
+      .image-upload-box
+        = f.fields_for :images do |image|
+          = image.file_field :image, class: "image-upload-btn", accept: "image/*"
+        %pre.image-upload-label
+          ドラッグアンドドロップ
+          またはクリックしてファイルをアップロード
+-# form 商品名、商品説明
+.exhibit-form
+  .exhibit-form__group
+    .exhibit-form__group__label
+      %label{ class: "exhibit-form-label" } 商品名
+      %span{ class: "exhibit-form-require"} 必須
+    .exhibit-form__group__input
+      = f.text_field :name, placeholder: "商品名（必須 40文字まで）", class: "textfield-default"
+  .exhibit-form__group--2
+    .exhibit-form__group__label
+      %label{ class: "exhibit-form-label" } 商品の説明
+      %span{ class: "exhibit-form-require"} 必須
+    .exhibit-form__group__input
+      = f.text_area :description, placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", class: "textarea-default"
+-# form 販売価格
+.exhibit-form
+  .exhibit-form__group2
+    .exhibit-form__group2__left
+      %label{ class: "exhibit-form-label-gray" } 販売価格
+      %label{ class: "exhibit-form-label-gray-small" } (300~9,999,999)
+    .exhibit-form__group2__right
+      .exhibit-form__group2__right__box#exhibit-form-price
+        .exhibit-form__group2__right__box__left
+          .exhibit-form__group2__right__box__left__box
+            %label{ class: "exhibit-form-label" } 価格
+            %span{ class: "exhibit-form-require"} 必須
+        .exhibit-form__group2__right__box__right
+          %label{ class: "exhibit-form-label-small" } ¥
+          = f.text_field :price, placeholder: "例）300", class: "textfield-small"

@@ -1,0 +1,15 @@
+.exhibit-wrapper
+  -# ①ヘッダー
+  = render 'items/layouts/exhibit_header'
+  .details-wrapper
+    .details-wrapper__contents
+      .margin
+      -# ◆商品情報開始◆
+      .details-wrapper__contents__item-box
+        -# 商品名表示
+        %h1.item-name
+          購入が完了しました
+        .done-contents
+          = link_to root_path, class: "back-to-toppage" do
+            トップページへもどる
+  = render 'items/layouts/exhibit_footer'

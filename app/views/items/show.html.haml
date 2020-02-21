@@ -2,80 +2,18 @@
 .wrapper
   -# ヘッダー
   = render 'layouts/header'
+  -# コンテンツ
   .content_wrapper
     .details-wrapper
       .details-wrapper__contents
         .margin
-        -# ◆商品情報　開始◆
+        -# ◆商品情報開始◆
         .details-wrapper__contents__item-box
-          -# 商品名表示
-          %h1.item-name
-            = @item.name
-          -# 商品の詳細表示
-          .item-main-content
-            -# 画像表示
-            .item-photo
-              .item-photo__main
-                = image_tag(@item.images[0].image.url, size: "300x300", alt: @item.name)
-                -# 最終的にはmainにも全ての画像をhtmlに追加、JSで選択された画像だけ表示されるようにする
-                -# - @item.images.each do |file|
-                -#   = image_tag("#{file.image}", size: "300x0", alt: "gazo")
-              .item-photo__sub
-                - @item.images.each do |file|
-                  = image_tag(file.image.url, size: "60x60", alt: @item.name)
-            -# 詳細を表形式で表示
-            .item-detail-table
-              %table
-                %tr
-                  %th 出品者
-                  %td
-                    -# ******マイページの実装が終えたらパスを修正******
-                    = link_to root_path, class: "link-layout" do
-                      = @item.user.name_sei
-                %tr
-                  %th カテゴリー
-                  %td 
-                %tr
-                  %th ブランド
-                  %td 
-                %tr
-                  %th 商品の状態
-                  %td 新品、未使用
-                %tr
-                  %th 配送料の負担
-                  %td 送料込み(出品者負担)
-                %tr
-                  %th 配送の方法
-                  %td ラクラク便
-                %tr
-                  %th 配送元地域
-                  %td 東京都
-                %tr
-                  %th 配送日の目安
-                  %td 1~2日で配送
-          -# 商品の価格表示
-          .item-price
-            %span.item-price__money
-              ¥
-              = digit_separator(@item.price)
-            %span
-              （税込）
-            %span.item-price__delivery
-              送料込み
-          -# 商品の説明文表示
-          .item-description
-            = line_feed_display(@item.description)
-        -# ◆商品情報　終了◆
-
-        -# ボタン3つ
+          = render 'items/show'
+        -# ボタン
         .details-wrapper__contents__btn
-          = link_to root_path, class: "btn-red" do
-            商品の編集
-          .details-wrapper__contents__btn__or
-            or
-          = link_to root_path, class: "btn-gray" do
-            出品を一旦停止する
-          = link_to root_path, class: "btn-gray" do
-            この商品を削除する
+          = link_to purchase_item_path, class: "btn-red" do
+            購入画面に進む
+
   -# フッター
   = render 'layouts/footer'
