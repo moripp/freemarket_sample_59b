@@ -4,9 +4,25 @@
   -# ①ヘッダー
   = render 'layouts/header'
   = render 'layouts/exhibit_btn'
-  .profile-wrapper
+
+  .content-wrapper
+    %nav.white-bar
+      %ul.pan
+        %p
+          
+
+        %p
+          
+        %p
+          - breadcrumb :new_profile
+          = breadcrumbs
+          
+
+  -# .profile-wrapper
+
   -# ②コンテンツ
   .profile-wrapper__contents
+    
     -# ②-1左カラム（キッドさん作成中）
     = render 'mypages/left'
     -# ②-2右カラム
