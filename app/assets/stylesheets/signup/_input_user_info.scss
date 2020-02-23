@@ -12,6 +12,14 @@
     font-size: 13px;
     font-weight: 600;
   }
+  &-any{
+    background: $gray;
+    color: $white;
+    border-radius: 2px;
+    padding: 0.3em;
+    font-size: 13px;
+    font-weight: 600;
+  }
   &__contents {
     &__sign{  
       &__nextstage-send-btn{
@@ -46,7 +54,8 @@
             padding-bottom: 10px;
           }
           &__confirm{
-            margin-bottom: 30px;
+            margin-top: 10px;
+            margin-bottom: 15px;
           }
           &__view{
             margin-bottom: 30px;
@@ -63,7 +72,7 @@
         }
 
         &__name{
-          margin-bottom: 60px;
+          margin-bottom: 30px;
           &__heading{
             &__label{
               padding-bottom: 10px;
@@ -109,16 +118,19 @@
               position: absolute;
               top: 10px;
               left: 80px;
+              pointer-events: none;
             }
             & .birth_date_mm{
               position: absolute;
               top: 10px;
               left: 185px;
+              pointer-events: none;
             }
             & .birth_date_dd{
               position: absolute;
               top: 10px;
               left: 290px;
+              pointer-events: none;
             }
             & select {
               padding-left: 10px;
