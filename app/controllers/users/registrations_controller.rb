@@ -25,8 +25,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
       render :new_address and return
     end
     @user.build_address(@address.attributes)
-    @user.save # userとaddressを同時に保存
-    sign_in(:user, @user)
+    if @user.save # userとaddressを同時に保存
+      sign_in(:user, @user)
+    else
+      redirect_to new_user_registration_path
+    end
   end
 
   private
