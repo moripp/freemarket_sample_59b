@@ -2,12 +2,23 @@
   = render 'layouts/header'
   = render 'layouts/exhibit_btn'
   .content-wrapper
-    = render 'layouts/pankuzu'
+    %nav.white-bar
+      %ul.pan
+        %li
+          - breadcrumb :logout
+          = breadcrumbs
+          
     %main.main-container
+      
       = render 'mypages/left'
       .main-container__right
         .logout_wrapper
           = link_to destroy_user_session_path, method: :delete do
             .single-content
-              %button.btn-red ログアウト       
+
+              %button.btn-red{type:"submit"} ログアウト 
+              
+
+              -# %button.btn-red ログアウト       
+
   = render 'layouts/footer'
