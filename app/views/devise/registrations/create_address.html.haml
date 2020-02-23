@@ -1,1 +1,13 @@
-登録完了
+.users-wrapper
+  = render 'devise/registrations/header'
+  .users-wrapper__contents
+    %h2 会員登録完了
+    .users-wrapper__contents__sign
+      .users-wrapper__contents__sign__complete
+        ありがとうございます。
+        %br 会員登録が完了しました。
+      .users-wrapper__contents__sign__start
+        = link_to root_path do
+          .users-wrapper__contents__sign__start__btn
+            サイコロをはじめる
+  = render 'devise/registrations/footer'
