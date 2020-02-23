@@ -1,50 +1,66 @@
-.wrapper
-  = render 'layouts/header'
-  .content_wrapper
-    %h2 住所登録
-    = form_for @address do |f|
-      = render "devise/shared/error_messages", resource: @address
-      .field
-        = f.label :name_sei
-        %br/
-        = f.text_field :name_sei, autofocus: true, autocomplete: "name_sei"
-      .field
-        = f.label :name_mei
-        %br/
-        = f.text_field :name_mei, autofocus: true, autocomplete: "name_mei"
-      .field
-        = f.label :kana_sei
-        %br/
-        = f.text_field :kana_sei, autofocus: true, autocomplete: "kana_sei"
-      .field
-        = f.label :kana_mei
-        %br/
-        = f.text_field :kana_mei, autofocus: true, autocomplete: "kana_mei"
-      .field
-        = f.label :postal_code
-        %br/
-        = f.text_field :postal_code, autofocus: true, autocomplete: "postal_code"
-      .field
-        = f.label :prefectures
-        %br/
-        = f.text_field :prefectures, autofocus: true, autocomplete: "prefectures"
-      .field
-        = f.label :city
-        %br/
-        = f.text_field :city, autofocus: true, autocomplete: "city"
-      .field
-        = f.label :address
-        %br/
-        = f.text_field :address, autofocus: true, autocomplete: "address"
-      .field
-        = f.label :building
-        %br/
-        = f.text_field :building, autofocus: true, autocomplete: "building"
-      .field
-        = f.label :tel
-        %br/
-        = f.text_field :tel, autofocus: true, autocomplete: "tel"
-      .actions
-        = f.submit "Sign up"
-    = render "devise/shared/links"
-    = render 'layouts/footer'
+.users-wrapper
+  = render 'devise/registrations/header'
+
+  .users-wrapper__contents
+    %h2 住所入力
+    .users-wrapper__contents__sign
+      .users-wrapper__contents__sign__signup
+        = form_for @address do |f|
+          = render "devise/shared/error_messages", resource: @address
+          .users-wrapper__contents__sign__signup
+            .users-wrapper__contents__sign__signup__label
+              %label.users-wrapper-label お名前
+              %span.users-wrapper-require 必須
+            .users-wrapper__contents__sign__signup__input
+              = f.text_field :name_sei, placeholder: "例) 山田 ", class: "textfield-default"
+            .users-wrapper__contents__sign__signup__input
+              = f.text_field :name_mei, placeholder: "例) 太郎 ", class: "textfield-default"
+          .users-wrapper__contents__sign__signup
+            .users-wrapper__contents__sign__signup__label
+              %label.users-wrapper-label お名前カナ
+              %span.users-wrapper-require 必須
+            .users-wrapper__contents__sign__signup__input
+              = f.text_field :kana_sei, placeholder: "例) ヤマダ ", class: "textfield-default"
+            .users-wrapper__contents__sign__signup__input
+              = f.text_field :kana_mei, placeholder: "例) アヤ ", class: "textfield-default"
+          .users-wrapper__contents__sign__signup
+            .users-wrapper__contents__sign__signup__label
+              %label.users-wrapper-label 郵便番号
+              %span.users-wrapper-require 必須
+            .users-wrapper__contents__sign__signup__input
+              = f.text_field :postal_code, placeholder: "例) 123-4567", class: "textfield-default"
+          .users-wrapper__contents__sign__signup
+            .users-wrapper__contents__sign__signup__label
+              %label.users-wrapper-label 都道府県
+              %span.users-wrapper-require 必須
+            .users-wrapper__contents__sign__signup__input
+              = f.text_field :prefectures, placeholder: "例) 北海道", class: "textfield-default"
+          .users-wrapper__contents__sign__signup
+            .users-wrapper__contents__sign__signup__label
+              %label.users-wrapper-label 市区町村
+              %span.users-wrapper-require 必須
+            .users-wrapper__contents__sign__signup__input
+              = f.text_field :city, placeholder: "例) 横浜市緑区", class: "textfield-default"
+          .users-wrapper__contents__sign__signup
+            .users-wrapper__contents__sign__signup__label
+              %label.users-wrapper-label 番地
+              %span.users-wrapper-require 必須
+            .users-wrapper__contents__sign__signup__input
+              = f.text_field :address, placeholder: "例) 青山１−１−１", class: "textfield-default"
+          .users-wrapper__contents__sign__signup
+            .users-wrapper__contents__sign__signup__label
+              %label.users-wrapper-label 番地
+              %span.users-wrapper-any 任意
+            .users-wrapper__contents__sign__signup__input
+              = f.text_field :building, placeholder: "例) 柳ビル１０３", class: "textfield-default"
+          .users-wrapper__contents__sign__signup
+            .users-wrapper__contents__sign__signup__label
+              %label.users-wrapper-label 電話
+              %span.users-wrapper-any 任意
+            .users-wrapper__contents__sign__signup__input
+              = f.text_field :tel, placeholder: "例) 09058674356", class: "textfield-default"
+          .users-wrapper__contents__sign__signup
+            .users-wrapper__contents__sign__signup__btn
+              = f.submit "登録する", class: "users-wrapper__contents__sign__signup__next-send-btn"
+
+  = render 'devise/registrations/footer'
