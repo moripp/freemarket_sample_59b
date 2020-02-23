@@ -1,0 +1,50 @@
+.wrapper
+  = render 'layouts/header'
+  .content_wrapper
+    %h2 住所登録
+    = form_for @address do |f|
+      = render "devise/shared/error_messages", resource: @address
+      .field
+        = f.label :name_sei
+        %br/
+        = f.text_field :name_sei, autofocus: true, autocomplete: "name_sei"
+      .field
+        = f.label :name_mei
+        %br/
+        = f.text_field :name_mei, autofocus: true, autocomplete: "name_mei"
+      .field
+        = f.label :kana_sei
+        %br/
+        = f.text_field :kana_sei, autofocus: true, autocomplete: "kana_sei"
+      .field
+        = f.label :kana_mei
+        %br/
+        = f.text_field :kana_mei, autofocus: true, autocomplete: "kana_mei"
+      .field
+        = f.label :postal_code
+        %br/
+        = f.text_field :postal_code, autofocus: true, autocomplete: "postal_code"
+      .field
+        = f.label :prefectures
+        %br/
+        = f.text_field :prefectures, autofocus: true, autocomplete: "prefectures"
+      .field
+        = f.label :city
+        %br/
+        = f.text_field :city, autofocus: true, autocomplete: "city"
+      .field
+        = f.label :address
+        %br/
+        = f.text_field :address, autofocus: true, autocomplete: "address"
+      .field
+        = f.label :building
+        %br/
+        = f.text_field :building, autofocus: true, autocomplete: "building"
+      .field
+        = f.label :tel
+        %br/
+        = f.text_field :tel, autofocus: true, autocomplete: "tel"
+      .actions
+        = f.submit "Sign up"
+    = render "devise/shared/links"
+    = render 'layouts/footer'

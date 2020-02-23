@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
 
   # deviseデフォルトで許可しているkey以外を許容するための記載
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name_sei,:name_mei,:kana_sei,:kana_mei,:birth_date,:postal_code,:prefectures,:city,:address,:building,:tel])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name_sei, :name_mei, :kana_sei, :kana_mei, :birth_date, :nickname])
   end
 
   # サインインしてない時はログイン画面へ遷移させる
