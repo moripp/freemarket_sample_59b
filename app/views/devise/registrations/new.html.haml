@@ -1,54 +1,89 @@
-.wrapper
-  = render 'layouts/header'
-  .content_wrapper
-    = link_to 'Facebookで登録', user_facebook_omniauth_authorize_path, method: :post
-    = link_to 'Googleで登録', user_google_oauth2_omniauth_authorize_path, method: :post
-    %h2 Sign up
-    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-      = render "devise/shared/error_messages", resource: resource
-      .field
-        = f.label :nickname
-        %br/
-        = f.text_field :nickname, autofocus: true, autocomplete: "nickname"
-      .field
-        = f.label :name_sei
-        %br/
-        = f.text_field :name_sei, autofocus: true, autocomplete: "name_sei"
-      .field
-        = f.label :name_mei
-        %br/
-        = f.text_field :name_mei, autofocus: true, autocomplete: "name_mei"
-      .field
-        = f.label :kana_sei
-        %br/
-        = f.text_field :kana_sei, autofocus: true, autocomplete: "kana_sei"
-      .field
-        = f.label :kana_mei
-        %br/
-        = f.text_field :kana_mei, autofocus: true, autocomplete: "kana_mei"
-      .field
-        = f.label :birth_date
-        %br/
-        = f.date_select :birth_date, use_month_numbers: true,start_year: 1930, end_year: (Time.now.year - 10), default: Date.new(1989, 1, 1)
-      .field
-        = f.label :email
-        %br/
-        = f.email_field :email, autofocus: true, autocomplete: "email"
-      - if @sns_id.present? # SNS認証して新規登録する場合はパスワード入力欄を表示しない
-        = hidden_field_tag :sns_auth, true # パスワードの代わりに次の値を送るタグを生成 params[:sns_auth] true
-      - else
-        .field
-          = f.label :password
-          - if @minimum_password_length
-            %em
-              (#{@minimum_password_length} characters minimum)
-          %br/
-          = f.password_field :password, autocomplete: "new-password"
-        .field
-          = f.label :password_confirmation
-          %br/
-          = f.password_field :password_confirmation, autocomplete: "new-password"
-      .actions
-        = f.submit "Next"
-    = render "devise/shared/links"
-    = render 'layouts/footer'
+.users-wrapper
+  = render 'devise/registrations/header'
+
+  .users-wrapper__contents
+    %h2 会員情報入力
+    .users-wrapper__contents__sign
+      .users-wrapper__contents__sign__signup
+        = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+          = render "devise/shared/error_messages", resource: resource
+          .users-wrapper__contents__sign__signup__nickname
+            .users-wrapper__contents__sign__signup__nickname__label
+              %label.users-wrapper-label ニックネーム
+              %span.users-wrapper-require 必須
+            .users-wrapper__contents__sign__signup__nickname__input
+              = f.text_field :nickname, placeholder: "例（メルカリ太郎）", class: "textfield-default"
+          .users-wrapper__contents__sign__signup__mail
+            .users-wrapper__contents__sign__signup__mail__label
+              %label.users-wrapper-label メールアドレス
+              %span.users-wrapper-require 必須
+            .users-wrapper__contents__sign__signup__mail__input
+              = f.text_field :email, placeholder: "PC,携帯どちらでも可", class: "textfield-default"
+
+          - if @sns_id.present? # SNS認証して新規登録する場合はパスワード入力欄を表示しない
+            = hidden_field_tag :sns_auth, true # パスワードの代わりに次の値を送るタグを生成 params[:sns_auth] true
+          - else
+            .users-wrapper__contents__sign__signup__password
+              .users-wrapper__contents__sign__signup__password__label
+                %label.users-wrapper-label パスワード
+                %span.users-wrapper-require 必須
+              .users-wrapper__contents__sign__signup__password__input
+                = f.password_field :password, placeholder: "７文字以上の半角英数字", class: "textfield-default"
+            .users-wrapper__contents__sign__signup__password__confirm ※ 英字と数字の両方を含めて設定してください
+            .users-wrapper__contents__sign__signup__password__view
+              =check_box_tag :password_check
+              =label_tag :check1, "パスワードを表示する"
+
+          .users-wrapper__contents__sign__signup__nameconfirm
+            .users-wrapper__contents__sign__signup__nameconfirm__label
+              %label.users-wrapper-label 本人確認
+            .users-wrapper__contents__sign__signup__nameconfirm__text
+              安心・安全にご利用いただくために、お客さまの本人
+              情報の登録にご協力ください。他のお客さまに公開されることはありません。
+          .users-wrapper__contents__sign__signup__name
+            .users-wrapper__contents__sign__signup__name__heading
+              .users-wrapper__contents__sign__signup__name__heading__label
+                %label.users-wrapper-label お名前（全角）
+                %span.users-wrapper-require 必須
+            .users-wrapper__contents__sign__signup__name__textfield
+              .users-wrapper__contents__sign__signup__name__textfield__left
+              .users-wrapper__contents__sign__signup__name__textfield__left__input
+                = f.text_field :name_sei, placeholder: "例 山田", class: "textfield-default"
+              .users-wrapper__contents__sign__signup__name__textfield__right  
+              .users-wrapper__contents__sign__signup__name__textfield__right__input
+                = f.text_field :name_mei, placeholder: "例 花子", class: "textfield-default"
+          .users-wrapper__contents__sign__signup__nameconfirm
+            .users-wrapper__contents__sign__signup__nameconfirm__heading
+              .users-wrapper__contents__sign__signup__nameconfirm__heading__label
+                %label.users-wrapper-label お名前カナ（全角）
+                %span.users-wrapper-require 必須
+            .users-wrapper__contents__sign__signup__nameconfirm__textfield
+              .users-wrapper__contents__sign__signup__nameconfirm__textfield__left
+              .users-wrapper__contents__sign__signup__nameconfirm__textfield__left__input
+                = f.text_field :kana_sei, placeholder: "例 ヤマダ", class: "textfield-default"
+              .users-wrapper__contents__sign__signup__nameconfirm__textfield__right
+              .users-wrapper__contents__sign__signup__nameconfirm__textfield__right__input
+                = f.text_field :kana_mei, placeholder: "例 アヤ", class: "textfield-default"
+          .users-wrapper__contents__sign__signup__born
+            .users-wrapper__contents__sign__signup__born__heading
+              .users-wrapper__contents__sign__signup__born__heading__label
+                %label.users-wrapper-label 生年月日
+                %span.users-wrapper-require 必須
+            .users-wrapper__contents__sign__signup__born__textfield
+              .users-wrapper__contents__sign__signup__born__textfield__input
+                = f.date_select :birth_date, use_month_numbers: true, start_year: 1900, end_year: (Time.now.year), default: Date.new(Time.now.year, 1, 1)
+                .birth_date_yyyy
+                  = fa_icon("chevron-down")
+                .birth_date_mm
+                  = fa_icon("chevron-down") 
+                .birth_date_dd
+                  = fa_icon("chevron-down") 
+          .users-wrapper__contents__sign__signup__certificate
+            ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+          .users-wrapper__contents__sign__signup__userpolicy
+            「次へ進む」のボタンを押すことにより、利用規約に同意したものとみなします
+          .users-wrapper__contents__sign__nextstage
+            .users-wrapper__contents__sign__nextstage__btn
+              = f.submit "次へ進む", class: "users-wrapper__contents__sign__nextstage-send-btn"
+
+  = render 'devise/registrations/footer'
