@@ -3,7 +3,7 @@ class HomeController < ApplicationController
 
   def index
    
-    @items =Item.where(user_id: current_user.id).includes(:images).order(id: "DESC").page(params[:page]).per(5)
+    @items =Item.includes(:images).order(id: "DESC").page(params[:page]).per(20)
   
   end
 end
