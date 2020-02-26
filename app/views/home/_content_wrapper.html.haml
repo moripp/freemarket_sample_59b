@@ -6,3 +6,4 @@
           %h3 アイテム一覧
         %ul.item-list__box
           = render partial: 'layouts/item_list', collection: @items, as: 'item'
+        = paginate(@items)
