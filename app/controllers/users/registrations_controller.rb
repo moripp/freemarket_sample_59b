@@ -24,9 +24,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
       flash.now[:alert] = @address.errors.full_messages
       render :new_address and return
     end
-    @user.build_address(@address.attributes)
-    if @user.save # userとaddressを同時に保存
-      sign_in(:user, @user)
+
+    session["devise.regist_data"][:address] = @address.attributes # address情報をセッションに格納
+    render :new_credit_card
+  end
     else
       redirect_to new_user_registration_path
     end
