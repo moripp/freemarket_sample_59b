@@ -13,10 +13,12 @@ class User < ApplicationRecord
   has_one :address
 
   # validations
+  validates :nickname, presence: true
+  validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{7,}+\z/i} # 次の3条件全て満たす場合許可する  7文字以上、半角英数字のみで入力、英字と数字を1文字以上含む
   validates :name_sei, presence: true
   validates :name_mei, presence: true
-  validates :kana_sei, presence: true, format: { with: /\A[\p{katakana}\p{blank}ー－]+\z/} # カタカナのみ許容する
-  validates :kana_mei, presence: true, format: { with: /\A[\p{katakana}\p{blank}ー－]+\z/} # カタカナのみ許容する
+  validates :kana_sei, presence: true, format: { with: /[\p{katakana}ー－&&[^ -~｡-ﾟ]]+/ } # 全角カタカナのみ許容する
+  validates :kana_mei, presence: true, format: { with: /[\p{katakana}ー－&&[^ -~｡-ﾟ]]+/ } # 全角カタカナのみ許容する
   validates :birth_date, presence: true
 
   def self.from_omniauth(auth)
