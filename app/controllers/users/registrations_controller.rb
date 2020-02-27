@@ -35,8 +35,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @address = session["devise.regist_data"]["address"] # address情報取り出し
     @user.build_address(@address) # addressのインスタンス作成
 
+    # ここからcredit_card登録作業（credit_cardコントローラーの内容をほぼコピー）
+    Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_ACCESS_KEY)
+    if params['payjp-token'].blank?
+      render :new_credit_card
     else
-      redirect_to new_user_registration_path
+      customer = Payjp::Customer.create(card: payjp_token_params[params['payjp-token']])
+      @user.build_credit_card(customer_id: customer.id, card_id: customer.cards.data[0].id)      
     end
   end
 
@@ -55,5 +60,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
           .permit(:name_sei, :name_mei, :kana_sei, :kana_mei,
                   :postal_code, :prefectures, :city, :address, :building,
                   :tel)
+  end
+
+  def payjp_token_params
+    params.require(:"payjp-token")
   end
 end
