@@ -17,6 +17,12 @@
             %span.users-wrapper-require 必須
           .users-wrapper__contents__sign__signup__deadline__input
             .payment_card_expire
+              = select_tag 'card[month]', options_for_select(["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]) 
+              .payment_card_expire__mm-icon
+                = fa_icon("chevron-down") 
+              .payment_card_expire__mm 月
+            .payment_card_expire
+              = select_tag 'card[year]', options_for_select([Time.current.year, Time.current.next_year.year, Time.current.since(2.years).year, Time.current.since(3.years).year, Time.current.since(4.years).year]) 
               .payment_card_expire__yy-icon
                 = fa_icon("chevron-down") 
               .payment_card_expire__yy 年
