@@ -28,6 +28,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
     session["devise.regist_data"][:address] = @address.attributes # address情報をセッションに格納
     render :new_credit_card
   end
+
+  def create_credit_card
     else
       redirect_to new_user_registration_path
     end
