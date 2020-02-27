@@ -1,7 +1,8 @@
 class ItemsController < ApplicationController
   before_action :move_to_Log_in, except:[:show]
   before_action :set_item, only:[:purchase,:pay,:show]
-  before_action :check_not_myitem
+  before_action :check_not_myitem, only:[:purchase,:pay,:show]
+  before_action :check_for_sale, only:[:purchase,:pay]
 
   def index
   end
@@ -34,6 +35,7 @@ class ItemsController < ApplicationController
       customer: credit_card.customer_id,
       currency: 'jpy'
     )
+    @item.sold_out!
     redirect_to done_items_path
   end
 
@@ -50,10 +52,12 @@ class ItemsController < ApplicationController
   end
 
   def check_not_myitem # itemの出品者とログインユーザーが異なるか確認
-    @item = Item.find(params[:id])
     if @item.user_id == current_user.id
       redirect_to myitem_path
     end
   end
 
+  def check_for_sale 
+    redirect_to root_path and return unless @item.for_sale?
+  end
 end
