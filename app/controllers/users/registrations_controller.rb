@@ -42,6 +42,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
     else
       customer = Payjp::Customer.create(card: payjp_token_params[params['payjp-token']])
       @user.build_credit_card(customer_id: customer.id, card_id: customer.cards.data[0].id)      
+      if @user.save # userに関する全ての情報を一括で保存
+        sign_in(:user, @user) # ログインした状態で登録完了画面へ
+      else
+        session["devise.regist_data"].clear # セッション削除
+        redirect_to new_user_registration_path # 万が一登録に失敗した時は最初からやり直し
+      end
     end
   end
 
