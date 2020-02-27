@@ -1,0 +1,33 @@
+.users-wrapper
+  = render 'devise/registrations/header'
+  .users-wrapper__contents
+    %h2 支払い方法
+    .users-wrapper__contents__sign
+      .users-wrapper__contents__sign__signup
+      = form_with(url: credit_card_path, local: true, id: 'charge-form') do |f|
+        .users-wrapper__contents__sign__signup
+          .users-wrapper__contents__sign__signup__label
+            %label.users-wrapper-label カード番号
+            %span.users-wrapper-require 必須
+          .users-wrapper__contents__sign__signup__payment__input
+            = f.number_field :number, placeholder: "半角数字のみ", class: "textfield-default", id: "card-number"
+        .users-wrapper__contents__sign__signup__deadline
+          .users-wrapper__contents__sign__signup__label
+            %label.users-wrapper-label 有効期限
+            %span.users-wrapper-require 必須
+          .users-wrapper__contents__sign__signup__deadline__input
+            .payment_card_expire
+              .payment_card_expire__yy-icon
+                = fa_icon("chevron-down") 
+              .payment_card_expire__yy 年
+        .users-wrapper__contents__sign__signup__securitycode
+          .users-wrapper__contents__sign__signup__label
+            %label.users-wrapper-label セキュリティコード
+            %span.users-wrapper-require 必須
+          .users-wrapper__contents__sign__signup__securitycode__input
+            = f.number_field :securitycode, placeholder: "カード背面4桁もしくは3桁の番号", class: "textfield-default", id: "card-cvc"
+        .users-wrapper__contents__sign__signup__next
+          .users-wrapper__contents__sign__signup__next__btn
+            = f.submit "登録する", class: "users-wrapper__contents__sign__signup__next-send-btn"
+  = render 'devise/registrations/footer'
+
