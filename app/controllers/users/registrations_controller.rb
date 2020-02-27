@@ -30,6 +30,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def create_credit_card
+    # まずはuserとaddressのインスタンス準備
+    @user = User.new(session["devise.regist_data"]["user"]) # userのインスタンス作成
+    @address = session["devise.regist_data"]["address"] # address情報取り出し
+    @user.build_address(@address) # addressのインスタンス作成
+
     else
       redirect_to new_user_registration_path
     end
