@@ -12,8 +12,12 @@
           = render 'items/show'
         -# ボタン
         .details-wrapper__contents__btn
-          = link_to purchase_item_path, class: "btn-red" do
-            購入画面に進む
+          - if @item.for_sale?
+            = link_to purchase_item_path, class: "btn-red" do
+              購入画面に進む
+          - else
+            = link_to purchase_item_path, class: "btn-red" do
+              売り切れだからTOPページに戻る
 
   -# フッター
   = render 'layouts/footer'
