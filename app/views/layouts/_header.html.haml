@@ -3,10 +3,6 @@
     .main_header__wrapper__logo
       =link_to image_tag("#{asset_path('saicoro_logo_red.svg')}", size: "136x36", alt: "saicoro"), root_path
     .main_header__wrapper__menu
-      =link_to sitemap_index_path do
-        サイトマップ
-      = link_to new_user_registration_path do
-        新規会員登録
       .main_header__wrapper__menu__user
         -# ===ログイン後の表示===========
         - if user_signed_in?

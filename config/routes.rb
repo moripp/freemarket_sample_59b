@@ -14,7 +14,6 @@ devise_for :users, controllers: { # カスタマイズしたdeviseのcontroller�
   end
   
   root "home#index"
-  resources :sitemap, only: [:index]
   resources :mypages, only: [:index]
   resources :myitems, only: [:show, :edit, :update, :destroy]
   resources :sell, only: [:new, :create]
