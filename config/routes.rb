@@ -8,6 +8,8 @@ devise_for :users, controllers: { # カスタマイズしたdeviseのcontroller�
   devise_scope :user do
     get 'addresses', to: 'users/registrations#new_address'
     post 'addresses', to: 'users/registrations#create_address'
+    get 'credit_card', to: 'users/registrations#new_credit_card'
+    post 'credit_card', to: 'users/registrations#create_credit_card'
   end
   
   root "home#index"
