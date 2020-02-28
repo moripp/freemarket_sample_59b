@@ -37,6 +37,6 @@
             = f.submit "登録する", class: "users-wrapper__contents__sign__signup__next-send-btn"
   = render 'devise/registrations/footer'
 
-%script{:src => "https://js.pay.jp/", :type => "text/javascript"}
+%script{src: "https://js.pay.jp/", type: "text/javascript"}
 :javascript
   Payjp.setPublicKey('pk_test_1609ecc73a34d376c061c53d');
