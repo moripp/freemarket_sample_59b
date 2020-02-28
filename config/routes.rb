@@ -6,6 +6,7 @@ devise_for :users, controllers: { # カスタマイズしたdeviseのcontroller�
   }
 
   devise_scope :user do
+    get 'select', to: 'users/registrations#index'
     get 'addresses', to: 'users/registrations#new_address'
     post 'addresses', to: 'users/registrations#create_address'
     get 'credit_card', to: 'users/registrations#new_credit_card'
