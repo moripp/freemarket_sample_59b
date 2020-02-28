@@ -1,5 +1,5 @@
 .users-wrapper
-  = render 'signup/header'
+  = render 'devise/registrations/header'
   .users-wrapper__signup_contents
     .users-wrapper__signup_contents__account
       %p アカウントをお持ちでない方はこちら
@@ -20,4 +20,4 @@
         = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", class: "textfield-default email"
         = f.password_field :password, autocomplete: "current-password", placeholder: "パスワード", class: "textfield-default password"
         = f.submit "ログイン", class: "users-wrapper__contents__signin__login__btn"
-  = render 'signup/footer'
+  = render 'devise/registrations/footer'
