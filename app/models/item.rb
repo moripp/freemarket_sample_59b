@@ -3,7 +3,7 @@ class Item < ApplicationRecord
   has_many :images , dependent: :destroy
   accepts_nested_attributes_for :images # 商品の情報と一緒に画像も保存されるようにする
 
-  enum status: {for_sale: 0, not_sale: 1}
+  enum status: {for_sale: 0, not_sale: 1, sold_out: 2}
 
   validates :images, associated: true, length: { maximum: 10 }
   validates :name, presence: true, length: { maximum: 40 }
