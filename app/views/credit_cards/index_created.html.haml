@@ -1,32 +1,33 @@
 -# 2-4.クレジットカード情報表示ページ
 -# ①ヘッダー、②コンテンツ（②-1左カラム、②-2右カラム）、③フッターの大きく4要素でできている。
-.credit_cards-wrapper
+.wrapper
   -# ①ヘッダー
   = render 'layouts/header'
-  -# ②コンテンツ
-  .credit_cards-wrapper__contents
-    -# ②-1左カラム（キッドさん作成中）
-    = render 'mypages/left'
-    -# ②-2右カラム
-    .credit_cards-wrapper__contents__right
-      -# 見出し
-      %h2.title 支払い方法
-      .credit_cards-box
-        %section
-          .credit_cards-box__title 
-            %h3.heading クレジットカード一覧
-          %ul.credit_cards-box__list
-            %li
-              = form_with(local: true) do |f|
-                .credit_cards-box__list__imformation
-                  %figure.credit_cards-box__list__imformation__figure
-                    = image_tag("#{asset_path('visa.svg')}", size: "49x15", alt: "VISA")
-                  .credit_cards-box__list__imformation__number 
-                    = @customer_card.last4 
-                  .credit_cards-box__list__imformation__number 
-                    = "#{@customer_card.exp_month} / #{@customer_card.exp_year} "
-                  .credit_cards-box__list__imformation__remove 
-                    = f.submit "削除する", class: "credit_cards-remove-btn"
+  .credit_cards-wrapper
+    -# ②コンテンツ
+    .credit_cards-wrapper__contents
+      -# ②-1左カラム（キッドさん作成中）
+      = render 'mypages/left'
+      -# ②-2右カラム
+      .credit_cards-wrapper__contents__right
+        -# 見出し
+        %h2.title 支払い方法
+        .credit_cards-box
+          %section
+            .credit_cards-box__title 
+              %h3.heading クレジットカード一覧
+            %ul.credit_cards-box__list
+              %li
+                = form_with(local: true) do |f|
+                  .credit_cards-box__list__imformation
+                    %figure.credit_cards-box__list__imformation__figure
+                      = image_tag("#{asset_path('visa.svg')}", size: "49x15", alt: "VISA")
+                    .credit_cards-box__list__imformation__number 
+                      = @customer_card.last4 
+                    .credit_cards-box__list__imformation__number 
+                      = "#{@customer_card.exp_month} / #{@customer_card.exp_year} "
+                    .credit_cards-box__list__imformation__remove 
+                      = f.submit "削除する", class: "credit_cards-remove-btn"
 
   -# ③フッター
   = render 'layouts/footer'

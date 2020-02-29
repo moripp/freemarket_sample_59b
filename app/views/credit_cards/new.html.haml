@@ -1,52 +1,53 @@
 -# 2-4.ユーザークレジットカード情報入力ページ
 -# ①ヘッダー、②コンテンツ（②-1左カラム、②-2右カラム）、③フッターの大きく4要素でできている。
-.credit_cards-input-wrapper
+.wrapper
   -# ①ヘッダー
   = render 'layouts/header'
   = render 'layouts/exhibit_btn'
-  -# ②コンテンツ
-  .credit_cards-input-wrapper__contents
-    -# ②-1左カラム（キッドさん作成中）
-    = render 'mypages/left'
-    -# ②-2右カラム
-    .credit_cards-input-wrapper__contents__right
-      -# 見出し
-      %h2.credit_cards-input-wrapper__contents__right__title クレジットカード情報入力
-      -# ここからform
-      = form_with(url: credit_cards_path , local: true, id: 'charge-form') do |f|
-        -# form カード番号
-        .credit_cards-form
-          .credit_cards-form__content
-            .credit_cards-form__content__group
-              .credit_cards-form__content__group__label
-                %label.credit_cards-form-label カード番号
-                %span.credit_cards-form-require 必須
-              .credit_cards-form__content__group__input
-                = f.number_field :number, placeholder: "半角数字のみ", class: "input-default", id: "card-number"
-            .credit_cards-form__content__group--2
-              .credit_cards-form__content__group--2__label
-                %label.credit_cards-form-label 有効期限
-                %span.credit_cards-form-require 必須
-              .credit_cards-form__content__group--2__input--half
-                .payment_card_expire
-                  = select_tag 'card[month]', options_for_select(["1", "2", "3", "4", "5"]) 
-                  .payment_card_expire__mm-icon
-                    = fa_icon("chevron-down") 
-                  .payment_card_expire__mm 月
-                .payment_card_expire
-                  = select_tag 'card[year]', options_for_select(["2020", "2021", "2022", "2023", "2024"]) 
-                  .payment_card_expire__yy-icon
-                    = fa_icon("chevron-down") 
-                  .payment_card_expire__yy 年
-            -# form セキュリティコード
-            .credit_cards-form__content__group--3
-              .credit_cards-form__content__group__label
-                %label.credit_cards-form-label セキュリティーコード
-                %span.credit_cards-form-require 必須
-              .credit_cards-form__content__group__input
-                = f.number_field :securitycode, placeholder: "カード背面4桁もしくは3桁の番号", class: "input-default", id: "card-cvc"
-          .credit_cards-input-wrapper__contents__right__btn
-            = f.submit "追加する", class: "credit_cards-input-btn"
+  .credit_cards-input-wrapper
+    -# ②コンテンツ
+    .credit_cards-input-wrapper__contents
+      -# ②-1左カラム（キッドさん作成中）
+      = render 'mypages/left'
+      -# ②-2右カラム
+      .credit_cards-input-wrapper__contents__right
+        -# 見出し
+        %h2.credit_cards-input-wrapper__contents__right__title クレジットカード情報入力
+        -# ここからform
+        = form_with(url: credit_cards_path , local: true, id: 'charge-form') do |f|
+          -# form カード番号
+          .credit_cards-form
+            .credit_cards-form__content
+              .credit_cards-form__content__group
+                .credit_cards-form__content__group__label
+                  %label.credit_cards-form-label カード番号
+                  %span.credit_cards-form-require 必須
+                .credit_cards-form__content__group__input
+                  = f.number_field :number, placeholder: "半角数字のみ", class: "input-default", id: "card-number"
+              .credit_cards-form__content__group--2
+                .credit_cards-form__content__group--2__label
+                  %label.credit_cards-form-label 有効期限
+                  %span.credit_cards-form-require 必須
+                .credit_cards-form__content__group--2__input--half
+                  .payment_card_expire
+                    = select_tag 'card[month]', options_for_select(["1", "2", "3", "4", "5"]) 
+                    .payment_card_expire__mm-icon
+                      = fa_icon("chevron-down") 
+                    .payment_card_expire__mm 月
+                  .payment_card_expire
+                    = select_tag 'card[year]', options_for_select(["2020", "2021", "2022", "2023", "2024"]) 
+                    .payment_card_expire__yy-icon
+                      = fa_icon("chevron-down") 
+                    .payment_card_expire__yy 年
+              -# form セキュリティコード
+              .credit_cards-form__content__group--3
+                .credit_cards-form__content__group__label
+                  %label.credit_cards-form-label セキュリティーコード
+                  %span.credit_cards-form-require 必須
+                .credit_cards-form__content__group__input
+                  = f.number_field :securitycode, placeholder: "カード背面4桁もしくは3桁の番号", class: "input-default", id: "card-cvc"
+            .credit_cards-input-wrapper__contents__right__btn
+              = f.submit "追加する", class: "credit_cards-input-btn"
   -# ③フッター
   = render 'layouts/footer'
 
