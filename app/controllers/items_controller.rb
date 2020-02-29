@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   before_action :move_to_Log_in, except:[:show]
   before_action :set_item, only:[:purchase,:pay,:show]
-  before_action :check_not_myitem, only:[:purchase,:pay,:show]
+  before_action :check_not_myitem, only:[:purchase,:pay]
   before_action :check_for_sale, only:[:purchase,:pay]
 
   def index
