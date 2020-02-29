@@ -1,18 +1,18 @@
 .users-wrapper
-  = render 'header'
+  = render 'devise/registrations/header'
   .users-wrapper__contents
     %h2 新規会員登録
     .users-wrapper__contents__sign
-      = link_to input_user_info_signup_index_path do
+      = link_to new_user_registration_path do
         .users-wrapper__contents__sign__btn.email
           %i.fa.fa-envelope
           %span メールアドレスで登録する
-      = link_to "#" do
+      = link_to user_facebook_omniauth_authorize_path, method: :post do
         .users-wrapper__contents__sign__btn.facebook
           %i.fa.fa-facebook-square
           %span Facebookで登録する
-      = link_to "#" do
+      = link_to user_google_oauth2_omniauth_authorize_path, method: :post do
         .users-wrapper__contents__sign__btn.google
           %i.fa.fa-google
           %span Googleで登録する
-  = render 'footer'
+  = render 'devise/registrations/footer'

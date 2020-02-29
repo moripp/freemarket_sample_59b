@@ -6,6 +6,7 @@ devise_for :users, controllers: { # カスタマイズしたdeviseのcontroller�
   }
 
   devise_scope :user do
+    get 'select', to: 'users/registrations#index'
     get 'addresses', to: 'users/registrations#new_address'
     post 'addresses', to: 'users/registrations#create_address'
     get 'credit_card', to: 'users/registrations#new_credit_card'
@@ -13,7 +14,6 @@ devise_for :users, controllers: { # カスタマイズしたdeviseのcontroller�
   end
   
   root "home#index"
-  resources :sitemap, only: [:index]
   resources :mypages, only: [:index]
   resources :myitems, only: [:show, :edit, :update, :destroy]
   resources :sell, only: [:new, :create]
@@ -29,16 +29,4 @@ devise_for :users, controllers: { # カスタマイズしたdeviseのcontroller�
   resources :profiles,only: [:new,:edit,:index]
   resources :credit_cards,only: [:index,:new,:create]
   resources :logout,only: [:index]
-  # ウィザード形式の記述
-  resources :signup, only: [:new] do
-    collection do
-      get 'select'
-      get 'input_user_info'
-      get 'input_phone_number'
-      get 'input_address'
-      get 'input_payment' # 入力最終ステップ
-      get 'completion_registration' # 登録完了後のページ
-
-    end
-  end
 end
