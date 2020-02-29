@@ -10,8 +10,8 @@
             = link_to mypages_path do
               %i.fa.fa-user
                 %span
-                  - if current_user.profile
-                    = current_user.profile.nickname
+                  - if current_user.nickname
+                    = current_user.nickname
                   - else
                     = "#{current_user.name_sei}#{current_user.name_mei}"
           .main_header__wrapper__menu__user--logout
