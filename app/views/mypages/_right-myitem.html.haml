@@ -1,0 +1,41 @@
+.main-container__right
+  %section.main-container__right__user-icon 
+    = link_to "#" do
+      %figure
+        = image_tag "#{asset_path('no_image.png')}",size:"60×60",alt:"トップ画"
+      %h2.bold
+        - if current_user.profile
+          = current_user.profile.nickname
+        - else
+          = link_to profiles_path do
+            .fa-edit.fa プロフィールを登録する  
+      .number
+        %div
+          評価
+          %span.bold 0
+        %div
+          出品数
+          %span.bold 0
+
+  %section.main-container__right__notification-todo
+    %ul.main-container__right__notification-todo__tab
+      %li.active
+        %h3
+          = link_to  do
+            出品中
+            %span.mypage-nav-number.hidden-large
+    .tab-content
+      %ul.ul-tab
+        - @items.each do |i|
+          %li
+            = link_to myitem_path(i.id) do
+              %figure
+                = image_tag(i.images[0].image.url, size: "45x45", alt: i.name)
+              .mypage-item-body
+                .mypage-item-text
+                  = i.name
+                %time
+                  %i.fa.fa-clock-o
+                    = i.created_at.strftime("%-m月%-d日")
+              %i.fa.fa-chevron-right
+      = paginate(@items)
