@@ -22,24 +22,20 @@
       %li.active
         %h3
           = link_to  do
-            お知らせ
+            出品中
             %span.mypage-nav-number.hidden-large
-           
-      %li
-        %h3
-          = link_to "#" do
-            やることリスト
     .tab-content
       %ul.ul-tab
-  %section.main-container__right__under
-    %h2.buy-item-head 購入した商品
-    %ul.mypage-tabs
-      %li
-        .active
-          取引中       
-      %li
-        .not-moving
-          過去の取引        
-    .under-content
-      %ul.content-inner
-        %li.mypage-item-not-found 取引中の商品がありません
+        - @items.each do |i|
+          %li
+            = link_to myitem_path(i.id) do
+              %figure
+                = image_tag(i.images[0].image.url, size: "45x45", alt: i.name)
+              .mypage-item-body
+                .mypage-item-text
+                  = i.name
+                %time
+                  %i.fa.fa-clock-o
+                    = i.created_at.strftime("%-m月%-d日")
+              %i.fa.fa-chevron-right
+      = paginate(@items)

@@ -1,0 +1,15 @@
+.wrapper
+  = render 'layouts/header'
+  = render 'layouts/exhibit_btn'
+  .content_wrapper
+    %nav.white-bar
+      %ul.pan
+        %li
+          - breadcrumb :mypage
+          = breadcrumbs
+
+    %main.main-container 
+      = render 'mypages/left'
+      = render 'mypages/right-myitem'
+    .main-cotainer-margin
+  = render 'layouts/footer'
