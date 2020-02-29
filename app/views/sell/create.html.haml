@@ -10,5 +10,5 @@
         = link_to new_sell_path, class: "continue-exhibit-btn" do
           続けて出品する
       .exhibit-complete-wrapper__contents__box__link
-        = link_to root_path, class: "root-path-btn" do
+        = link_to item_path(@item.id), class: "root-path-btn" do
           商品ページへ行ってシェアする
