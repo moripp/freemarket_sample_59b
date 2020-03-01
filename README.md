@@ -88,3 +88,5 @@
 ## Association
 - belongs_to :user
 ※カラム名はgem合わせ
+
+<!-- testpirori -->
